@@ -1277,7 +1277,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (569:12) {#each hero_feature as feature }
+// (562:12) {#each hero_feature as feature }
 function create_each_block(ctx) {
 	let div;
 	let h6;
@@ -1473,34 +1473,34 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h10, "class", "svelte-vn1x14");
-			attr(div0, "class", "hero-text-container1 svelte-vn1x14");
-			attr(h11, "class", "svelte-vn1x14");
-			attr(div1, "class", "hero-text-container2 svelte-vn1x14");
-			attr(div2, "class", "hero-feature-tag-container svelte-vn1x14");
-			attr(p, "class", "h650 svelte-vn1x14");
-			attr(div3, "class", "hero-feature-container svelte-vn1x14");
+			attr(h10, "class", "svelte-pcpoiu");
+			attr(div0, "class", "hero-text-container1 svelte-pcpoiu");
+			attr(h11, "class", "svelte-pcpoiu");
+			attr(div1, "class", "hero-text-container2 svelte-pcpoiu");
+			attr(div2, "class", "hero-feature-tag-container tags_top svelte-pcpoiu");
+			attr(p, "class", "h650 svelte-pcpoiu");
+			attr(div3, "class", "hero-feature-container svelte-pcpoiu");
 			set_custom_element_data(lottie_player, "autoplay", "");
 			set_custom_element_data(lottie_player, "loop", "");
 			set_custom_element_data(lottie_player, "mode", "normal");
-			set_custom_element_data(lottie_player, "class", "hero-lottie svelte-vn1x14");
+			set_custom_element_data(lottie_player, "class", "hero-lottie svelte-pcpoiu");
 			if (!src_url_equal(lottie_player.src, lottie_player_src_value = coffeeLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
-			attr(img0, "class", "hero-image svelte-vn1x14");
+			attr(img0, "class", "hero-image svelte-pcpoiu");
 			if (!src_url_equal(img0.src, img0_src_value = /*hero_image*/ ctx[1].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*hero_image*/ ctx[1].alt);
-			attr(div4, "class", "svelte-vn1x14");
-			attr(div5, "class", "hero-image-wrapper svelte-vn1x14");
-			attr(img1, "class", "home-banner-mobile svelte-vn1x14");
+			attr(div4, "class", "svelte-pcpoiu");
+			attr(div5, "class", "hero-image-wrapper svelte-pcpoiu");
+			attr(img1, "class", "home-banner-mobile svelte-pcpoiu");
 			if (!src_url_equal(img1.src, img1_src_value = /*home_banner_mobile*/ ctx[6].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*home_banner_mobile*/ ctx[6].alt);
-			attr(img2, "class", "home-banner-small-desktop svelte-vn1x14");
+			attr(img2, "class", "home-banner-small-desktop svelte-pcpoiu");
 			if (!src_url_equal(img2.src, img2_src_value = /*home_banner_small_desktop*/ ctx[7].url)) attr(img2, "src", img2_src_value);
 			attr(img2, "alt", img2_alt_value = /*home_banner_small_desktop*/ ctx[7].alt);
-			attr(div6, "class", "header-wrapper svelte-vn1x14");
-			attr(div7, "class", "header-container svelte-vn1x14");
+			attr(div6, "class", "header-wrapper svelte-pcpoiu");
+			attr(div7, "class", "header-container svelte-pcpoiu");
 			attr(section, "role", "img");
 			attr(section, "aria-label", section_aria_label_value = /*background*/ ctx[0].alt);
-			attr(section, "class", "svelte-vn1x14");
+			attr(section, "class", "svelte-pcpoiu");
 		},
 		m(target, anchor) {
 			insert_hydration(target, section, anchor);
