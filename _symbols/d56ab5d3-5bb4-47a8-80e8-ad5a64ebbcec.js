@@ -2845,7 +2845,7 @@ function create_if_block$1(ctx) {
 
 	function select_block_type(ctx, dirty) {
 		if (/*data*/ ctx[0].svg) return create_if_block_1$1;
-		return create_else_block;
+		return create_else_block$1;
 	}
 
 	let current_block_type = select_block_type(ctx);
@@ -2885,7 +2885,7 @@ function create_if_block$1(ctx) {
 }
 
 // (115:1) {:else}
-function create_else_block(ctx) {
+function create_else_block$1(ctx) {
 	let span;
 	let span_levels = [/*data*/ ctx[0].attributes];
 	let span_data = {};
@@ -3096,7 +3096,7 @@ function get_each_context_1(ctx, list, i) {
 }
 
 // (251:35) 
-function create_if_block_4(ctx) {
+function create_if_block_5(ctx) {
 	let img;
 	let img_src_value;
 	let img_alt_value;
@@ -3134,7 +3134,7 @@ function create_if_block_4(ctx) {
 }
 
 // (249:10) {#if logo.title}
-function create_if_block_3(ctx) {
+function create_if_block_4(ctx) {
 	let t_value = /*logo*/ ctx[0].title + "";
 	let t;
 
@@ -3157,8 +3157,8 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (256:10) {#each site_nav as { link }}
-function create_each_block_1(ctx) {
+// (270:12) {:else}
+function create_else_block(ctx) {
 	let h6;
 	let a;
 	let t_value = /*link*/ ctx[8].label + "";
@@ -3217,7 +3217,171 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (270:35) 
+// (257:12) {#if link.label === 'Payments'}
+function create_if_block_3(ctx) {
+	let div1;
+	let h6;
+	let a0;
+	let t0_value = /*link*/ ctx[8].label + "";
+	let t0;
+	let a0_class_value;
+	let a0_href_value;
+	let t1;
+	let div0;
+	let a1;
+	let t2;
+	let t3;
+	let a2;
+	let t4;
+	let t5;
+	let a3;
+	let t6;
+
+	return {
+		c() {
+			div1 = element("div");
+			h6 = element("h6");
+			a0 = element("a");
+			t0 = text(t0_value);
+			t1 = space();
+			div0 = element("div");
+			a1 = element("a");
+			t2 = text("eCommerce");
+			t3 = space();
+			a2 = element("a");
+			t4 = text("In-Store");
+			t5 = space();
+			a3 = element("a");
+			t6 = text("Instant Settlements");
+			this.h();
+		},
+		l(nodes) {
+			div1 = claim_element(nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			h6 = claim_element(div1_nodes, "H6", { class: true });
+			var h6_nodes = children(h6);
+			a0 = claim_element(h6_nodes, "A", { id: true, class: true, href: true });
+			var a0_nodes = children(a0);
+			t0 = claim_text(a0_nodes, t0_value);
+			a0_nodes.forEach(detach);
+			h6_nodes.forEach(detach);
+			t1 = claim_space(div1_nodes);
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+			a1 = claim_element(div0_nodes, "A", { href: true });
+			var a1_nodes = children(a1);
+			t2 = claim_text(a1_nodes, "eCommerce");
+			a1_nodes.forEach(detach);
+			t3 = claim_space(div0_nodes);
+			a2 = claim_element(div0_nodes, "A", { href: true });
+			var a2_nodes = children(a2);
+			t4 = claim_text(a2_nodes, "In-Store");
+			a2_nodes.forEach(detach);
+			t5 = claim_space(div0_nodes);
+			a3 = claim_element(div0_nodes, "A", { href: true });
+			var a3_nodes = children(a3);
+			t6 = claim_text(a3_nodes, "Instant Settlements");
+			a3_nodes.forEach(detach);
+			div0_nodes.forEach(detach);
+			div1_nodes.forEach(detach);
+			this.h();
+		},
+		h() {
+			attr(a0, "id", "nav-item");
+
+			attr(a0, "class", a0_class_value = "" + (null_to_empty(window.location.pathname.includes(/*link*/ ctx[8].url)
+			? 'active-link'
+			: 'inactive-link') + " svelte-jc1u8d"));
+
+			attr(a0, "href", a0_href_value = /*link*/ ctx[8].url);
+			attr(h6, "class", "h950");
+			attr(a1, "href", "/payments/ecommerce");
+			attr(a2, "href", "/payments/in-store");
+			attr(a3, "href", "/payments/instant-settlements");
+			attr(div0, "class", "dropdown-content");
+			attr(div1, "class", "dropdown");
+		},
+		m(target, anchor) {
+			insert_hydration(target, div1, anchor);
+			append_hydration(div1, h6);
+			append_hydration(h6, a0);
+			append_hydration(a0, t0);
+			append_hydration(div1, t1);
+			append_hydration(div1, div0);
+			append_hydration(div0, a1);
+			append_hydration(a1, t2);
+			append_hydration(div0, t3);
+			append_hydration(div0, a2);
+			append_hydration(a2, t4);
+			append_hydration(div0, t5);
+			append_hydration(div0, a3);
+			append_hydration(a3, t6);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*site_nav*/ 2 && t0_value !== (t0_value = /*link*/ ctx[8].label + "")) set_data(t0, t0_value);
+
+			if (dirty & /*site_nav*/ 2 && a0_class_value !== (a0_class_value = "" + (null_to_empty(window.location.pathname.includes(/*link*/ ctx[8].url)
+			? 'active-link'
+			: 'inactive-link') + " svelte-jc1u8d"))) {
+				attr(a0, "class", a0_class_value);
+			}
+
+			if (dirty & /*site_nav*/ 2 && a0_href_value !== (a0_href_value = /*link*/ ctx[8].url)) {
+				attr(a0, "href", a0_href_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) detach(div1);
+		}
+	};
+}
+
+// (256:10) {#each site_nav as { link }}
+function create_each_block_1(ctx) {
+	let if_block_anchor;
+
+	function select_block_type_1(ctx, dirty) {
+		if (/*link*/ ctx[8].label === 'Payments') return create_if_block_3;
+		return create_else_block;
+	}
+
+	let current_block_type = select_block_type_1(ctx);
+	let if_block = current_block_type(ctx);
+
+	return {
+		c() {
+			if_block.c();
+			if_block_anchor = empty();
+		},
+		l(nodes) {
+			if_block.l(nodes);
+			if_block_anchor = empty();
+		},
+		m(target, anchor) {
+			if_block.m(target, anchor);
+			insert_hydration(target, if_block_anchor, anchor);
+		},
+		p(ctx, dirty) {
+			if (current_block_type === (current_block_type = select_block_type_1(ctx)) && if_block) {
+				if_block.p(ctx, dirty);
+			} else {
+				if_block.d(1);
+				if_block = current_block_type(ctx);
+
+				if (if_block) {
+					if_block.c();
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			}
+		},
+		d(detaching) {
+			if_block.d(detaching);
+			if (detaching) detach(if_block_anchor);
+		}
+	};
+}
+
+// (285:35) 
 function create_if_block_2(ctx) {
 	let img;
 	let img_src_value;
@@ -3255,7 +3419,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (268:10) {#if logo.title}
+// (283:10) {#if logo.title}
 function create_if_block_1(ctx) {
 	let t_value = /*logo*/ ctx[0].title + "";
 	let t;
@@ -3279,7 +3443,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (286:8) {#if mobileNavOpen}
+// (301:8) {#if mobileNavOpen}
 function create_if_block(ctx) {
 	let nav;
 	let t0;
@@ -3437,7 +3601,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (289:14) {#each site_nav as { link }}
+// (304:14) {#each site_nav as { link }}
 function create_each_block(ctx) {
 	let h6;
 	let a;
@@ -3530,8 +3694,8 @@ function create_fragment(ctx) {
 	let dispose;
 
 	function select_block_type(ctx, dirty) {
-		if (/*logo*/ ctx[0].title) return create_if_block_3;
-		if (/*logo*/ ctx[0].image.url) return create_if_block_4;
+		if (/*logo*/ ctx[0].title) return create_if_block_4;
+		if (/*logo*/ ctx[0].image.url) return create_if_block_5;
 	}
 
 	let current_block_type = select_block_type(ctx);
@@ -3543,12 +3707,12 @@ function create_fragment(ctx) {
 		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
 	}
 
-	function select_block_type_1(ctx, dirty) {
+	function select_block_type_2(ctx, dirty) {
 		if (/*logo*/ ctx[0].title) return create_if_block_1;
 		if (/*logo*/ ctx[0].image.url) return create_if_block_2;
 	}
 
-	let current_block_type_1 = select_block_type_1(ctx);
+	let current_block_type_1 = select_block_type_2(ctx);
 	let if_block1 = current_block_type_1 && current_block_type_1(ctx);
 
 	icon = new Component$1({
@@ -3734,7 +3898,7 @@ function create_fragment(ctx) {
 				attr(a1, "href", a1_href_value);
 			}
 
-			if (current_block_type_1 === (current_block_type_1 = select_block_type_1(ctx)) && if_block1) {
+			if (current_block_type_1 === (current_block_type_1 = select_block_type_2(ctx)) && if_block1) {
 				if_block1.p(ctx, dirty);
 			} else {
 				if (if_block1) if_block1.d(1);
