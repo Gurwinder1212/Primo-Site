@@ -705,6 +705,8 @@
         <nav style="display: flex; align-items:center;" class="svelte-jc1u8d"><h6 class="h950"><a id="nav-item" class="inactive-link svelte-jc1u8d" href="/personal">Personal</a>
              </h6><h6 class="h950"><a id="nav-item" class="inactive-link svelte-jc1u8d" href="/business">Business</a>
              </h6><h6 class="h950"><a id="nav-item" class="inactive-link svelte-jc1u8d" href="/investor">Investor</a>
+             </h6><h6 class="h950"><a id="nav-item" class="inactive-link svelte-jc1u8d" href="#">Payments</a>
+             </h6><h6 class="h950"><a id="nav-item" class="active-link svelte-jc1u8d" href=""></a>
              </h6>
             <a class="primary-small-button" id="nav" href="/portal">Get Started</a></nav></div>
       <div class="mobile-nav svelte-jc1u8d"><a href="/" class="logo svelte-jc1u8d"><img src="https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg" alt="logo" class="svelte-jc1u8d"></a>
@@ -721,19 +723,6 @@
   <span class="svelte-14fdjq7"><p id="copyright" class="p-small svelte-14fdjq7">© 2023 UNLOK. All rights reserved.</p></span></footer></div> 
 
       <script type="module">
-      import('/_symbols/d56ab5d3-5bb4-47a8-80e8-ad5a64ebbcec.js')
-      .then(({default:App}) => {
-        
-            new App({
-              target: document.querySelector('#section-6c56681c'),
-              hydrate: true,
-              props: {"logo":{"image":{"alt":"logo","src":"https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg","url":"https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg","size":3},"title":""},"site_nav":[{"link":{"url":"/personal","label":"Personal"}},{"link":{"url":"/business","label":"Business","active":false}},{"link":{"url":"/investor","label":"Investor"}}],"site_nav_button":{"url":"/portal","label":"Get Started"}}
-            })
-          
-      })
-      .catch(e => console.error(e))
-    
-
       import('/_symbols/b9dad700-15c0-4994-b58c-6544b46bac94.js')
       .then(({default:App}) => {
         
@@ -741,6 +730,19 @@
               target: document.querySelector('#section-e2602f0c'),
               hydrate: true,
               props: {"nav":[{"link":{"url":"/tokenomics","label":"Tokenomics"}},{"link":{"url":"/privacy","label":"Privacy Policy"}},{"link":{"url":"/tokenomics","label":"Whitepaper"}},{"link":{"url":"https://unlokloyalty.com#contact-us","label":"Contact Us"}}],"copyright":"© 2023 UNLOK. All rights reserved."}
+            })
+          
+      })
+      .catch(e => console.error(e))
+    
+
+      import('/_symbols/d56ab5d3-5bb4-47a8-80e8-ad5a64ebbcec.js')
+      .then(({default:App}) => {
+        
+            new App({
+              target: document.querySelector('#section-6c56681c'),
+              hydrate: true,
+              props: {"logo":{"image":{"alt":"logo","src":"https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg","url":"https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg","size":3},"title":""},"site_nav":[{"":{"url":"","label":""},"l":{"url":"","label":""},"li":{"url":"","label":""},"lin":{"url":"","label":""},"link":{"url":"/personal","label":"Personal"}},{"":{"url":"","label":""},"l":{"url":"","label":""},"li":{"url":"","label":""},"lin":{"url":"","label":""},"link":{"url":"/business","label":"Business","active":false}},{"":{"url":"","label":""},"l":{"url":"","label":""},"li":{"url":"","label":""},"lin":{"url":"","label":""},"link":{"url":"/investor","label":"Investor"}},{"":{"url":"","label":""},"l":{"url":"","label":""},"li":{"url":"","label":""},"lin":{"url":"","label":""},"link":{"url":"#","label":"Payments","active":false}},{"":{"url":"","label":""},"l":{"url":"","label":""},"li":{"url":"","label":""},"lin":{"url":"","label":""},"link":{"url":"","label":""}}],"site_nav_button":{"url":"/portal","label":"Get Started"}}
             })
           
       })
