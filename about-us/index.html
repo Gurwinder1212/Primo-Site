@@ -773,10 +773,13 @@
     <body id="page">
        
 <div class="section" id="section-58ad0536"><header class="svelte-7ieua5"><div class="header-container svelte-7ieua5"><div class="section-container svelte-7ieua5"><div class="desktop-nav svelte-7ieua5"><a href="/" class="logo svelte-7ieua5"><img src="https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg" alt="logo" class="svelte-7ieua5"></a>
-        <nav style="display: flex; align-items:center;" class="svelte-7ieua5"><h6 class="h950"><a id="nav-item" class="inactive-link svelte-7ieua5" href="/about-us">About</a>
-              </h6><h6 class="h950"><a id="nav-item" class="active-link svelte-7ieua5" href=""></a>
+          <nav style="display: flex; align-items:center; position:relative;" class="svelte-7ieua5"><div class="dropdown svelte-7ieua5"><h6 class="h950"><a id="nav-item" class="active-link svelte-7ieua5" href="">Payments
+                  </a></h6>
+                <div class="dropdown-content svelte-7ieua5"><a href="/payments/ecommerce" class="svelte-7ieua5">eCommerce</a>
+                  <a href="/payments/in-store" class="svelte-7ieua5">In-Store</a>
+                  <a href="/payments/instant-settlements" class="svelte-7ieua5">Instant Settlements</a></div>
+              </div><h6 class="h950"><a id="nav-item" class="inactive-link svelte-7ieua5" href="/about-us">About</a>
               </h6><h6 class="h950"><a id="nav-item" class="inactive-link svelte-7ieua5" href="#">Login</a>
-              </h6><h6 class="h950"><a id="nav-item" class="active-link svelte-7ieua5" href=""></a>
               </h6>
           <a class="primary-small-button" id="nav" href="/portal">Get Started</a></nav></div>
       <div class="mobile-nav svelte-7ieua5"><a href="/" class="logo svelte-7ieua5"><img src="https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg" alt="logo" class="svelte-7ieua5"></a>
@@ -934,7 +937,7 @@
             new App({
               target: document.querySelector('#section-58ad0536'),
               hydrate: true,
-              props: {"logo":{"image":{"alt":"logo","src":"https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg","url":"https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg","size":3},"title":""},"site_nav":[{"link":{"url":"/about-us","label":"About"}},{"link":{"label":"","url":"","active":false}},{"link":{"url":"#","label":"Login"}},{"link":{"label":"","url":"","active":false}}],"site_nav_button":{"url":"/portal","label":"Get Started"}}
+              props: {"logo":{"image":{"alt":"logo","src":"https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg","url":"https://dcutvpoezjrllqtfzyhv.supabase.co/storage/v1/object/public/images/80af99af-577e-467b-a42c-328f39dc7934/1686165013778unlok-logo2%20copy.svg","size":3},"title":""},"site_nav":[{"link":{"label":"Payments","url":"","active":false}},{"link":{"url":"/about-us","label":"About"}},{"link":{"url":"#","label":"Login"}}],"site_nav_button":{"url":"/portal","label":"Get Started"}}
             })
           
       })

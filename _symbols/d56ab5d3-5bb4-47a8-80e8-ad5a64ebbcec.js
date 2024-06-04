@@ -3813,6 +3813,7 @@ function create_fragment(ctx) {
 			attr(a1, "href", a1_href_value = /*site_nav_button*/ ctx[2].url);
 			set_style(nav, "display", "flex");
 			set_style(nav, "align-items", "center");
+			set_style(nav, "position", "relative");
 			attr(nav, "class", "svelte-7ieua5");
 			attr(div0, "class", "desktop-nav svelte-7ieua5");
 			attr(a2, "href", "/");
