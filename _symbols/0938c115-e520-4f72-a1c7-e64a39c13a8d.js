@@ -2822,7 +2822,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (421:8) {#each social as { link, icon }}
+// (425:8) {#each social as { link, icon }}
 function create_each_block(ctx) {
 	let a;
 	let span;
@@ -2859,7 +2859,7 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "icon svelte-2u5228");
+			attr(span, "class", "icon svelte-1qjd4sj");
 			attr(a, "href", a_href_value = /*link*/ ctx[12].url);
 			attr(a, "alt", a_alt_value = /*link*/ ctx[12].alt);
 		},
@@ -3044,22 +3044,22 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(p0, "class", "p-large svelte-2u5228");
-			attr(p1, "class", "p-large svelte-2u5228");
+			attr(p0, "class", "p-large svelte-1qjd4sj");
+			attr(p1, "class", "p-large svelte-1qjd4sj");
 			if (!src_url_equal(iframe.src, iframe_src_value = "https://cdn.forms-content.sg-form.com/a0bf2821-1221-11ee-b804-2a098f035ca4")) attr(iframe, "src", iframe_src_value);
 			attr(iframe, "title", "contact form");
-			attr(iframe, "class", "svelte-2u5228");
-			attr(form, "class", "svelte-2u5228");
-			attr(p2, "class", "p-medium svelte-2u5228");
-			attr(div0, "class", "bubble-1 svelte-2u5228");
-			attr(p3, "class", "p-medium svelte-2u5228");
-			attr(div1, "class", "bubble-2 svelte-2u5228");
-			attr(div2, "class", "bubbles svelte-2u5228");
-			attr(p4, "class", "p-large svelte-2u5228");
-			attr(div3, "class", "social-links svelte-2u5228");
-			attr(div4, "class", "section-container content svelte-2u5228");
-			attr(div5, "class", "wrapper svelte-2u5228");
-			attr(div6, "class", "container svelte-2u5228");
+			attr(iframe, "class", "svelte-1qjd4sj");
+			attr(form, "class", "svelte-1qjd4sj");
+			attr(p2, "class", "p-medium svelte-1qjd4sj");
+			attr(div0, "class", "bubble-1 svelte-1qjd4sj");
+			attr(p3, "class", "p-medium svelte-1qjd4sj");
+			attr(div1, "class", "bubble-2 svelte-1qjd4sj");
+			attr(div2, "class", "bubbles svelte-1qjd4sj");
+			attr(p4, "class", "p-large svelte-1qjd4sj");
+			attr(div3, "class", "social-links svelte-1qjd4sj");
+			attr(div4, "class", "section-container content svelte-1qjd4sj");
+			attr(div5, "class", "wrapper svelte-1qjd4sj");
+			attr(div6, "class", "container svelte-1qjd4sj");
 			attr(div6, "id", "contact-us");
 		},
 		m(target, anchor) {
