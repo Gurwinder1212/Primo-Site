@@ -1357,7 +1357,7 @@ function create_fragment(ctx) {
 			p_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			t3 = claim_space(div4_nodes);
-			div3 = claim_element(div4_nodes, "DIV", { class: true });
+			div3 = claim_element(div4_nodes, "DIV", { class: true, style: true });
 			var div3_nodes = children(div3);
 			img0 = claim_element(div3_nodes, "IMG", { class: true, src: true, alt: true });
 			t4 = claim_space(div3_nodes);
@@ -1434,6 +1434,7 @@ function create_fragment(ctx) {
 			if (!src_url_equal(img1.src, img1_src_value = /*temp_image*/ ctx[0].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*temp_image*/ ctx[0].alt);
 			attr(div3, "class", "hero-image-2-wrapper svelte-zm098q");
+			set_style(div3, "bottom", "3%");
 			attr(div4, "class", "hero-container svelte-zm098q");
 			attr(div5, "class", "header-wrapper svelte-zm098q");
 			attr(div6, "class", "header-container svelte-zm098q");
