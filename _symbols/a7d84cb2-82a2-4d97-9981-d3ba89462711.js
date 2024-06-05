@@ -1351,7 +1351,7 @@ function create_fragment(ctx) {
 			t1 = claim_space(div5_nodes);
 			div1 = claim_element(div5_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			h11 = claim_element(div1_nodes, "H1", {});
+			h11 = claim_element(div1_nodes, "H1", { class: true });
 			var h11_nodes = children(h11);
 			t2 = claim_text(h11_nodes, /*hero_title2*/ ctx[2]);
 			h11_nodes.forEach(detach);
@@ -1414,38 +1414,39 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h10, "class", "svelte-6dussa");
-			attr(div0, "class", "hero-text-container1 svelte-6dussa");
-			attr(div1, "class", "hero-text-container eco_second_title");
-			attr(h6, "class", "h650 svelte-6dussa");
-			attr(div2, "class", "hero-feature-container svelte-6dussa");
-			attr(img0, "class", "hero-image-2 svelte-6dussa");
+			attr(h10, "class", "svelte-zm098q");
+			attr(div0, "class", "hero-text-container1 svelte-zm098q");
+			attr(h11, "class", "svelte-zm098q");
+			attr(div1, "class", "hero-text-container eco_second_title svelte-zm098q");
+			attr(h6, "class", "h650 svelte-zm098q");
+			attr(div2, "class", "hero-feature-container svelte-zm098q");
+			attr(img0, "class", "hero-image-2 svelte-zm098q");
 			if (!src_url_equal(img0.src, img0_src_value = /*hero_image_2*/ ctx[3].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*hero_image_2*/ ctx[3].alt);
 			set_custom_element_data(lottie_player0, "autoplay", "");
 			set_custom_element_data(lottie_player0, "loop", "");
 			set_custom_element_data(lottie_player0, "mode", "normal");
-			set_custom_element_data(lottie_player0, "class", "lottie-4 svelte-6dussa");
+			set_custom_element_data(lottie_player0, "class", "lottie-4 svelte-zm098q");
 			if (!src_url_equal(lottie_player0.src, lottie_player0_src_value = flyingPigLottie)) set_custom_element_data(lottie_player0, "src", lottie_player0_src_value);
-			attr(div3, "class", "pink-box svelte-6dussa");
+			attr(div3, "class", "pink-box svelte-zm098q");
 			set_custom_element_data(lottie_player1, "autoplay", "");
 			set_custom_element_data(lottie_player1, "loop", "");
 			set_custom_element_data(lottie_player1, "mode", "normal");
-			set_custom_element_data(lottie_player1, "class", "lottie-2 svelte-6dussa");
+			set_custom_element_data(lottie_player1, "class", "lottie-2 svelte-zm098q");
 			if (!src_url_equal(lottie_player1.src, lottie_player1_src_value = foodorderDeliveryLottie)) set_custom_element_data(lottie_player1, "src", lottie_player1_src_value);
 			set_custom_element_data(lottie_player2, "autoplay", "");
 			set_custom_element_data(lottie_player2, "loop", "");
 			set_custom_element_data(lottie_player2, "mode", "normal");
-			set_custom_element_data(lottie_player2, "class", "lottie-3 svelte-6dussa");
+			set_custom_element_data(lottie_player2, "class", "lottie-3 svelte-zm098q");
 			if (!src_url_equal(lottie_player2.src, lottie_player2_src_value = honeymoonTravellingLottie)) set_custom_element_data(lottie_player2, "src", lottie_player2_src_value);
-			attr(img1, "class", "lottie-1 svelte-6dussa");
+			attr(img1, "class", "lottie-1 svelte-zm098q");
 			if (!src_url_equal(img1.src, img1_src_value = /*temp_image*/ ctx[0].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*temp_image*/ ctx[0].alt);
-			attr(div4, "class", "hero-image-2-wrapper svelte-6dussa");
-			attr(div5, "class", "hero-container svelte-6dussa");
-			attr(div6, "class", "header-wrapper svelte-6dussa");
-			attr(div7, "class", "header-container svelte-6dussa");
-			attr(section, "class", "svelte-6dussa");
+			attr(div4, "class", "hero-image-2-wrapper svelte-zm098q");
+			attr(div5, "class", "hero-container svelte-zm098q");
+			attr(div6, "class", "header-wrapper svelte-zm098q");
+			attr(div7, "class", "header-container svelte-zm098q");
+			attr(section, "class", "svelte-zm098q");
 		},
 		m(target, anchor) {
 			insert_hydration(target, section, anchor);
