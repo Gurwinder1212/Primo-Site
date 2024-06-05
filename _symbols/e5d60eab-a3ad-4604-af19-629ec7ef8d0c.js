@@ -1029,7 +1029,7 @@ function create_fragment(ctx) {
 			attr(div5, "class", "card-container-mobile svelte-1m7fkq");
 			attr(div6, "class", "bullet svelte-1m7fkq");
 			attr(div7, "class", "wrapper svelte-1m7fkq");
-			attr(div8, "class", "container svelte-1m7fkq");
+			attr(div8, "class", "container none svelte-1m7fkq");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div8, anchor);
