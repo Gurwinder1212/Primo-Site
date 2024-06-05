@@ -1338,19 +1338,19 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h10, "class", "svelte-1tgv3tg");
-			attr(div0, "class", "hero-text-container1 svelte-1tgv3tg");
-			attr(h11, "class", "svelte-1tgv3tg");
-			attr(div1, "class", "hero-text-container2 svelte-1tgv3tg");
-			attr(p, "class", "h650 svelte-qgaks about_top_desc svelte-1tgv3tg");
-			attr(img0, "class", "hero-image-1 none svelte-1tgv3tg");
+			attr(h10, "class", "svelte-1jd7hd9");
+			attr(div0, "class", "hero-text-container1 svelte-1jd7hd9");
+			attr(h11, "class", "svelte-1jd7hd9");
+			attr(div1, "class", "hero-text-container2 svelte-1jd7hd9");
+			attr(p, "class", "h650 svelte-qgaks about_top_desc svelte-1jd7hd9");
+			attr(img0, "class", "hero-image-1 none svelte-1jd7hd9");
 			if (!src_url_equal(img0.src, img0_src_value = /*hero_image_1*/ ctx[2].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*hero_image_1*/ ctx[2].alt);
-			attr(img1, "class", "hero-image-2 about_top_right_image svelte-1tgv3tg");
+			attr(img1, "class", "hero-image-2 about_top_right_image svelte-1jd7hd9");
 			if (!src_url_equal(img1.src, img1_src_value = /*hero_image_2*/ ctx[3].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*hero_image_2*/ ctx[3].alt);
-			attr(div2, "class", "hero-feature-container svelte-1tgv3tg");
-			attr(div3, "class", "hero-wrapper svelte-1tgv3tg");
+			attr(div2, "class", "hero-feature-container svelte-1jd7hd9");
+			attr(div3, "class", "hero-wrapper svelte-1jd7hd9");
 		},
 		m(target, anchor) {
 			insert_hydration(target, section, anchor);
