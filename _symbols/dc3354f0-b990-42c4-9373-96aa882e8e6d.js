@@ -285,6 +285,14 @@ function set_data(text, data) {
         return;
     text.data = data;
 }
+function set_style(node, key, value, important) {
+    if (value == null) {
+        node.style.removeProperty(key);
+    }
+    else {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+}
 
 let current_component;
 function set_current_component(component) {
@@ -1343,7 +1351,7 @@ function create_fragment(ctx) {
 			t1 = claim_space(div4_nodes);
 			div1 = claim_element(div4_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			p = claim_element(div1_nodes, "P", { class: true });
+			p = claim_element(div1_nodes, "P", { class: true, style: true });
 			var p_nodes = children(p);
 			t2 = claim_text(p_nodes, /*hero_description*/ ctx[3]);
 			p_nodes.forEach(detach);
@@ -1401,6 +1409,7 @@ function create_fragment(ctx) {
 			attr(h1, "class", "svelte-zm098q");
 			attr(div0, "class", "hero-text-container1 svelte-qgaks svelte-zm098q");
 			attr(p, "class", "h650 svelte-qgaks svelte-zm098q");
+			set_style(p, "margin-top", "5em");
 			attr(div1, "class", "hero-feature-container svelte-zm098q");
 			attr(img0, "class", "hero-image-2 svelte-zm098q");
 			if (!src_url_equal(img0.src, img0_src_value = /*hero_image_2*/ ctx[2].url)) attr(img0, "src", img0_src_value);
