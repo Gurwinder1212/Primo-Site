@@ -1,4 +1,4 @@
-// Site Header - Personal - Updated June 4, 2024
+// Site Header - Personal - Updated June 5, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -1279,31 +1279,27 @@ function create_fragment(ctx) {
 	let t2;
 	let t3;
 	let div2;
+	let h6;
+	let t4;
+	let t5;
+	let div4;
 	let img0;
 	let img0_src_value;
 	let img0_alt_value;
-	let t4;
-	let h6;
-	let t5;
 	let t6;
-	let div4;
-	let img1;
-	let img1_src_value;
-	let img1_alt_value;
-	let t7;
 	let div3;
 	let lottie_player0;
 	let lottie_player0_src_value;
-	let t8;
+	let t7;
 	let lottie_player1;
 	let lottie_player1_src_value;
-	let t9;
+	let t8;
 	let lottie_player2;
 	let lottie_player2_src_value;
-	let t10;
-	let img2;
-	let img2_src_value;
-	let img2_alt_value;
+	let t9;
+	let img1;
+	let img1_src_value;
+	let img1_alt_value;
 
 	return {
 		c() {
@@ -1320,22 +1316,20 @@ function create_fragment(ctx) {
 			t2 = text(/*hero_title2*/ ctx[2]);
 			t3 = space();
 			div2 = element("div");
-			img0 = element("img");
-			t4 = space();
 			h6 = element("h6");
-			t5 = text(/*hero_description*/ ctx[5]);
-			t6 = space();
+			t4 = text(/*hero_description*/ ctx[4]);
+			t5 = space();
 			div4 = element("div");
-			img1 = element("img");
-			t7 = space();
+			img0 = element("img");
+			t6 = space();
 			div3 = element("div");
 			lottie_player0 = element("lottie-player");
-			t8 = space();
+			t7 = space();
 			lottie_player1 = element("lottie-player");
-			t9 = space();
+			t8 = space();
 			lottie_player2 = element("lottie-player");
-			t10 = space();
-			img2 = element("img");
+			t9 = space();
+			img1 = element("img");
 			this.h();
 		},
 		l(nodes) {
@@ -1357,7 +1351,7 @@ function create_fragment(ctx) {
 			t1 = claim_space(div5_nodes);
 			div1 = claim_element(div5_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			h11 = claim_element(div1_nodes, "H1", { class: true });
+			h11 = claim_element(div1_nodes, "H1", {});
 			var h11_nodes = children(h11);
 			t2 = claim_text(h11_nodes, /*hero_title2*/ ctx[2]);
 			h11_nodes.forEach(detach);
@@ -1365,18 +1359,16 @@ function create_fragment(ctx) {
 			t3 = claim_space(div5_nodes);
 			div2 = claim_element(div5_nodes, "DIV", { class: true });
 			var div2_nodes = children(div2);
-			img0 = claim_element(div2_nodes, "IMG", { class: true, src: true, alt: true });
-			t4 = claim_space(div2_nodes);
 			h6 = claim_element(div2_nodes, "H6", { class: true });
 			var h6_nodes = children(h6);
-			t5 = claim_text(h6_nodes, /*hero_description*/ ctx[5]);
+			t4 = claim_text(h6_nodes, /*hero_description*/ ctx[4]);
 			h6_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
-			t6 = claim_space(div5_nodes);
+			t5 = claim_space(div5_nodes);
 			div4 = claim_element(div5_nodes, "DIV", { class: true });
 			var div4_nodes = children(div4);
-			img1 = claim_element(div4_nodes, "IMG", { class: true, src: true, alt: true });
-			t7 = claim_space(div4_nodes);
+			img0 = claim_element(div4_nodes, "IMG", { class: true, src: true, alt: true });
+			t6 = claim_space(div4_nodes);
 			div3 = claim_element(div4_nodes, "DIV", { class: true });
 			var div3_nodes = children(div3);
 
@@ -1390,7 +1382,7 @@ function create_fragment(ctx) {
 
 			children(lottie_player0).forEach(detach);
 			div3_nodes.forEach(detach);
-			t8 = claim_space(div4_nodes);
+			t7 = claim_space(div4_nodes);
 
 			lottie_player1 = claim_element(div4_nodes, "LOTTIE-PLAYER", {
 				autoplay: true,
@@ -1401,7 +1393,7 @@ function create_fragment(ctx) {
 			});
 
 			children(lottie_player1).forEach(detach);
-			t9 = claim_space(div4_nodes);
+			t8 = claim_space(div4_nodes);
 
 			lottie_player2 = claim_element(div4_nodes, "LOTTIE-PLAYER", {
 				autoplay: true,
@@ -1412,8 +1404,8 @@ function create_fragment(ctx) {
 			});
 
 			children(lottie_player2).forEach(detach);
-			t10 = claim_space(div4_nodes);
-			img2 = claim_element(div4_nodes, "IMG", { class: true, src: true, alt: true });
+			t9 = claim_space(div4_nodes);
+			img1 = claim_element(div4_nodes, "IMG", { class: true, src: true, alt: true });
 			div4_nodes.forEach(detach);
 			div5_nodes.forEach(detach);
 			div6_nodes.forEach(detach);
@@ -1424,16 +1416,12 @@ function create_fragment(ctx) {
 		h() {
 			attr(h10, "class", "svelte-6dussa");
 			attr(div0, "class", "hero-text-container1 svelte-6dussa");
-			attr(h11, "class", "svelte-6dussa");
-			attr(div1, "class", "hero-text-container2 svelte-6dussa");
-			attr(img0, "class", "hero-image-1 svelte-6dussa");
-			if (!src_url_equal(img0.src, img0_src_value = /*hero_image_1*/ ctx[3].url)) attr(img0, "src", img0_src_value);
-			attr(img0, "alt", img0_alt_value = /*hero_image_1*/ ctx[3].alt);
+			attr(div1, "class", "hero-text-container eco_second_title");
 			attr(h6, "class", "h650 svelte-6dussa");
 			attr(div2, "class", "hero-feature-container svelte-6dussa");
-			attr(img1, "class", "hero-image-2 svelte-6dussa");
-			if (!src_url_equal(img1.src, img1_src_value = /*hero_image_2*/ ctx[4].url)) attr(img1, "src", img1_src_value);
-			attr(img1, "alt", img1_alt_value = /*hero_image_2*/ ctx[4].alt);
+			attr(img0, "class", "hero-image-2 svelte-6dussa");
+			if (!src_url_equal(img0.src, img0_src_value = /*hero_image_2*/ ctx[3].url)) attr(img0, "src", img0_src_value);
+			attr(img0, "alt", img0_alt_value = /*hero_image_2*/ ctx[3].alt);
 			set_custom_element_data(lottie_player0, "autoplay", "");
 			set_custom_element_data(lottie_player0, "loop", "");
 			set_custom_element_data(lottie_player0, "mode", "normal");
@@ -1450,9 +1438,9 @@ function create_fragment(ctx) {
 			set_custom_element_data(lottie_player2, "mode", "normal");
 			set_custom_element_data(lottie_player2, "class", "lottie-3 svelte-6dussa");
 			if (!src_url_equal(lottie_player2.src, lottie_player2_src_value = honeymoonTravellingLottie)) set_custom_element_data(lottie_player2, "src", lottie_player2_src_value);
-			attr(img2, "class", "lottie-1 svelte-6dussa");
-			if (!src_url_equal(img2.src, img2_src_value = /*temp_image*/ ctx[0].url)) attr(img2, "src", img2_src_value);
-			attr(img2, "alt", img2_alt_value = /*temp_image*/ ctx[0].alt);
+			attr(img1, "class", "lottie-1 svelte-6dussa");
+			if (!src_url_equal(img1.src, img1_src_value = /*temp_image*/ ctx[0].url)) attr(img1, "src", img1_src_value);
+			attr(img1, "alt", img1_alt_value = /*temp_image*/ ctx[0].alt);
 			attr(div4, "class", "hero-image-2-wrapper svelte-6dussa");
 			attr(div5, "class", "hero-container svelte-6dussa");
 			attr(div6, "class", "header-wrapper svelte-6dussa");
@@ -1473,51 +1461,40 @@ function create_fragment(ctx) {
 			append_hydration(h11, t2);
 			append_hydration(div5, t3);
 			append_hydration(div5, div2);
-			append_hydration(div2, img0);
-			append_hydration(div2, t4);
 			append_hydration(div2, h6);
-			append_hydration(h6, t5);
-			append_hydration(div5, t6);
+			append_hydration(h6, t4);
+			append_hydration(div5, t5);
 			append_hydration(div5, div4);
-			append_hydration(div4, img1);
-			append_hydration(div4, t7);
+			append_hydration(div4, img0);
+			append_hydration(div4, t6);
 			append_hydration(div4, div3);
 			append_hydration(div3, lottie_player0);
-			append_hydration(div4, t8);
+			append_hydration(div4, t7);
 			append_hydration(div4, lottie_player1);
-			append_hydration(div4, t9);
+			append_hydration(div4, t8);
 			append_hydration(div4, lottie_player2);
-			append_hydration(div4, t10);
-			append_hydration(div4, img2);
+			append_hydration(div4, t9);
+			append_hydration(div4, img1);
 		},
 		p(ctx, [dirty]) {
 			if (dirty & /*hero_title1*/ 2) set_data(t0, /*hero_title1*/ ctx[1]);
 			if (dirty & /*hero_title2*/ 4) set_data(t2, /*hero_title2*/ ctx[2]);
+			if (dirty & /*hero_description*/ 16) set_data(t4, /*hero_description*/ ctx[4]);
 
-			if (dirty & /*hero_image_1*/ 8 && !src_url_equal(img0.src, img0_src_value = /*hero_image_1*/ ctx[3].url)) {
+			if (dirty & /*hero_image_2*/ 8 && !src_url_equal(img0.src, img0_src_value = /*hero_image_2*/ ctx[3].url)) {
 				attr(img0, "src", img0_src_value);
 			}
 
-			if (dirty & /*hero_image_1*/ 8 && img0_alt_value !== (img0_alt_value = /*hero_image_1*/ ctx[3].alt)) {
+			if (dirty & /*hero_image_2*/ 8 && img0_alt_value !== (img0_alt_value = /*hero_image_2*/ ctx[3].alt)) {
 				attr(img0, "alt", img0_alt_value);
 			}
 
-			if (dirty & /*hero_description*/ 32) set_data(t5, /*hero_description*/ ctx[5]);
-
-			if (dirty & /*hero_image_2*/ 16 && !src_url_equal(img1.src, img1_src_value = /*hero_image_2*/ ctx[4].url)) {
+			if (dirty & /*temp_image*/ 1 && !src_url_equal(img1.src, img1_src_value = /*temp_image*/ ctx[0].url)) {
 				attr(img1, "src", img1_src_value);
 			}
 
-			if (dirty & /*hero_image_2*/ 16 && img1_alt_value !== (img1_alt_value = /*hero_image_2*/ ctx[4].alt)) {
+			if (dirty & /*temp_image*/ 1 && img1_alt_value !== (img1_alt_value = /*temp_image*/ ctx[0].alt)) {
 				attr(img1, "alt", img1_alt_value);
-			}
-
-			if (dirty & /*temp_image*/ 1 && !src_url_equal(img2.src, img2_src_value = /*temp_image*/ ctx[0].url)) {
-				attr(img2, "src", img2_src_value);
-			}
-
-			if (dirty & /*temp_image*/ 1 && img2_alt_value !== (img2_alt_value = /*temp_image*/ ctx[0].alt)) {
-				attr(img2, "alt", img2_alt_value);
 			}
 		},
 		i: noop,
@@ -1542,23 +1519,23 @@ function instance($$self, $$props, $$invalidate) {
 	let { hero_description } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('props' in $$props) $$invalidate(6, props = $$props.props);
+		if ('props' in $$props) $$invalidate(5, props = $$props.props);
 		if ('temp_image' in $$props) $$invalidate(0, temp_image = $$props.temp_image);
 		if ('hero_title1' in $$props) $$invalidate(1, hero_title1 = $$props.hero_title1);
 		if ('hero_title2' in $$props) $$invalidate(2, hero_title2 = $$props.hero_title2);
-		if ('hero_image_1' in $$props) $$invalidate(3, hero_image_1 = $$props.hero_image_1);
-		if ('hero_image_2' in $$props) $$invalidate(4, hero_image_2 = $$props.hero_image_2);
-		if ('hero_description' in $$props) $$invalidate(5, hero_description = $$props.hero_description);
+		if ('hero_image_1' in $$props) $$invalidate(6, hero_image_1 = $$props.hero_image_1);
+		if ('hero_image_2' in $$props) $$invalidate(3, hero_image_2 = $$props.hero_image_2);
+		if ('hero_description' in $$props) $$invalidate(4, hero_description = $$props.hero_description);
 	};
 
 	return [
 		temp_image,
 		hero_title1,
 		hero_title2,
-		hero_image_1,
 		hero_image_2,
 		hero_description,
-		props
+		props,
+		hero_image_1
 	];
 }
 
@@ -1567,13 +1544,13 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			props: 6,
+			props: 5,
 			temp_image: 0,
 			hero_title1: 1,
 			hero_title2: 2,
-			hero_image_1: 3,
-			hero_image_2: 4,
-			hero_description: 5
+			hero_image_1: 6,
+			hero_image_2: 3,
+			hero_description: 4
 		});
 	}
 }

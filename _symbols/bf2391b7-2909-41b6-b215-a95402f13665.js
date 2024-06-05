@@ -1,4 +1,4 @@
-// Content Image Bottom - Personal - Updated June 4, 2024
+// Content Image Bottom - Personal - Updated June 5, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -608,7 +608,7 @@ function create_fragment(ctx) {
 			if (!src_url_equal(lottie_player.src, lottie_player_src_value = stairsToSuccessLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
 			attr(div0, "class", "section-container content svelte-16r7h0q");
 			attr(div1, "class", "wrapper svelte-16r7h0q");
-			attr(div2, "class", "container svelte-16r7h0q");
+			attr(div2, "class", "container none svelte-16r7h0q");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);

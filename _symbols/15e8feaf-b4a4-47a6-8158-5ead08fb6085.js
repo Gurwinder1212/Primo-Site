@@ -1,4 +1,4 @@
-// Content Image Top - Personal - Updated June 4, 2024
+// Content Image Top - Personal - Updated June 5, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -607,7 +607,7 @@ function create_fragment(ctx) {
 			attr(div0, "class", "content-image-wrapper svelte-1wdf4m2");
 			attr(div1, "class", "section-container content svelte-1wdf4m2");
 			attr(div2, "class", "wrapper svelte-1wdf4m2");
-			attr(div3, "class", "container svelte-1wdf4m2");
+			attr(div3, "class", "container none svelte-1wdf4m2");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);

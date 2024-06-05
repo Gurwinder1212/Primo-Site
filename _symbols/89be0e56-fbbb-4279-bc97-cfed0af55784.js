@@ -1,4 +1,4 @@
-// Content Cards - Personal - Updated June 4, 2024
+// Content Cards - Personal - Updated June 5, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -1028,7 +1028,7 @@ function create_fragment(ctx) {
 			attr(h2, "class", "svelte-1yafmcq");
 			attr(div1, "class", "hero-text-container2 svelte-1yafmcq");
 			attr(div2, "class", "content-header-wrapper svelte-1yafmcq");
-			attr(div3, "class", "card-container-desktop svelte-1yafmcq");
+			attr(div3, "class", "card-container-desktop slidewoo svelte-1yafmcq");
 			attr(div4, "class", "content-wrapper svelte-1yafmcq");
 			attr(div5, "class", "siema svelte-1yafmcq");
 			attr(div6, "class", "card-container-mobile svelte-1yafmcq");
