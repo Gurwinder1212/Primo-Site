@@ -1268,11 +1268,14 @@ function create_fragment(ctx) {
 	let h11;
 	let t2;
 	let t3;
+	let p;
+	let t4;
+	let t5;
 	let div2;
 	let img0;
 	let img0_src_value;
 	let img0_alt_value;
-	let t4;
+	let t6;
 	let img1;
 	let img1_src_value;
 	let img1_alt_value;
@@ -1289,9 +1292,12 @@ function create_fragment(ctx) {
 			h11 = element("h1");
 			t2 = text(/*hero_title2*/ ctx[1]);
 			t3 = space();
+			p = element("p");
+			t4 = text(/*hero_description*/ ctx[4]);
+			t5 = space();
 			div2 = element("div");
 			img0 = element("img");
-			t4 = space();
+			t6 = space();
 			img1 = element("img");
 			this.h();
 		},
@@ -1316,10 +1322,15 @@ function create_fragment(ctx) {
 			h11_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			t3 = claim_space(div3_nodes);
+			p = claim_element(div3_nodes, "P", { class: true });
+			var p_nodes = children(p);
+			t4 = claim_text(p_nodes, /*hero_description*/ ctx[4]);
+			p_nodes.forEach(detach);
+			t5 = claim_space(div3_nodes);
 			div2 = claim_element(div3_nodes, "DIV", { class: true });
 			var div2_nodes = children(div2);
 			img0 = claim_element(div2_nodes, "IMG", { class: true, src: true, alt: true });
-			t4 = claim_space(div2_nodes);
+			t6 = claim_space(div2_nodes);
 			img1 = claim_element(div2_nodes, "IMG", { class: true, src: true, alt: true });
 			div2_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
@@ -1331,7 +1342,8 @@ function create_fragment(ctx) {
 			attr(div0, "class", "hero-text-container1 svelte-517vep");
 			attr(h11, "class", "svelte-517vep");
 			attr(div1, "class", "hero-text-container2 svelte-517vep");
-			attr(img0, "class", "hero-image-1 svelte-517vep");
+			attr(p, "class", "h650 svelte-qgaks");
+			attr(img0, "class", "hero-image-1 none svelte-517vep");
 			if (!src_url_equal(img0.src, img0_src_value = /*hero_image_1*/ ctx[2].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*hero_image_1*/ ctx[2].alt);
 			attr(img1, "class", "hero-image-2 svelte-517vep");
@@ -1351,14 +1363,18 @@ function create_fragment(ctx) {
 			append_hydration(div1, h11);
 			append_hydration(h11, t2);
 			append_hydration(div3, t3);
+			append_hydration(div3, p);
+			append_hydration(p, t4);
+			append_hydration(div3, t5);
 			append_hydration(div3, div2);
 			append_hydration(div2, img0);
-			append_hydration(div2, t4);
+			append_hydration(div2, t6);
 			append_hydration(div2, img1);
 		},
 		p(ctx, [dirty]) {
 			if (dirty & /*hero_title1*/ 1) set_data(t0, /*hero_title1*/ ctx[0]);
 			if (dirty & /*hero_title2*/ 2) set_data(t2, /*hero_title2*/ ctx[1]);
+			if (dirty & /*hero_description*/ 16) set_data(t4, /*hero_description*/ ctx[4]);
 
 			if (dirty & /*hero_image_1*/ 4 && !src_url_equal(img0.src, img0_src_value = /*hero_image_1*/ ctx[2].url)) {
 				attr(img0, "src", img0_src_value);
@@ -1396,15 +1412,15 @@ function instance($$self, $$props, $$invalidate) {
 	let { hero_description } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('props' in $$props) $$invalidate(4, props = $$props.props);
-		if ('logo' in $$props) $$invalidate(5, logo = $$props.logo);
-		if ('site_nav' in $$props) $$invalidate(6, site_nav = $$props.site_nav);
+		if ('props' in $$props) $$invalidate(5, props = $$props.props);
+		if ('logo' in $$props) $$invalidate(6, logo = $$props.logo);
+		if ('site_nav' in $$props) $$invalidate(7, site_nav = $$props.site_nav);
 		if ('hero_title1' in $$props) $$invalidate(0, hero_title1 = $$props.hero_title1);
 		if ('hero_title2' in $$props) $$invalidate(1, hero_title2 = $$props.hero_title2);
 		if ('hero_image_1' in $$props) $$invalidate(2, hero_image_1 = $$props.hero_image_1);
 		if ('hero_image_2' in $$props) $$invalidate(3, hero_image_2 = $$props.hero_image_2);
-		if ('site_nav_button' in $$props) $$invalidate(7, site_nav_button = $$props.site_nav_button);
-		if ('hero_description' in $$props) $$invalidate(8, hero_description = $$props.hero_description);
+		if ('site_nav_button' in $$props) $$invalidate(8, site_nav_button = $$props.site_nav_button);
+		if ('hero_description' in $$props) $$invalidate(4, hero_description = $$props.hero_description);
 	};
 
 	return [
@@ -1412,11 +1428,11 @@ function instance($$self, $$props, $$invalidate) {
 		hero_title2,
 		hero_image_1,
 		hero_image_2,
+		hero_description,
 		props,
 		logo,
 		site_nav,
-		site_nav_button,
-		hero_description
+		site_nav_button
 	];
 }
 
@@ -1425,15 +1441,15 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			props: 4,
-			logo: 5,
-			site_nav: 6,
+			props: 5,
+			logo: 6,
+			site_nav: 7,
 			hero_title1: 0,
 			hero_title2: 1,
 			hero_image_1: 2,
 			hero_image_2: 3,
-			site_nav_button: 7,
-			hero_description: 8
+			site_nav_button: 8,
+			hero_description: 4
 		});
 	}
 }
