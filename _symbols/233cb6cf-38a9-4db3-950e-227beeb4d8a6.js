@@ -1,4 +1,4 @@
-// Site Header - Tokenomics - Updated June 5, 2024
+// Site Header - Tokenomics - Updated July 15, 2024
 function noop() { }
 function run(fn) {
     return fn();
