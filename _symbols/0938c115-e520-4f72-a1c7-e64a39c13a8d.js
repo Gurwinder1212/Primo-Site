@@ -1,4 +1,4 @@
-// Contact Form - Home - Updated July 15, 2024
+// Contact Form - Home - Updated July 16, 2024
 function noop() { }
 function assign(tar, src) {
     // @ts-ignore
@@ -2822,7 +2822,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (425:8) {#each social as { link, icon }}
+// (446:8) {#each social as { link, icon }}
 function create_each_block(ctx) {
 	let a;
 	let span;
@@ -2900,11 +2900,11 @@ function create_each_block(ctx) {
 }
 
 function create_fragment(ctx) {
-	let div6;
-	let div5;
-	let div4;
-	let h3;
+	let div2;
+	let div1;
+	let h30;
 	let t0;
+	let br;
 	let t1;
 	let p0;
 	let t2;
@@ -2912,23 +2912,40 @@ function create_fragment(ctx) {
 	let p1;
 	let t4;
 	let t5;
-	let form;
-	let iframe;
-	let iframe_src_value;
-	let t6;
-	let div2;
 	let div0;
-	let p2;
+	let form0;
+	let iframe0;
+	let iframe0_src_value;
+	let t6;
+	let div9;
+	let div8;
+	let div7;
+	let h31;
 	let t7;
 	let t8;
-	let div1;
-	let p3;
+	let p2;
 	let t9;
 	let t10;
-	let p4;
+	let p3;
 	let t11;
 	let t12;
+	let form1;
+	let iframe1;
+	let iframe1_src_value;
+	let t13;
+	let div5;
 	let div3;
+	let p4;
+	let t14;
+	let t15;
+	let div4;
+	let p5;
+	let t16;
+	let t17;
+	let p6;
+	let t18;
+	let t19;
+	let div6;
 	let current;
 	let each_value = /*social*/ ctx[0];
 	let each_blocks = [];
@@ -2943,11 +2960,11 @@ function create_fragment(ctx) {
 
 	return {
 		c() {
-			div6 = element("div");
-			div5 = element("div");
-			div4 = element("div");
-			h3 = element("h3");
+			div2 = element("div");
+			div1 = element("div");
+			h30 = element("h3");
 			t0 = text(/*content_title*/ ctx[1]);
+			br = element("br");
 			t1 = space();
 			p0 = element("p");
 			t2 = text(/*content_paragraph_1*/ ctx[4]);
@@ -2955,22 +2972,38 @@ function create_fragment(ctx) {
 			p1 = element("p");
 			t4 = text(/*content_paragraph_2*/ ctx[5]);
 			t5 = space();
-			form = element("form");
-			iframe = element("iframe");
-			t6 = space();
-			div2 = element("div");
 			div0 = element("div");
-			p2 = element("p");
-			t7 = text(/*content_bubble_1*/ ctx[2]);
+			form0 = element("form");
+			iframe0 = element("iframe");
+			t6 = space();
+			div9 = element("div");
+			div8 = element("div");
+			div7 = element("div");
+			h31 = element("h3");
+			t7 = text(/*content_title*/ ctx[1]);
 			t8 = space();
-			div1 = element("div");
-			p3 = element("p");
-			t9 = text(/*content_bubble_2*/ ctx[3]);
+			p2 = element("p");
+			t9 = text(/*content_paragraph_1*/ ctx[4]);
 			t10 = space();
-			p4 = element("p");
-			t11 = text(/*content_paragraph_3*/ ctx[6]);
+			p3 = element("p");
+			t11 = text(/*content_paragraph_2*/ ctx[5]);
 			t12 = space();
+			form1 = element("form");
+			iframe1 = element("iframe");
+			t13 = space();
+			div5 = element("div");
 			div3 = element("div");
+			p4 = element("p");
+			t14 = text(/*content_bubble_1*/ ctx[2]);
+			t15 = space();
+			div4 = element("div");
+			p5 = element("p");
+			t16 = text(/*content_bubble_2*/ ctx[3]);
+			t17 = space();
+			p6 = element("p");
+			t18 = text(/*content_paragraph_3*/ ctx[6]);
+			t19 = space();
+			div6 = element("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
@@ -2979,122 +3012,178 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div6 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div6_nodes = children(div6);
-			div5 = claim_element(div6_nodes, "DIV", { class: true });
-			var div5_nodes = children(div5);
-			div4 = claim_element(div5_nodes, "DIV", { class: true });
-			var div4_nodes = children(div4);
-			h3 = claim_element(div4_nodes, "H3", {});
-			var h3_nodes = children(h3);
-			t0 = claim_text(h3_nodes, /*content_title*/ ctx[1]);
-			h3_nodes.forEach(detach);
-			t1 = claim_space(div4_nodes);
-			p0 = claim_element(div4_nodes, "P", { class: true });
+			div2 = claim_element(nodes, "DIV", { class: true });
+			var div2_nodes = children(div2);
+			div1 = claim_element(div2_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			h30 = claim_element(div1_nodes, "H3", {});
+			var h30_nodes = children(h30);
+			t0 = claim_text(h30_nodes, /*content_title*/ ctx[1]);
+			h30_nodes.forEach(detach);
+			br = claim_element(div1_nodes, "BR", {});
+			t1 = claim_space(div1_nodes);
+			p0 = claim_element(div1_nodes, "P", { class: true });
 			var p0_nodes = children(p0);
 			t2 = claim_text(p0_nodes, /*content_paragraph_1*/ ctx[4]);
 			p0_nodes.forEach(detach);
-			t3 = claim_space(div4_nodes);
-			p1 = claim_element(div4_nodes, "P", { class: true });
+			t3 = claim_space(div1_nodes);
+			p1 = claim_element(div1_nodes, "P", { class: true });
 			var p1_nodes = children(p1);
 			t4 = claim_text(p1_nodes, /*content_paragraph_2*/ ctx[5]);
 			p1_nodes.forEach(detach);
-			t5 = claim_space(div4_nodes);
-			form = claim_element(div4_nodes, "FORM", { class: true });
-			var form_nodes = children(form);
-			iframe = claim_element(form_nodes, "IFRAME", { src: true, title: true, class: true });
-			children(iframe).forEach(detach);
-			form_nodes.forEach(detach);
-			t6 = claim_space(div4_nodes);
-			div2 = claim_element(div4_nodes, "DIV", { class: true });
-			var div2_nodes = children(div2);
-			div0 = claim_element(div2_nodes, "DIV", { class: true });
+			t5 = claim_space(div1_nodes);
+			div0 = claim_element(div1_nodes, "DIV", { id: true });
 			var div0_nodes = children(div0);
-			p2 = claim_element(div0_nodes, "P", { class: true });
-			var p2_nodes = children(p2);
-			t7 = claim_text(p2_nodes, /*content_bubble_1*/ ctx[2]);
-			p2_nodes.forEach(detach);
+			form0 = claim_element(div0_nodes, "FORM", { class: true });
+			var form0_nodes = children(form0);
+			iframe0 = claim_element(form0_nodes, "IFRAME", { src: true, title: true, class: true });
+			children(iframe0).forEach(detach);
+			form0_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
-			t8 = claim_space(div2_nodes);
-			div1 = claim_element(div2_nodes, "DIV", { class: true });
-			var div1_nodes = children(div1);
-			p3 = claim_element(div1_nodes, "P", { class: true });
-			var p3_nodes = children(p3);
-			t9 = claim_text(p3_nodes, /*content_bubble_2*/ ctx[3]);
-			p3_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
-			t10 = claim_space(div4_nodes);
-			p4 = claim_element(div4_nodes, "P", { class: true });
-			var p4_nodes = children(p4);
-			t11 = claim_text(p4_nodes, /*content_paragraph_3*/ ctx[6]);
-			p4_nodes.forEach(detach);
-			t12 = claim_space(div4_nodes);
-			div3 = claim_element(div4_nodes, "DIV", { class: true });
+			t6 = claim_space(nodes);
+			div9 = claim_element(nodes, "DIV", { class: true, id: true });
+			var div9_nodes = children(div9);
+			div8 = claim_element(div9_nodes, "DIV", { class: true });
+			var div8_nodes = children(div8);
+			div7 = claim_element(div8_nodes, "DIV", { class: true });
+			var div7_nodes = children(div7);
+			h31 = claim_element(div7_nodes, "H3", {});
+			var h31_nodes = children(h31);
+			t7 = claim_text(h31_nodes, /*content_title*/ ctx[1]);
+			h31_nodes.forEach(detach);
+			t8 = claim_space(div7_nodes);
+			p2 = claim_element(div7_nodes, "P", { class: true });
+			var p2_nodes = children(p2);
+			t9 = claim_text(p2_nodes, /*content_paragraph_1*/ ctx[4]);
+			p2_nodes.forEach(detach);
+			t10 = claim_space(div7_nodes);
+			p3 = claim_element(div7_nodes, "P", { class: true });
+			var p3_nodes = children(p3);
+			t11 = claim_text(p3_nodes, /*content_paragraph_2*/ ctx[5]);
+			p3_nodes.forEach(detach);
+			t12 = claim_space(div7_nodes);
+			form1 = claim_element(div7_nodes, "FORM", { class: true });
+			var form1_nodes = children(form1);
+			iframe1 = claim_element(form1_nodes, "IFRAME", { src: true, title: true, class: true });
+			children(iframe1).forEach(detach);
+			form1_nodes.forEach(detach);
+			t13 = claim_space(div7_nodes);
+			div5 = claim_element(div7_nodes, "DIV", { class: true });
+			var div5_nodes = children(div5);
+			div3 = claim_element(div5_nodes, "DIV", { class: true });
 			var div3_nodes = children(div3);
-
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(div3_nodes);
-			}
-
+			p4 = claim_element(div3_nodes, "P", { class: true });
+			var p4_nodes = children(p4);
+			t14 = claim_text(p4_nodes, /*content_bubble_1*/ ctx[2]);
+			p4_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
+			t15 = claim_space(div5_nodes);
+			div4 = claim_element(div5_nodes, "DIV", { class: true });
+			var div4_nodes = children(div4);
+			p5 = claim_element(div4_nodes, "P", { class: true });
+			var p5_nodes = children(p5);
+			t16 = claim_text(p5_nodes, /*content_bubble_2*/ ctx[3]);
+			p5_nodes.forEach(detach);
 			div4_nodes.forEach(detach);
 			div5_nodes.forEach(detach);
+			t17 = claim_space(div7_nodes);
+			p6 = claim_element(div7_nodes, "P", { class: true });
+			var p6_nodes = children(p6);
+			t18 = claim_text(p6_nodes, /*content_paragraph_3*/ ctx[6]);
+			p6_nodes.forEach(detach);
+			t19 = claim_space(div7_nodes);
+			div6 = claim_element(div7_nodes, "DIV", { class: true });
+			var div6_nodes = children(div6);
+
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].l(div6_nodes);
+			}
+
 			div6_nodes.forEach(detach);
+			div7_nodes.forEach(detach);
+			div8_nodes.forEach(detach);
+			div9_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
 			attr(p0, "class", "p-large svelte-1qjd4sj");
 			attr(p1, "class", "p-large svelte-1qjd4sj");
-			if (!src_url_equal(iframe.src, iframe_src_value = "https://cdn.forms-content.sg-form.com/a0bf2821-1221-11ee-b804-2a098f035ca4")) attr(iframe, "src", iframe_src_value);
-			attr(iframe, "title", "contact form");
-			attr(iframe, "class", "svelte-1qjd4sj");
-			attr(form, "class", "svelte-1qjd4sj");
-			attr(p2, "class", "p-medium svelte-1qjd4sj");
-			attr(div0, "class", "bubble-1 svelte-1qjd4sj");
-			attr(p3, "class", "p-medium svelte-1qjd4sj");
-			attr(div1, "class", "bubble-2 svelte-1qjd4sj");
-			attr(div2, "class", "bubbles svelte-1qjd4sj");
-			attr(p4, "class", "p-large svelte-1qjd4sj");
-			attr(div3, "class", "social-links svelte-1qjd4sj");
-			attr(div4, "class", "section-container content svelte-1qjd4sj");
-			attr(div5, "class", "wrapper svelte-1qjd4sj");
-			attr(div6, "class", "container svelte-1qjd4sj");
-			attr(div6, "id", "contact-us");
+			if (!src_url_equal(iframe0.src, iframe0_src_value = "https://cdn.forms-content.sg-form.com/a0bf2821-1221-11ee-b804-2a098f035ca4")) attr(iframe0, "src", iframe0_src_value);
+			attr(iframe0, "title", "contact form");
+			attr(iframe0, "class", "svelte-1qjd4sj");
+			attr(form0, "class", "svelte-1qjd4sj");
+			attr(div0, "id", "second");
+			attr(div1, "class", "wrapper svelte-1qjd4sj");
+			attr(div2, "class", "container svelte-1qjd4sj");
+			attr(p2, "class", "p-large svelte-1qjd4sj");
+			attr(p3, "class", "p-large svelte-1qjd4sj");
+			if (!src_url_equal(iframe1.src, iframe1_src_value = "https://cdn.forms-content.sg-form.com/a0bf2821-1221-11ee-b804-2a098f035ca4")) attr(iframe1, "src", iframe1_src_value);
+			attr(iframe1, "title", "contact form");
+			attr(iframe1, "class", "svelte-1qjd4sj");
+			attr(form1, "class", "svelte-1qjd4sj");
+			attr(p4, "class", "p-medium svelte-1qjd4sj");
+			attr(div3, "class", "bubble-1 svelte-1qjd4sj");
+			attr(p5, "class", "p-medium svelte-1qjd4sj");
+			attr(div4, "class", "bubble-2 svelte-1qjd4sj");
+			attr(div5, "class", "bubbles none svelte-1qjd4sj");
+			attr(p6, "class", "p-large svelte-1qjd4sj");
+			attr(div6, "class", "social-links svelte-1qjd4sj");
+			attr(div7, "class", "section-container content svelte-1qjd4sj");
+			attr(div8, "class", "wrapper svelte-1qjd4sj");
+			attr(div9, "class", "container none svelte-1qjd4sj");
+			attr(div9, "id", "contact-us");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div6, anchor);
-			append_hydration(div6, div5);
-			append_hydration(div5, div4);
-			append_hydration(div4, h3);
-			append_hydration(h3, t0);
-			append_hydration(div4, t1);
-			append_hydration(div4, p0);
-			append_hydration(p0, t2);
-			append_hydration(div4, t3);
-			append_hydration(div4, p1);
-			append_hydration(p1, t4);
-			append_hydration(div4, t5);
-			append_hydration(div4, form);
-			append_hydration(form, iframe);
-			append_hydration(div4, t6);
-			append_hydration(div4, div2);
-			append_hydration(div2, div0);
-			append_hydration(div0, p2);
-			append_hydration(p2, t7);
-			append_hydration(div2, t8);
+			insert_hydration(target, div2, anchor);
 			append_hydration(div2, div1);
-			append_hydration(div1, p3);
-			append_hydration(p3, t9);
-			append_hydration(div4, t10);
-			append_hydration(div4, p4);
-			append_hydration(p4, t11);
-			append_hydration(div4, t12);
-			append_hydration(div4, div3);
+			append_hydration(div1, h30);
+			append_hydration(h30, t0);
+			append_hydration(div1, br);
+			append_hydration(div1, t1);
+			append_hydration(div1, p0);
+			append_hydration(p0, t2);
+			append_hydration(div1, t3);
+			append_hydration(div1, p1);
+			append_hydration(p1, t4);
+			append_hydration(div1, t5);
+			append_hydration(div1, div0);
+			append_hydration(div0, form0);
+			append_hydration(form0, iframe0);
+			insert_hydration(target, t6, anchor);
+			insert_hydration(target, div9, anchor);
+			append_hydration(div9, div8);
+			append_hydration(div8, div7);
+			append_hydration(div7, h31);
+			append_hydration(h31, t7);
+			append_hydration(div7, t8);
+			append_hydration(div7, p2);
+			append_hydration(p2, t9);
+			append_hydration(div7, t10);
+			append_hydration(div7, p3);
+			append_hydration(p3, t11);
+			append_hydration(div7, t12);
+			append_hydration(div7, form1);
+			append_hydration(form1, iframe1);
+			append_hydration(div7, t13);
+			append_hydration(div7, div5);
+			append_hydration(div5, div3);
+			append_hydration(div3, p4);
+			append_hydration(p4, t14);
+			append_hydration(div5, t15);
+			append_hydration(div5, div4);
+			append_hydration(div4, p5);
+			append_hydration(p5, t16);
+			append_hydration(div7, t17);
+			append_hydration(div7, p6);
+			append_hydration(p6, t18);
+			append_hydration(div7, t19);
+			append_hydration(div7, div6);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(div3, null);
+					each_blocks[i].m(div6, null);
 				}
 			}
 
@@ -3104,9 +3193,12 @@ function create_fragment(ctx) {
 			if (!current || dirty & /*content_title*/ 2) set_data(t0, /*content_title*/ ctx[1]);
 			if (!current || dirty & /*content_paragraph_1*/ 16) set_data(t2, /*content_paragraph_1*/ ctx[4]);
 			if (!current || dirty & /*content_paragraph_2*/ 32) set_data(t4, /*content_paragraph_2*/ ctx[5]);
-			if (!current || dirty & /*content_bubble_1*/ 4) set_data(t7, /*content_bubble_1*/ ctx[2]);
-			if (!current || dirty & /*content_bubble_2*/ 8) set_data(t9, /*content_bubble_2*/ ctx[3]);
-			if (!current || dirty & /*content_paragraph_3*/ 64) set_data(t11, /*content_paragraph_3*/ ctx[6]);
+			if (!current || dirty & /*content_title*/ 2) set_data(t7, /*content_title*/ ctx[1]);
+			if (!current || dirty & /*content_paragraph_1*/ 16) set_data(t9, /*content_paragraph_1*/ ctx[4]);
+			if (!current || dirty & /*content_paragraph_2*/ 32) set_data(t11, /*content_paragraph_2*/ ctx[5]);
+			if (!current || dirty & /*content_bubble_1*/ 4) set_data(t14, /*content_bubble_1*/ ctx[2]);
+			if (!current || dirty & /*content_bubble_2*/ 8) set_data(t16, /*content_bubble_2*/ ctx[3]);
+			if (!current || dirty & /*content_paragraph_3*/ 64) set_data(t18, /*content_paragraph_3*/ ctx[6]);
 
 			if (dirty & /*social*/ 1) {
 				each_value = /*social*/ ctx[0];
@@ -3122,7 +3214,7 @@ function create_fragment(ctx) {
 						each_blocks[i] = create_each_block(child_ctx);
 						each_blocks[i].c();
 						transition_in(each_blocks[i], 1);
-						each_blocks[i].m(div3, null);
+						each_blocks[i].m(div6, null);
 					}
 				}
 
@@ -3154,7 +3246,9 @@ function create_fragment(ctx) {
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div6);
+			if (detaching) detach(div2);
+			if (detaching) detach(t6);
+			if (detaching) detach(div9);
 			destroy_each(each_blocks, detaching);
 		}
 	};
