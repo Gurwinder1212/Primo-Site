@@ -285,6 +285,14 @@ function set_data(text, data) {
         return;
     text.data = data;
 }
+function set_style(node, key, value, important) {
+    if (value == null) {
+        node.style.removeProperty(key);
+    }
+    else {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+}
 
 let current_component;
 function set_current_component(component) {
@@ -544,33 +552,60 @@ function create_fragment(ctx) {
 	let div4;
 	let div3;
 	let div2;
-	let img;
-	let img_src_value;
-	let img_alt_value;
+	let img0;
+	let img0_src_value;
+	let img0_alt_value;
 	let t0;
 	let div1;
-	let lottie_player;
-	let lottie_player_src_value;
+	let lottie_player0;
+	let lottie_player0_src_value;
 	let t1;
 	let div0;
-	let a;
+	let a0;
 	let t2_value = /*content_action*/ ctx[1].label + "";
 	let t2;
-	let a_href_value;
+	let a0_href_value;
+	let t3;
+	let div9;
+	let div8;
+	let div7;
+	let img1;
+	let img1_src_value;
+	let img1_alt_value;
+	let div6;
+	let lottie_player1;
+	let lottie_player1_src_value;
+	let t4;
+	let div5;
+	let a1;
+	let t5_value = /*content_action*/ ctx[1].label + "";
+	let t5;
+	let a1_href_value;
 
 	return {
 		c() {
 			div4 = element("div");
 			div3 = element("div");
 			div2 = element("div");
-			img = element("img");
+			img0 = element("img");
 			t0 = space();
 			div1 = element("div");
-			lottie_player = element("lottie-player");
+			lottie_player0 = element("lottie-player");
 			t1 = space();
 			div0 = element("div");
-			a = element("a");
+			a0 = element("a");
 			t2 = text(t2_value);
+			t3 = space();
+			div9 = element("div");
+			div8 = element("div");
+			div7 = element("div");
+			img1 = element("img");
+			div6 = element("div");
+			lottie_player1 = element("lottie-player");
+			t4 = space();
+			div5 = element("div");
+			a1 = element("a");
+			t5 = text(t5_value);
 			this.h();
 		},
 		l(nodes) {
@@ -580,12 +615,12 @@ function create_fragment(ctx) {
 			var div3_nodes = children(div3);
 			div2 = claim_element(div3_nodes, "DIV", { class: true });
 			var div2_nodes = children(div2);
-			img = claim_element(div2_nodes, "IMG", { class: true, src: true, alt: true });
+			img0 = claim_element(div2_nodes, "IMG", { class: true, src: true, alt: true });
 			t0 = claim_space(div2_nodes);
 			div1 = claim_element(div2_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
 
-			lottie_player = claim_element(div1_nodes, "LOTTIE-PLAYER", {
+			lottie_player0 = claim_element(div1_nodes, "LOTTIE-PLAYER", {
 				autoplay: true,
 				loop: true,
 				mode: true,
@@ -593,70 +628,154 @@ function create_fragment(ctx) {
 				src: true
 			});
 
-			children(lottie_player).forEach(detach);
+			children(lottie_player0).forEach(detach);
 			t1 = claim_space(div1_nodes);
 			div0 = claim_element(div1_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
-			a = claim_element(div0_nodes, "A", { href: true, class: true });
-			var a_nodes = children(a);
-			t2 = claim_text(a_nodes, t2_value);
-			a_nodes.forEach(detach);
+			a0 = claim_element(div0_nodes, "A", { href: true, class: true });
+			var a0_nodes = children(a0);
+			t2 = claim_text(a0_nodes, t2_value);
+			a0_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
 			div4_nodes.forEach(detach);
+			t3 = claim_space(nodes);
+			div9 = claim_element(nodes, "DIV", { class: true, style: true });
+			var div9_nodes = children(div9);
+			div8 = claim_element(div9_nodes, "DIV", { class: true });
+			var div8_nodes = children(div8);
+			div7 = claim_element(div8_nodes, "DIV", { class: true, style: true });
+			var div7_nodes = children(div7);
+
+			img1 = claim_element(div7_nodes, "IMG", {
+				class: true,
+				src: true,
+				alt: true,
+				style: true
+			});
+
+			div6 = claim_element(div7_nodes, "DIV", { class: true });
+			var div6_nodes = children(div6);
+
+			lottie_player1 = claim_element(div6_nodes, "LOTTIE-PLAYER", {
+				autoplay: true,
+				loop: true,
+				mode: true,
+				class: true,
+				src: true
+			});
+
+			children(lottie_player1).forEach(detach);
+			t4 = claim_space(div6_nodes);
+			div5 = claim_element(div6_nodes, "DIV", { class: true });
+			var div5_nodes = children(div5);
+			a1 = claim_element(div5_nodes, "A", { href: true, class: true });
+			var a1_nodes = children(a1);
+			t5 = claim_text(a1_nodes, t5_value);
+			a1_nodes.forEach(detach);
+			div5_nodes.forEach(detach);
+			div6_nodes.forEach(detach);
+			div7_nodes.forEach(detach);
+			div8_nodes.forEach(detach);
+			div9_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(img, "class", "content-image svelte-x50bhh");
-			if (!src_url_equal(img.src, img_src_value = /*content_image*/ ctx[0].url)) attr(img, "src", img_src_value);
-			attr(img, "alt", img_alt_value = /*content_image*/ ctx[0].alt);
-			set_custom_element_data(lottie_player, "autoplay", "");
-			set_custom_element_data(lottie_player, "loop", "");
-			set_custom_element_data(lottie_player, "mode", "normal");
-			set_custom_element_data(lottie_player, "class", "lottie svelte-x50bhh");
-			if (!src_url_equal(lottie_player.src, lottie_player_src_value = eyesLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
-			attr(a, "href", a_href_value = /*content_action*/ ctx[1].url);
-			attr(a, "class", "primary-small-button svelte-x50bhh");
+			attr(img0, "class", "content-image svelte-x50bhh");
+			if (!src_url_equal(img0.src, img0_src_value = /*content_image*/ ctx[0].url)) attr(img0, "src", img0_src_value);
+			attr(img0, "alt", img0_alt_value = /*content_image*/ ctx[0].alt);
+			set_custom_element_data(lottie_player0, "autoplay", "");
+			set_custom_element_data(lottie_player0, "loop", "");
+			set_custom_element_data(lottie_player0, "mode", "normal");
+			set_custom_element_data(lottie_player0, "class", "lottie svelte-x50bhh");
+			if (!src_url_equal(lottie_player0.src, lottie_player0_src_value = eyesLottie)) set_custom_element_data(lottie_player0, "src", lottie_player0_src_value);
+			attr(a0, "href", a0_href_value = /*content_action*/ ctx[1].url);
+			attr(a0, "class", "primary-small-button svelte-x50bhh");
 			attr(div0, "class", "button-wrapper svelte-x50bhh");
 			attr(div1, "class", "content-2 svelte-x50bhh");
 			attr(div2, "class", "section-container content svelte-x50bhh");
 			attr(div3, "class", "wrapper svelte-x50bhh");
-			attr(div4, "class", "container svelte-x50bhh");
+			attr(div4, "class", "container none svelte-x50bhh");
+			attr(img1, "class", "content-image svelte-x50bhh");
+			if (!src_url_equal(img1.src, img1_src_value = /*content_image*/ ctx[0].url)) attr(img1, "src", img1_src_value);
+			attr(img1, "alt", img1_alt_value = /*content_image*/ ctx[0].alt);
+			attr(img1, "style", "/* background: red; */background: #fff;padding: 2em;padding: 3em;");
+			set_custom_element_data(lottie_player1, "autoplay", "");
+			set_custom_element_data(lottie_player1, "loop", "");
+			set_custom_element_data(lottie_player1, "mode", "normal");
+			set_custom_element_data(lottie_player1, "class", "lottie svelte-x50bhh");
+			if (!src_url_equal(lottie_player1.src, lottie_player1_src_value = eyesLottie)) set_custom_element_data(lottie_player1, "src", lottie_player1_src_value);
+			attr(a1, "href", a1_href_value = /*content_action*/ ctx[1].url);
+			attr(a1, "class", "primary-small-button svelte-x50bhh");
+			attr(div5, "class", "button-wrapper svelte-x50bhh");
+			attr(div6, "class", "content-2 svelte-x50bhh");
+			attr(div7, "class", "section-container content svelte-x50bhh");
+			attr(div7, "style", "background: #f4f9fc;/* padding: 2em; */");
+			attr(div8, "class", "wrapper svelte-x50bhh svelte-x50bhh");
+			attr(div9, "class", "container svelte-x50bhh");
+			set_style(div9, "background", "#fff");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div4, anchor);
 			append_hydration(div4, div3);
 			append_hydration(div3, div2);
-			append_hydration(div2, img);
+			append_hydration(div2, img0);
 			append_hydration(div2, t0);
 			append_hydration(div2, div1);
-			append_hydration(div1, lottie_player);
+			append_hydration(div1, lottie_player0);
 			append_hydration(div1, t1);
 			append_hydration(div1, div0);
-			append_hydration(div0, a);
-			append_hydration(a, t2);
+			append_hydration(div0, a0);
+			append_hydration(a0, t2);
+			insert_hydration(target, t3, anchor);
+			insert_hydration(target, div9, anchor);
+			append_hydration(div9, div8);
+			append_hydration(div8, div7);
+			append_hydration(div7, img1);
+			append_hydration(div7, div6);
+			append_hydration(div6, lottie_player1);
+			append_hydration(div6, t4);
+			append_hydration(div6, div5);
+			append_hydration(div5, a1);
+			append_hydration(a1, t5);
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*content_image*/ 1 && !src_url_equal(img.src, img_src_value = /*content_image*/ ctx[0].url)) {
-				attr(img, "src", img_src_value);
+			if (dirty & /*content_image*/ 1 && !src_url_equal(img0.src, img0_src_value = /*content_image*/ ctx[0].url)) {
+				attr(img0, "src", img0_src_value);
 			}
 
-			if (dirty & /*content_image*/ 1 && img_alt_value !== (img_alt_value = /*content_image*/ ctx[0].alt)) {
-				attr(img, "alt", img_alt_value);
+			if (dirty & /*content_image*/ 1 && img0_alt_value !== (img0_alt_value = /*content_image*/ ctx[0].alt)) {
+				attr(img0, "alt", img0_alt_value);
 			}
 
 			if (dirty & /*content_action*/ 2 && t2_value !== (t2_value = /*content_action*/ ctx[1].label + "")) set_data(t2, t2_value);
 
-			if (dirty & /*content_action*/ 2 && a_href_value !== (a_href_value = /*content_action*/ ctx[1].url)) {
-				attr(a, "href", a_href_value);
+			if (dirty & /*content_action*/ 2 && a0_href_value !== (a0_href_value = /*content_action*/ ctx[1].url)) {
+				attr(a0, "href", a0_href_value);
+			}
+
+			if (dirty & /*content_image*/ 1 && !src_url_equal(img1.src, img1_src_value = /*content_image*/ ctx[0].url)) {
+				attr(img1, "src", img1_src_value);
+			}
+
+			if (dirty & /*content_image*/ 1 && img1_alt_value !== (img1_alt_value = /*content_image*/ ctx[0].alt)) {
+				attr(img1, "alt", img1_alt_value);
+			}
+
+			if (dirty & /*content_action*/ 2 && t5_value !== (t5_value = /*content_action*/ ctx[1].label + "")) set_data(t5, t5_value);
+
+			if (dirty & /*content_action*/ 2 && a1_href_value !== (a1_href_value = /*content_action*/ ctx[1].url)) {
+				attr(a1, "href", a1_href_value);
 			}
 		},
 		i: noop,
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(div4);
+			if (detaching) detach(t3);
+			if (detaching) detach(div9);
 		}
 	};
 }
