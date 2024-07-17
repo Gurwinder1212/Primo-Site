@@ -586,15 +586,16 @@ function get_each_context_2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (441:10) {#each content_card as card}
+// (452:10) {#each content_card as card}
 function create_each_block_2(ctx) {
-	let div3;
-	let div1;
+	let div4;
+	let div2;
+	let div0;
 	let img;
 	let img_src_value;
 	let img_alt_value;
 	let t0;
-	let div0;
+	let div1;
 	let h60;
 	let t1_value = /*card*/ ctx[17].title + "";
 	let t1;
@@ -603,7 +604,7 @@ function create_each_block_2(ctx) {
 	let t3_value = /*card*/ ctx[17].subtitle + "";
 	let t3;
 	let t4;
-	let div2;
+	let div3;
 	let p;
 	let t5_value = /*card*/ ctx[17].description + "";
 	let t5;
@@ -611,81 +612,86 @@ function create_each_block_2(ctx) {
 
 	return {
 		c() {
-			div3 = element("div");
-			div1 = element("div");
+			div4 = element("div");
+			div2 = element("div");
+			div0 = element("div");
 			img = element("img");
 			t0 = space();
-			div0 = element("div");
+			div1 = element("div");
 			h60 = element("h6");
 			t1 = text(t1_value);
 			t2 = space();
 			h61 = element("h6");
 			t3 = text(t3_value);
 			t4 = space();
-			div2 = element("div");
+			div3 = element("div");
 			p = element("p");
 			t5 = text(t5_value);
 			t6 = space();
 			this.h();
 		},
 		l(nodes) {
-			div3 = claim_element(nodes, "DIV", { class: true });
-			var div3_nodes = children(div3);
-			div1 = claim_element(div3_nodes, "DIV", { class: true });
-			var div1_nodes = children(div1);
-			img = claim_element(div1_nodes, "IMG", { src: true, alt: true, class: true });
-			t0 = claim_space(div1_nodes);
-			div0 = claim_element(div1_nodes, "DIV", {});
+			div4 = claim_element(nodes, "DIV", { class: true });
+			var div4_nodes = children(div4);
+			div2 = claim_element(div4_nodes, "DIV", { class: true });
+			var div2_nodes = children(div2);
+			div0 = claim_element(div2_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
-			h60 = claim_element(div0_nodes, "H6", {});
+			img = claim_element(div0_nodes, "IMG", { src: true, alt: true });
+			div0_nodes.forEach(detach);
+			t0 = claim_space(div2_nodes);
+			div1 = claim_element(div2_nodes, "DIV", {});
+			var div1_nodes = children(div1);
+			h60 = claim_element(div1_nodes, "H6", {});
 			var h60_nodes = children(h60);
 			t1 = claim_text(h60_nodes, t1_value);
 			h60_nodes.forEach(detach);
-			t2 = claim_space(div0_nodes);
-			h61 = claim_element(div0_nodes, "H6", { class: true });
+			t2 = claim_space(div1_nodes);
+			h61 = claim_element(div1_nodes, "H6", { class: true });
 			var h61_nodes = children(h61);
 			t3 = claim_text(h61_nodes, t3_value);
 			h61_nodes.forEach(detach);
-			div0_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
-			t4 = claim_space(div3_nodes);
-			div2 = claim_element(div3_nodes, "DIV", { class: true });
-			var div2_nodes = children(div2);
-			p = claim_element(div2_nodes, "P", { class: true });
+			div2_nodes.forEach(detach);
+			t4 = claim_space(div4_nodes);
+			div3 = claim_element(div4_nodes, "DIV", { class: true });
+			var div3_nodes = children(div3);
+			p = claim_element(div3_nodes, "P", { class: true });
 			var p_nodes = children(p);
 			t5 = claim_text(p_nodes, t5_value);
 			p_nodes.forEach(detach);
-			div2_nodes.forEach(detach);
-			t6 = claim_space(div3_nodes);
 			div3_nodes.forEach(detach);
+			t6 = claim_space(div4_nodes);
+			div4_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*card*/ ctx[17].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*card*/ ctx[17].image.alt);
-			attr(img, "class", "svelte-mwmf6e");
+			attr(div0, "class", "img_inner svelte-vcb0t8");
 			attr(h61, "class", "h800");
-			attr(div1, "class", "card-title-wrapper svelte-mwmf6e");
+			attr(div2, "class", "card-title-wrapper svelte-vcb0t8");
 			attr(p, "class", "p-medium");
-			attr(div2, "class", "card-content-wrapper svelte-mwmf6e");
-			attr(div3, "class", "card-wrapper slider svelte-mwmf6e");
+			attr(div3, "class", "card-content-wrapper svelte-vcb0t8");
+			attr(div4, "class", "card-wrapper slider svelte-vcb0t8");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div3, anchor);
-			append_hydration(div3, div1);
-			append_hydration(div1, img);
-			append_hydration(div1, t0);
-			append_hydration(div1, div0);
-			append_hydration(div0, h60);
+			insert_hydration(target, div4, anchor);
+			append_hydration(div4, div2);
+			append_hydration(div2, div0);
+			append_hydration(div0, img);
+			append_hydration(div2, t0);
+			append_hydration(div2, div1);
+			append_hydration(div1, h60);
 			append_hydration(h60, t1);
-			append_hydration(div0, t2);
-			append_hydration(div0, h61);
+			append_hydration(div1, t2);
+			append_hydration(div1, h61);
 			append_hydration(h61, t3);
-			append_hydration(div3, t4);
-			append_hydration(div3, div2);
-			append_hydration(div2, p);
+			append_hydration(div4, t4);
+			append_hydration(div4, div3);
+			append_hydration(div3, p);
 			append_hydration(p, t5);
-			append_hydration(div3, t6);
+			append_hydration(div4, t6);
 		},
 		p(ctx, dirty) {
 			if (dirty & /*content_card*/ 1 && !src_url_equal(img.src, img_src_value = /*card*/ ctx[17].image.url)) {
@@ -701,12 +707,12 @@ function create_each_block_2(ctx) {
 			if (dirty & /*content_card*/ 1 && t5_value !== (t5_value = /*card*/ ctx[17].description + "")) set_data(t5, t5_value);
 		},
 		d(detaching) {
-			if (detaching) detach(div3);
+			if (detaching) detach(div4);
 		}
 	};
 }
 
-// (459:8) {#each content_card as card}
+// (472:8) {#each content_card as card}
 function create_each_block_1(ctx) {
 	let div3;
 	let div1;
@@ -783,12 +789,12 @@ function create_each_block_1(ctx) {
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*card*/ ctx[17].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*card*/ ctx[17].image.alt);
-			attr(img, "class", "svelte-mwmf6e");
+			attr(img, "class", "svelte-vcb0t8");
 			attr(h61, "class", "h800");
-			attr(div1, "class", "card-title-wrapper svelte-mwmf6e");
+			attr(div1, "class", "card-title-wrapper svelte-vcb0t8");
 			attr(p, "class", "p-medium");
-			attr(div2, "class", "card-content-wrapper svelte-mwmf6e");
-			attr(div3, "class", "card-wrapper slider svelte-mwmf6e");
+			attr(div2, "class", "card-content-wrapper svelte-vcb0t8");
+			attr(div3, "class", "card-wrapper slider svelte-vcb0t8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -826,7 +832,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (479:6) {#each data as d, i}
+// (492:6) {#each data as d, i}
 function create_each_block(ctx) {
 	let input;
 	let input_checked_value;
@@ -858,7 +864,7 @@ function create_each_block(ctx) {
 			attr(input, "name", "slider-radio");
 			input.value = /*i*/ ctx[16];
 			input.checked = input_checked_value = /*select*/ ctx[5] == /*i*/ ctx[16];
-			attr(input, "class", "svelte-mwmf6e");
+			attr(input, "class", "svelte-vcb0t8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, input, anchor);
@@ -1023,18 +1029,18 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h3, "class", "svelte-mwmf6e");
-			attr(div0, "class", "hero-text-container1 svelte-mwmf6e");
-			attr(h2, "class", "svelte-mwmf6e");
-			attr(div1, "class", "hero-text-container2 svelte-mwmf6e");
-			attr(div2, "class", "content-header-wrapper svelte-mwmf6e");
-			attr(div3, "class", "card-container-desktop slidewoo svelte-mwmf6e");
-			attr(div4, "class", "content-wrapper svelte-mwmf6e");
-			attr(div5, "class", "siema svelte-mwmf6e");
-			attr(div6, "class", "card-container-mobile svelte-mwmf6e");
-			attr(div7, "class", "bullet svelte-mwmf6e");
-			attr(div8, "class", "wrapper svelte-mwmf6e");
-			attr(div9, "class", "container svelte-mwmf6e");
+			attr(h3, "class", "svelte-vcb0t8");
+			attr(div0, "class", "hero-text-container1 svelte-vcb0t8");
+			attr(h2, "class", "svelte-vcb0t8");
+			attr(div1, "class", "hero-text-container2 svelte-vcb0t8");
+			attr(div2, "class", "content-header-wrapper svelte-vcb0t8");
+			attr(div3, "class", "card-container-desktop slidewoo svelte-vcb0t8");
+			attr(div4, "class", "content-wrapper svelte-vcb0t8");
+			attr(div5, "class", "siema svelte-vcb0t8");
+			attr(div6, "class", "card-container-mobile svelte-vcb0t8");
+			attr(div7, "class", "bullet svelte-vcb0t8");
+			attr(div8, "class", "wrapper svelte-vcb0t8");
+			attr(div9, "class", "container svelte-vcb0t8");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div9, anchor);
