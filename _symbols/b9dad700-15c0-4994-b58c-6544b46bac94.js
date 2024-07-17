@@ -1261,7 +1261,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (68:4) {#each nav as { link }}
+// (75:4) {#each nav as { link }}
 function create_each_block(ctx) {
 	let h6;
 	let a;
@@ -1295,10 +1295,10 @@ function create_each_block(ctx) {
 			? '_blank'
 			: '_self');
 
-			attr(a, "class", "link svelte-14fdjq7");
+			attr(a, "class", "link svelte-1hycevv");
 			attr(a, "href", a_href_value = /*link*/ ctx[4].url);
 			attr(h6, "id", "links");
-			attr(h6, "class", "h950 svelte-14fdjq7");
+			attr(h6, "class", "h950 svelte-1hycevv");
 		},
 		m(target, anchor) {
 			insert_hydration(target, h6, anchor);
@@ -1377,11 +1377,11 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(nav_1, "class", "svelte-14fdjq7");
+			attr(nav_1, "class", "svelte-1hycevv");
 			attr(p, "id", "copyright");
-			attr(p, "class", "p-small svelte-14fdjq7");
-			attr(span, "class", "svelte-14fdjq7");
-			attr(footer, "class", "section-container svelte-14fdjq7");
+			attr(p, "class", "p-small svelte-1hycevv");
+			attr(span, "class", "svelte-1hycevv");
+			attr(footer, "class", "section-container svelte-1hycevv");
 		},
 		m(target, anchor) {
 			insert_hydration(target, footer, anchor);
