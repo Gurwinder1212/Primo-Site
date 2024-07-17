@@ -1,4 +1,4 @@
-// Content 2 - Home - Updated July 16, 2024
+// Content 2 - Home - Updated July 17, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -179,6 +179,14 @@ function attr(node, attribute, value) {
         node.removeAttribute(attribute);
     else if (node.getAttribute(attribute) !== value)
         node.setAttribute(attribute, value);
+}
+function set_custom_element_data(node, prop, value) {
+    if (prop in node) {
+        node[prop] = typeof node[prop] === 'boolean' && value === '' ? true : value;
+    }
+    else {
+        attr(node, prop, value);
+    }
 }
 function children(element) {
     return Array.from(element.childNodes);
@@ -536,10 +544,10 @@ function create_fragment(ctx) {
 	let div4;
 	let div3;
 	let div0;
-	let h3;
+	let h30;
 	let t0;
 	let t1;
-	let p;
+	let p0;
 	let t2;
 	let t3;
 	let div1;
@@ -552,20 +560,45 @@ function create_fragment(ctx) {
 	let img1_alt_value;
 	let t5;
 	let div2;
-	let a;
+	let a0;
 	let t6_value = /*action_button*/ ctx[0].label + "";
 	let t6;
-	let a_href_value;
+	let a0_href_value;
+	let t7;
+	let div10;
+	let div9;
+	let div8;
+	let div6;
+	let h31;
+	let t8;
+	let t9;
+	let p1;
+	let t10;
+	let t11;
+	let br;
+	let div5;
+	let a1;
+	let t12_value = /*action_button*/ ctx[0].label + "";
+	let t12;
+	let a1_href_value;
+	let t13;
+	let div7;
+	let lottie_player;
+	let lottie_player_src_value;
+	let t14;
+	let img2;
+	let img2_src_value;
+	let img2_alt_value;
 
 	return {
 		c() {
 			div4 = element("div");
 			div3 = element("div");
 			div0 = element("div");
-			h3 = element("h3");
+			h30 = element("h3");
 			t0 = text(/*content_title*/ ctx[1]);
 			t1 = space();
-			p = element("p");
+			p0 = element("p");
 			t2 = text(/*content_paragraph_1*/ ctx[2]);
 			t3 = space();
 			div1 = element("div");
@@ -574,8 +607,28 @@ function create_fragment(ctx) {
 			img1 = element("img");
 			t5 = space();
 			div2 = element("div");
-			a = element("a");
+			a0 = element("a");
 			t6 = text(t6_value);
+			t7 = space();
+			div10 = element("div");
+			div9 = element("div");
+			div8 = element("div");
+			div6 = element("div");
+			h31 = element("h3");
+			t8 = text(/*content_title*/ ctx[1]);
+			t9 = space();
+			p1 = element("p");
+			t10 = text(/*content_paragraph_1*/ ctx[2]);
+			t11 = space();
+			br = element("br");
+			div5 = element("div");
+			a1 = element("a");
+			t12 = text(t12_value);
+			t13 = space();
+			div7 = element("div");
+			lottie_player = element("lottie-player");
+			t14 = space();
+			img2 = element("img");
 			this.h();
 		},
 		l(nodes) {
@@ -585,15 +638,15 @@ function create_fragment(ctx) {
 			var div3_nodes = children(div3);
 			div0 = claim_element(div3_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
-			h3 = claim_element(div0_nodes, "H3", {});
-			var h3_nodes = children(h3);
-			t0 = claim_text(h3_nodes, /*content_title*/ ctx[1]);
-			h3_nodes.forEach(detach);
+			h30 = claim_element(div0_nodes, "H3", {});
+			var h30_nodes = children(h30);
+			t0 = claim_text(h30_nodes, /*content_title*/ ctx[1]);
+			h30_nodes.forEach(detach);
 			t1 = claim_space(div0_nodes);
-			p = claim_element(div0_nodes, "P", { class: true });
-			var p_nodes = children(p);
-			t2 = claim_text(p_nodes, /*content_paragraph_1*/ ctx[2]);
-			p_nodes.forEach(detach);
+			p0 = claim_element(div0_nodes, "P", { class: true });
+			var p0_nodes = children(p0);
+			t2 = claim_text(p0_nodes, /*content_paragraph_1*/ ctx[2]);
+			p0_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			t3 = claim_space(div3_nodes);
 			div1 = claim_element(div3_nodes, "DIV", { class: true });
@@ -619,42 +672,105 @@ function create_fragment(ctx) {
 			t5 = claim_space(div3_nodes);
 			div2 = claim_element(div3_nodes, "DIV", { class: true });
 			var div2_nodes = children(div2);
-			a = claim_element(div2_nodes, "A", { class: true, href: true });
-			var a_nodes = children(a);
-			t6 = claim_text(a_nodes, t6_value);
-			a_nodes.forEach(detach);
+			a0 = claim_element(div2_nodes, "A", { class: true, href: true });
+			var a0_nodes = children(a0);
+			t6 = claim_text(a0_nodes, t6_value);
+			a0_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
 			div4_nodes.forEach(detach);
+			t7 = claim_space(nodes);
+			div10 = claim_element(nodes, "DIV", { class: true });
+			var div10_nodes = children(div10);
+			div9 = claim_element(div10_nodes, "DIV", { class: true });
+			var div9_nodes = children(div9);
+			div8 = claim_element(div9_nodes, "DIV", { class: true });
+			var div8_nodes = children(div8);
+			div6 = claim_element(div8_nodes, "DIV", {});
+			var div6_nodes = children(div6);
+			h31 = claim_element(div6_nodes, "H3", {});
+			var h31_nodes = children(h31);
+			t8 = claim_text(h31_nodes, /*content_title*/ ctx[1]);
+			h31_nodes.forEach(detach);
+			t9 = claim_space(div6_nodes);
+			p1 = claim_element(div6_nodes, "P", { class: true });
+			var p1_nodes = children(p1);
+			t10 = claim_text(p1_nodes, /*content_paragraph_1*/ ctx[2]);
+			p1_nodes.forEach(detach);
+			t11 = claim_space(div6_nodes);
+			br = claim_element(div6_nodes, "BR", {});
+			div5 = claim_element(div6_nodes, "DIV", { class: true });
+			var div5_nodes = children(div5);
+			a1 = claim_element(div5_nodes, "A", { class: true, href: true });
+			var a1_nodes = children(a1);
+			t12 = claim_text(a1_nodes, t12_value);
+			a1_nodes.forEach(detach);
+			div5_nodes.forEach(detach);
+			div6_nodes.forEach(detach);
+			t13 = claim_space(div8_nodes);
+			div7 = claim_element(div8_nodes, "DIV", { class: true });
+			var div7_nodes = children(div7);
+
+			lottie_player = claim_element(div7_nodes, "LOTTIE-PLAYER", {
+				autoplay: true,
+				loop: true,
+				mode: true,
+				class: true,
+				src: true
+			});
+
+			children(lottie_player).forEach(detach);
+			t14 = claim_space(div7_nodes);
+			img2 = claim_element(div7_nodes, "IMG", { src: true, alt: true, class: true });
+			div7_nodes.forEach(detach);
+			div8_nodes.forEach(detach);
+			div9_nodes.forEach(detach);
+			div10_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(p, "class", "p-large");
-			attr(div0, "class", "section-container content svelte-y3xae3");
+			attr(p0, "class", "p-large");
+			attr(div0, "class", "section-container content svelte-1skabwk");
 			attr(img0, "id", "content-image-desktop");
 			if (!src_url_equal(img0.src, img0_src_value = /*content_image_desktop*/ ctx[4].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*content_image_desktop*/ ctx[4].alt);
-			attr(img0, "class", "svelte-y3xae3");
-			attr(div1, "class", "content-image-wrapper svelte-y3xae3");
+			attr(img0, "class", "svelte-1skabwk");
+			attr(div1, "class", "content-image-wrapper svelte-1skabwk");
 			attr(img1, "id", "content-image-mobile");
 			if (!src_url_equal(img1.src, img1_src_value = /*content_image_mobile*/ ctx[3].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*content_image_mobile*/ ctx[3].alt);
-			attr(img1, "class", "svelte-y3xae3");
-			attr(a, "class", "primary-large-button svelte-y3xae3");
-			attr(a, "href", a_href_value = /*action_button*/ ctx[0].url);
-			attr(div2, "class", "button-wrapper svelte-y3xae3");
-			attr(div3, "class", "wrapper svelte-y3xae3");
-			attr(div4, "class", "container svelte-y3xae3");
+			attr(img1, "class", "svelte-1skabwk");
+			attr(a0, "class", "primary-large-button svelte-1skabwk");
+			attr(a0, "href", a0_href_value = /*action_button*/ ctx[0].url);
+			attr(div2, "class", "button-wrapper svelte-1skabwk");
+			attr(div3, "class", "wrapper svelte-1skabwk");
+			attr(div4, "class", "container none svelte-1skabwk");
+			attr(p1, "class", "p-large");
+			attr(a1, "class", "primary-large-button svelte-1skabwk");
+			attr(a1, "href", a1_href_value = /*action_button*/ ctx[0].url);
+			attr(div5, "class", "button-wrapper svelte-1skabwk");
+			set_custom_element_data(lottie_player, "autoplay", "");
+			set_custom_element_data(lottie_player, "loop", "");
+			set_custom_element_data(lottie_player, "mode", "normal");
+			set_custom_element_data(lottie_player, "class", "lottie svelte-1skabwk");
+			if (!src_url_equal(lottie_player.src, lottie_player_src_value = trianglesLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
+			if (!src_url_equal(img2.src, img2_src_value = /*content_image_desktop*/ ctx[4].url)) attr(img2, "src", img2_src_value);
+			attr(img2, "alt", img2_alt_value = /*content_image_desktop*/ ctx[4].alt);
+			attr(img2, "class", "svelte-1skabwk");
+			attr(div7, "class", "img-wrapper svelte-1skabwk");
+			attr(div8, "class", "section-container content svelte-1skabwk");
+			attr(div9, "class", "wrapper svelte-1skabwk");
+			attr(div10, "class", "container svelte-1skabwk");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div4, anchor);
 			append_hydration(div4, div3);
 			append_hydration(div3, div0);
-			append_hydration(div0, h3);
-			append_hydration(h3, t0);
+			append_hydration(div0, h30);
+			append_hydration(h30, t0);
 			append_hydration(div0, t1);
-			append_hydration(div0, p);
-			append_hydration(p, t2);
+			append_hydration(div0, p0);
+			append_hydration(p0, t2);
 			append_hydration(div3, t3);
 			append_hydration(div3, div1);
 			append_hydration(div1, img0);
@@ -662,8 +778,28 @@ function create_fragment(ctx) {
 			append_hydration(div3, img1);
 			append_hydration(div3, t5);
 			append_hydration(div3, div2);
-			append_hydration(div2, a);
-			append_hydration(a, t6);
+			append_hydration(div2, a0);
+			append_hydration(a0, t6);
+			insert_hydration(target, t7, anchor);
+			insert_hydration(target, div10, anchor);
+			append_hydration(div10, div9);
+			append_hydration(div9, div8);
+			append_hydration(div8, div6);
+			append_hydration(div6, h31);
+			append_hydration(h31, t8);
+			append_hydration(div6, t9);
+			append_hydration(div6, p1);
+			append_hydration(p1, t10);
+			append_hydration(div6, t11);
+			append_hydration(div6, br);
+			append_hydration(div6, div5);
+			append_hydration(div5, a1);
+			append_hydration(a1, t12);
+			append_hydration(div8, t13);
+			append_hydration(div8, div7);
+			append_hydration(div7, lottie_player);
+			append_hydration(div7, t14);
+			append_hydration(div7, img2);
 		},
 		p(ctx, [dirty]) {
 			if (dirty & /*content_title*/ 2) set_data(t0, /*content_title*/ ctx[1]);
@@ -687,17 +823,37 @@ function create_fragment(ctx) {
 
 			if (dirty & /*action_button*/ 1 && t6_value !== (t6_value = /*action_button*/ ctx[0].label + "")) set_data(t6, t6_value);
 
-			if (dirty & /*action_button*/ 1 && a_href_value !== (a_href_value = /*action_button*/ ctx[0].url)) {
-				attr(a, "href", a_href_value);
+			if (dirty & /*action_button*/ 1 && a0_href_value !== (a0_href_value = /*action_button*/ ctx[0].url)) {
+				attr(a0, "href", a0_href_value);
+			}
+
+			if (dirty & /*content_title*/ 2) set_data(t8, /*content_title*/ ctx[1]);
+			if (dirty & /*content_paragraph_1*/ 4) set_data(t10, /*content_paragraph_1*/ ctx[2]);
+			if (dirty & /*action_button*/ 1 && t12_value !== (t12_value = /*action_button*/ ctx[0].label + "")) set_data(t12, t12_value);
+
+			if (dirty & /*action_button*/ 1 && a1_href_value !== (a1_href_value = /*action_button*/ ctx[0].url)) {
+				attr(a1, "href", a1_href_value);
+			}
+
+			if (dirty & /*content_image_desktop*/ 16 && !src_url_equal(img2.src, img2_src_value = /*content_image_desktop*/ ctx[4].url)) {
+				attr(img2, "src", img2_src_value);
+			}
+
+			if (dirty & /*content_image_desktop*/ 16 && img2_alt_value !== (img2_alt_value = /*content_image_desktop*/ ctx[4].alt)) {
+				attr(img2, "alt", img2_alt_value);
 			}
 		},
 		i: noop,
 		o: noop,
 		d(detaching) {
 			if (detaching) detach(div4);
+			if (detaching) detach(t7);
+			if (detaching) detach(div10);
 		}
 	};
 }
+
+const trianglesLottie = '{"nm":"Композиция 1","ddd":0,"h":600,"w":600,"meta":{"g":"@lottiefiles/toolkit-js 0.26.1"},"layers":[{"ty":4,"nm":"Слой-фигура 6","sr":1,"st":0,"op":300.00001221925,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[-130,-236,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[218,142,0],"t":0,"ti":[0,0,0],"to":[0,0,0]},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[100.929,103.144,0],"t":41,"ti":[0,0,0],"to":[0,0,0]},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[160,62,0],"t":112,"ti":[0,0,0],"to":[0,0,0]},{"s":[218,142,0],"t":142.000005783779}],"ix":2},"r":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[0],"t":0},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[90],"t":46},{"s":[0],"t":86.0000035028518}],"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"shapes":[{"ty":"gr","bm":0,"hd":false,"mn":"ADBE Vector Group","nm":"Фигура 1","ix":1,"cix":2,"np":3,"it":[{"ty":"sh","bm":0,"hd":false,"mn":"ADBE Vector Shape - Group","nm":"Контур 1","ix":1,"d":1,"ks":{"a":0,"k":{"c":true,"i":[[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0]],"v":[[-160,-256],[-132,-206],[-96,-250]]},"ix":2}},{"ty":"fl","bm":0,"hd":false,"mn":"ADBE Vector Graphic - Fill","nm":"Заливка 1","c":{"a":0,"k":[0.9647,0.898,0],"ix":4},"r":1,"o":{"a":0,"k":100,"ix":5}},{"ty":"tr","a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"sk":{"a":0,"k":0,"ix":4},"p":{"a":0,"k":[0,0],"ix":2},"r":{"a":0,"k":0,"ix":6},"sa":{"a":0,"k":0,"ix":5},"o":{"a":0,"k":100,"ix":7}}]}],"ind":1},{"ty":4,"nm":"Слой-фигура 5","sr":1,"st":0,"op":300.00001221925,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[92,244,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[396,494,0],"t":0,"ti":[0,0,0],"to":[0,0,0]},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[414,550,0],"t":76,"ti":[0,0,0],"to":[0,0,0]},{"s":[396,494,0],"t":142.000005783779}],"ix":2},"r":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":0.97},"s":[0],"t":0},{"o":{"x":0.333,"y":-0.026},"i":{"x":0.667,"y":1},"s":[-90.515],"t":46},{"s":[0],"t":86.0000035028518}],"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"shapes":[{"ty":"gr","bm":0,"hd":false,"mn":"ADBE Vector Group","nm":"Фигура 1","ix":1,"cix":2,"np":3,"it":[{"ty":"sh","bm":0,"hd":false,"mn":"ADBE Vector Shape - Group","nm":"Контур 1","ix":1,"d":1,"ks":{"a":0,"k":{"c":true,"i":[[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0]],"v":[[66,218],[58,272],[128,248]]},"ix":2}},{"ty":"fl","bm":0,"hd":false,"mn":"ADBE Vector Graphic - Fill","nm":"Заливка 1","c":{"a":0,"k":[0.9647,0.898,0],"ix":4},"r":1,"o":{"a":0,"k":100,"ix":5}},{"ty":"tr","a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"sk":{"a":0,"k":0,"ix":4},"p":{"a":0,"k":[0,0],"ix":2},"r":{"a":0,"k":0,"ix":6},"sa":{"a":0,"k":0,"ix":5},"o":{"a":0,"k":100,"ix":7}}]}],"ind":2},{"ty":4,"nm":"Слой-фигура 3","sr":1,"st":0,"op":300.00001221925,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[56,26,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[196,462,0],"t":0,"ti":[0,0,0],"to":[0,0,0]},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[74,546,0],"t":25,"ti":[0,0,0],"to":[0,0,0]},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[266.838,415.226,0],"t":99,"ti":[0,0,0],"to":[0,0,0]},{"s":[196,462,0],"t":142.000005783779}],"ix":2},"r":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[0],"t":0},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[267],"t":46},{"s":[0],"t":86.0000035028518}],"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"shapes":[{"ty":"gr","bm":0,"hd":false,"mn":"ADBE Vector Group","nm":"Фигура 1","ix":1,"cix":2,"np":3,"it":[{"ty":"sh","bm":0,"hd":false,"mn":"ADBE Vector Shape - Group","nm":"Контур 1","ix":1,"d":1,"ks":{"a":0,"k":{"c":true,"i":[[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0]],"v":[[44,-24],[16,50],[92,38]]},"ix":2}},{"ty":"fl","bm":0,"hd":false,"mn":"ADBE Vector Graphic - Fill","nm":"Заливка 1","c":{"a":0,"k":[0.9647,0.898,0],"ix":4},"r":1,"o":{"a":0,"k":100,"ix":5}},{"ty":"tr","a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"sk":{"a":0,"k":0,"ix":4},"p":{"a":0,"k":[0,0],"ix":2},"r":{"a":0,"k":0,"ix":6},"sa":{"a":0,"k":0,"ix":5},"o":{"a":0,"k":100,"ix":7}}]}],"ind":3},{"ty":4,"nm":"Слой-фигура 2","sr":1,"st":0,"op":300.00001221925,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[142,28,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[460,356,0],"t":0,"ti":[0,0,0],"to":[0,0,0]},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[518,430,0],"t":80,"ti":[0,0,0],"to":[0,0,0]},{"s":[460,356,0],"t":113.000004602584}],"ix":2},"r":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[0],"t":0},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[113],"t":46},{"s":[0],"t":86.0000035028518}],"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"shapes":[{"ty":"gr","bm":0,"hd":false,"mn":"ADBE Vector Group","nm":"Фигура 1","ix":1,"cix":2,"np":3,"it":[{"ty":"sh","bm":0,"hd":false,"mn":"ADBE Vector Shape - Group","nm":"Контур 1","ix":1,"d":1,"ks":{"a":0,"k":{"c":true,"i":[[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0]],"v":[[190,-4],[96,2],[156,62]]},"ix":2}},{"ty":"fl","bm":0,"hd":false,"mn":"ADBE Vector Graphic - Fill","nm":"Заливка 1","c":{"a":0,"k":[0.9647,0.898,0],"ix":4},"r":1,"o":{"a":0,"k":100,"ix":5}},{"ty":"tr","a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"sk":{"a":0,"k":0,"ix":4},"p":{"a":0,"k":[0,0],"ix":2},"r":{"a":0,"k":0,"ix":6},"sa":{"a":0,"k":0,"ix":5},"o":{"a":0,"k":100,"ix":7}}]}],"ind":4},{"ty":4,"nm":"Слой-фигура 7","sr":1,"st":0,"op":300.00001221925,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[-138,114,0],"ix":1},"s":{"a":0,"k":[38.277,38.277,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[342,300,0],"t":0,"ti":[0,0,0],"to":[0,0,0]},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[518,228,0],"t":64,"ti":[0,0,0],"to":[0,0,0]},{"s":[342,300,0],"t":142.000005783779}],"ix":2},"r":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[92],"t":0},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[44],"t":46},{"s":[92],"t":86.0000035028518}],"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"shapes":[{"ty":"gr","bm":0,"hd":false,"mn":"ADBE Vector Group","nm":"Фигура 1","ix":1,"cix":2,"np":3,"it":[{"ty":"sh","bm":0,"hd":false,"mn":"ADBE Vector Shape - Group","nm":"Контур 1","ix":1,"d":1,"ks":{"a":0,"k":{"c":true,"i":[[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0]],"v":[[-56,-84],[-154,92],[44,92]]},"ix":2}},{"ty":"fl","bm":0,"hd":false,"mn":"ADBE Vector Graphic - Fill","nm":"Заливка 1","c":{"a":0,"k":[0.9647,0.898,0],"ix":4},"r":1,"o":{"a":0,"k":100,"ix":5}},{"ty":"tr","a":{"a":0,"k":[-56.825,10.677],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"sk":{"a":0,"k":0,"ix":4},"p":{"a":0,"k":[-144.031,111.33],"ix":2},"r":{"a":0,"k":0,"ix":6},"sa":{"a":0,"k":0,"ix":5},"o":{"a":0,"k":100,"ix":7}}]}],"ind":5},{"ty":4,"nm":"Слой-фигура 1","sr":1,"st":0,"op":300.00001221925,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[-138,114,0],"ix":1},"s":{"a":0,"k":[64.4,64.4,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[174,288,0],"t":0,"ti":[0,0,0],"to":[0,0,0]},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[147.415,364.338,0],"t":27,"ti":[0,0,0],"to":[0,0,0]},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[110,284,0],"t":93,"ti":[0,0,0],"to":[0,0,0]},{"s":[174,288,0],"t":132.00000537647}],"ix":2},"r":{"a":1,"k":[{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[0],"t":0},{"o":{"x":0.333,"y":0},"i":{"x":0.667,"y":1},"s":[110],"t":46},{"s":[0],"t":86.0000035028518}],"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"shapes":[{"ty":"gr","bm":0,"hd":false,"mn":"ADBE Vector Group","nm":"Фигура 1","ix":1,"cix":2,"np":3,"it":[{"ty":"sh","bm":0,"hd":false,"mn":"ADBE Vector Shape - Group","nm":"Контур 1","ix":1,"d":1,"ks":{"a":0,"k":{"c":true,"i":[[0,0],[0,0],[0,0]],"o":[[0,0],[0,0],[0,0]],"v":[[-56,-84],[-154,92],[44,92]]},"ix":2}},{"ty":"fl","bm":0,"hd":false,"mn":"ADBE Vector Graphic - Fill","nm":"Заливка 1","c":{"a":0,"k":[0.9647,0.898,0],"ix":4},"r":1,"o":{"a":0,"k":100,"ix":5}},{"ty":"tr","a":{"a":0,"k":[-56.825,10.677],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"sk":{"a":0,"k":0,"ix":4},"p":{"a":0,"k":[-144.031,111.33],"ix":2},"r":{"a":0,"k":0,"ix":6},"sa":{"a":0,"k":0,"ix":5},"o":{"a":0,"k":100,"ix":7}}]}],"ind":6}],"v":"5.10.2","fr":29.9700012207031,"op":143.000005824509,"ip":0,"assets":[]}';
 
 function instance($$self, $$props, $$invalidate) {
 	let { props } = $$props;
