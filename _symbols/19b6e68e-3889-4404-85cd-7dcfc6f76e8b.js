@@ -280,6 +280,23 @@ let current_component;
 function set_current_component(component) {
     current_component = component;
 }
+function get_current_component() {
+    if (!current_component)
+        throw new Error('Function called outside component initialization');
+    return current_component;
+}
+/**
+ * The `onMount` function schedules a callback to run as soon as the component has been mounted to the DOM.
+ * It must be called during the component's initialisation (but doesn't need to live *inside* the component;
+ * it can be called from an external module).
+ *
+ * `onMount` does not run inside a [server-side component](/docs#run-time-server-side-component-api).
+ *
+ * https://svelte.dev/docs#run-time-svelte-onmount
+ */
+function onMount(fn) {
+    get_current_component().$$.on_mount.push(fn);
+}
 
 const dirty_components = [];
 const binding_callbacks = [];
@@ -532,11 +549,11 @@ class SvelteComponent {
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[5] = list[i];
+	child_ctx[6] = list[i];
 	return child_ctx;
 }
 
-// (308:8) {#each accordions as accordion}
+// (300:8) {#each accordions as accordion}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -544,12 +561,12 @@ function create_each_block(ctx) {
 	let t0;
 	let t1;
 	let span1;
-	let t2_value = /*accordion*/ ctx[5].title_accordion + "";
+	let t2_value = /*accordion*/ ctx[6].title_accordion + "";
 	let t2;
 	let t3;
 	let div1;
 	let p;
-	let t4_value = /*accordion*/ ctx[5].description_accordion + "";
+	let t4_value = /*accordion*/ ctx[6].description_accordion + "";
 	let t4;
 	let t5;
 
@@ -619,8 +636,8 @@ function create_each_block(ctx) {
 			append_hydration(div2, t5);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*accordions*/ 2 && t2_value !== (t2_value = /*accordion*/ ctx[5].title_accordion + "")) set_data(t2, t2_value);
-			if (dirty & /*accordions*/ 2 && t4_value !== (t4_value = /*accordion*/ ctx[5].description_accordion + "")) set_data(t4, t4_value);
+			if (dirty & /*accordions*/ 2 && t2_value !== (t2_value = /*accordion*/ ctx[6].title_accordion + "")) set_data(t2, t2_value);
+			if (dirty & /*accordions*/ 2 && t4_value !== (t4_value = /*accordion*/ ctx[6].description_accordion + "")) set_data(t4, t4_value);
 		},
 		d(detaching) {
 			if (detaching) detach(div2);
@@ -748,35 +765,25 @@ function instance($$self, $$props, $$invalidate) {
 	let { content_title_2 } = $$props;
 	let { content_description2 } = $$props;
 	let { accordions } = $$props;
+	let { accordionsData = [] } = $$props;
 
-	document.addEventListener('DOMContentLoaded', function () {
+	onMount(() => {
 		const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-		if (accordionHeaders.length === 0) {
-			alert('No accordion headers found.');
-		} else {
-			accordionHeaders.forEach(function (header, index) {
-				header.addEventListener('click', function () {
-					alert(`Header ${index + 1} clicked.`);
-					const content = this.nextElementSibling;
-					const icon = this.querySelector('.open-icon');
+		accordionHeaders.forEach(function (header) {
+			header.addEventListener('click', function () {
+				const content = this.nextElementSibling;
+				const icon = this.querySelector('.open-icon');
 
-					if (!content) {
-						alert('No content found.');
-					} else if (!icon) {
-						alert('No icon found.');
-					} else {
-						if (content.style.display === 'block') {
-							content.style.display = 'none';
-							icon.classList.remove('open');
-						} else {
-							content.style.display = 'block';
-							icon.classList.add('open');
-						}
-					}
-				});
+				if (content.style.display === 'block') {
+					content.style.display = 'none';
+					icon.classList.remove('open');
+				} else {
+					content.style.display = 'block';
+					icon.classList.add('open');
+				}
 			});
-		}
+		});
 	});
 
 	$$self.$$set = $$props => {
@@ -785,9 +792,17 @@ function instance($$self, $$props, $$invalidate) {
 		if ('content_title_2' in $$props) $$invalidate(0, content_title_2 = $$props.content_title_2);
 		if ('content_description2' in $$props) $$invalidate(4, content_description2 = $$props.content_description2);
 		if ('accordions' in $$props) $$invalidate(1, accordions = $$props.accordions);
+		if ('accordionsData' in $$props) $$invalidate(5, accordionsData = $$props.accordionsData);
 	};
 
-	return [content_title_2, accordions, props, action_button2, content_description2];
+	return [
+		content_title_2,
+		accordions,
+		props,
+		action_button2,
+		content_description2,
+		accordionsData
+	];
 }
 
 class Component extends SvelteComponent {
@@ -799,7 +814,8 @@ class Component extends SvelteComponent {
 			action_button2: 3,
 			content_title_2: 0,
 			content_description2: 4,
-			accordions: 1
+			accordions: 1,
+			accordionsData: 5
 		});
 	}
 }
