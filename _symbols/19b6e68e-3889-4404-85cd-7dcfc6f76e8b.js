@@ -636,8 +636,8 @@ function create_each_block(ctx) {
 			append_hydration(div2, t5);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*accordions*/ 2 && t2_value !== (t2_value = /*accordion*/ ctx[6].title_accordion + "")) set_data(t2, t2_value);
-			if (dirty & /*accordions*/ 2 && t4_value !== (t4_value = /*accordion*/ ctx[6].description_accordion + "")) set_data(t4, t4_value);
+			if (dirty & /*accordions*/ 1 && t2_value !== (t2_value = /*accordion*/ ctx[6].title_accordion + "")) set_data(t2, t2_value);
+			if (dirty & /*accordions*/ 1 && t4_value !== (t4_value = /*accordion*/ ctx[6].description_accordion + "")) set_data(t4, t4_value);
 		},
 		d(detaching) {
 			if (detaching) detach(div2);
@@ -653,7 +653,7 @@ function create_fragment(ctx) {
 	let t1;
 	let div1;
 	let div0;
-	let each_value = /*accordions*/ ctx[1];
+	let each_value = /*accordions*/ ctx[0];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
@@ -665,7 +665,7 @@ function create_fragment(ctx) {
 			div3 = element("div");
 			div2 = element("div");
 			h3 = element("h3");
-			t0 = text(/*content_title_2*/ ctx[0]);
+			t0 = text(/*content_title_2*/ ctx[1]);
 			t1 = space();
 			div1 = element("div");
 			div0 = element("div");
@@ -683,7 +683,7 @@ function create_fragment(ctx) {
 			var div2_nodes = children(div2);
 			h3 = claim_element(div2_nodes, "H3", { class: true });
 			var h3_nodes = children(h3);
-			t0 = claim_text(h3_nodes, /*content_title_2*/ ctx[0]);
+			t0 = claim_text(h3_nodes, /*content_title_2*/ ctx[1]);
 			h3_nodes.forEach(detach);
 			t1 = claim_space(div2_nodes);
 			div1 = claim_element(div2_nodes, "DIV", { id: true, class: true });
@@ -725,10 +725,10 @@ function create_fragment(ctx) {
 			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*content_title_2*/ 1) set_data(t0, /*content_title_2*/ ctx[0]);
+			if (dirty & /*content_title_2*/ 2) set_data(t0, /*content_title_2*/ ctx[1]);
 
-			if (dirty & /*accordions*/ 2) {
-				each_value = /*accordions*/ ctx[1];
+			if (dirty & /*accordions*/ 1) {
+				each_value = /*accordions*/ ctx[0];
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
@@ -761,10 +761,10 @@ function create_fragment(ctx) {
 
 function instance($$self, $$props, $$invalidate) {
 	let { props } = $$props;
+	let { accordions } = $$props;
 	let { action_button2 } = $$props;
 	let { content_title_2 } = $$props;
 	let { content_description2 } = $$props;
-	let { accordions } = $$props;
 	let { accordionsData = [] } = $$props;
 
 	onMount(() => {
@@ -788,16 +788,16 @@ function instance($$self, $$props, $$invalidate) {
 
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(2, props = $$props.props);
+		if ('accordions' in $$props) $$invalidate(0, accordions = $$props.accordions);
 		if ('action_button2' in $$props) $$invalidate(3, action_button2 = $$props.action_button2);
-		if ('content_title_2' in $$props) $$invalidate(0, content_title_2 = $$props.content_title_2);
+		if ('content_title_2' in $$props) $$invalidate(1, content_title_2 = $$props.content_title_2);
 		if ('content_description2' in $$props) $$invalidate(4, content_description2 = $$props.content_description2);
-		if ('accordions' in $$props) $$invalidate(1, accordions = $$props.accordions);
 		if ('accordionsData' in $$props) $$invalidate(5, accordionsData = $$props.accordionsData);
 	};
 
 	return [
-		content_title_2,
 		accordions,
+		content_title_2,
 		props,
 		action_button2,
 		content_description2,
@@ -811,10 +811,10 @@ class Component extends SvelteComponent {
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
 			props: 2,
+			accordions: 0,
 			action_button2: 3,
-			content_title_2: 0,
+			content_title_2: 1,
 			content_description2: 4,
-			accordions: 1,
 			accordionsData: 5
 		});
 	}
