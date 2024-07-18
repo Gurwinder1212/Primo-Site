@@ -1194,13 +1194,13 @@ function instance($$self, $$props, $$invalidate) {
 					0: 1, // 2 items for viewport wider than 800px
 					540: 2,
 					865: 3, // 3 items for viewport wider than 1240px
-					1020: 4
+					1900: 3
 				},
 				startIndex: 0,
 				draggable: true,
 				multipleDrag: true,
 				threshold: 20,
-				loop: false,
+				loop: true,
 				rtl: false,
 				onInit: () => {
 					
