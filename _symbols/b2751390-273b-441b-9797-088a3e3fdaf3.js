@@ -1,4 +1,4 @@
-// Content 2 - Home - Updated July 17, 2024
+// Content 2 - Home - Updated July 18, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -575,7 +575,6 @@ function create_fragment(ctx) {
 	let p1;
 	let t10;
 	let t11;
-	let br;
 	let div5;
 	let a1;
 	let t12_value = /*action_button*/ ctx[0].label + "";
@@ -620,7 +619,6 @@ function create_fragment(ctx) {
 			p1 = element("p");
 			t10 = text(/*content_paragraph_1*/ ctx[2]);
 			t11 = space();
-			br = element("br");
 			div5 = element("div");
 			a1 = element("a");
 			t12 = text(t12_value);
@@ -698,7 +696,6 @@ function create_fragment(ctx) {
 			t10 = claim_text(p1_nodes, /*content_paragraph_1*/ ctx[2]);
 			p1_nodes.forEach(detach);
 			t11 = claim_space(div6_nodes);
-			br = claim_element(div6_nodes, "BR", {});
 			div5 = claim_element(div6_nodes, "DIV", { class: true });
 			var div5_nodes = children(div5);
 			a1 = claim_element(div5_nodes, "A", { class: true, href: true });
@@ -791,7 +788,6 @@ function create_fragment(ctx) {
 			append_hydration(div6, p1);
 			append_hydration(p1, t10);
 			append_hydration(div6, t11);
-			append_hydration(div6, br);
 			append_hydration(div6, div5);
 			append_hydration(div5, a1);
 			append_hydration(a1, t12);
