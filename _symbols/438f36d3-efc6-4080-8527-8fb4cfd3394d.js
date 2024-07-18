@@ -1309,15 +1309,15 @@ function create_fragment(ctx) {
 			div5 = element("div");
 			div0 = element("div");
 			h10 = element("h1");
-			t0 = text(/*hero_title1*/ ctx[1]);
+			t0 = text(/*hero_title1_instant*/ ctx[4]);
 			t1 = space();
 			div1 = element("div");
 			h11 = element("h1");
-			t2 = text(/*hero_title2*/ ctx[2]);
+			t2 = text(/*hero_title2*/ ctx[1]);
 			t3 = space();
 			div2 = element("div");
 			h6 = element("h6");
-			t4 = text(/*hero_description*/ ctx[4]);
+			t4 = text(/*hero_description*/ ctx[3]);
 			t5 = space();
 			div4 = element("div");
 			img0 = element("img");
@@ -1345,7 +1345,7 @@ function create_fragment(ctx) {
 			var div0_nodes = children(div0);
 			h10 = claim_element(div0_nodes, "H1", { class: true });
 			var h10_nodes = children(h10);
-			t0 = claim_text(h10_nodes, /*hero_title1*/ ctx[1]);
+			t0 = claim_text(h10_nodes, /*hero_title1_instant*/ ctx[4]);
 			h10_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			t1 = claim_space(div5_nodes);
@@ -1353,7 +1353,7 @@ function create_fragment(ctx) {
 			var div1_nodes = children(div1);
 			h11 = claim_element(div1_nodes, "H1", { class: true });
 			var h11_nodes = children(h11);
-			t2 = claim_text(h11_nodes, /*hero_title2*/ ctx[2]);
+			t2 = claim_text(h11_nodes, /*hero_title2*/ ctx[1]);
 			h11_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			t3 = claim_space(div5_nodes);
@@ -1361,7 +1361,7 @@ function create_fragment(ctx) {
 			var div2_nodes = children(div2);
 			h6 = claim_element(div2_nodes, "H6", { class: true });
 			var h6_nodes = children(h6);
-			t4 = claim_text(h6_nodes, /*hero_description*/ ctx[4]);
+			t4 = claim_text(h6_nodes, /*hero_description*/ ctx[3]);
 			h6_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
 			t5 = claim_space(div5_nodes);
@@ -1421,8 +1421,8 @@ function create_fragment(ctx) {
 			attr(h6, "class", "h650 svelte-zm098q");
 			attr(div2, "class", "hero-feature-container svelte-zm098q");
 			attr(img0, "class", "hero-image-2 svelte-zm098q");
-			if (!src_url_equal(img0.src, img0_src_value = /*hero_image_2*/ ctx[3].url)) attr(img0, "src", img0_src_value);
-			attr(img0, "alt", img0_alt_value = /*hero_image_2*/ ctx[3].alt);
+			if (!src_url_equal(img0.src, img0_src_value = /*hero_image_2*/ ctx[2].url)) attr(img0, "src", img0_src_value);
+			attr(img0, "alt", img0_alt_value = /*hero_image_2*/ ctx[2].alt);
 			set_custom_element_data(lottie_player0, "autoplay", "");
 			set_custom_element_data(lottie_player0, "loop", "");
 			set_custom_element_data(lottie_player0, "mode", "normal");
@@ -1478,15 +1478,15 @@ function create_fragment(ctx) {
 			append_hydration(div4, img1);
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*hero_title1*/ 2) set_data(t0, /*hero_title1*/ ctx[1]);
-			if (dirty & /*hero_title2*/ 4) set_data(t2, /*hero_title2*/ ctx[2]);
-			if (dirty & /*hero_description*/ 16) set_data(t4, /*hero_description*/ ctx[4]);
+			if (dirty & /*hero_title1_instant*/ 16) set_data(t0, /*hero_title1_instant*/ ctx[4]);
+			if (dirty & /*hero_title2*/ 2) set_data(t2, /*hero_title2*/ ctx[1]);
+			if (dirty & /*hero_description*/ 8) set_data(t4, /*hero_description*/ ctx[3]);
 
-			if (dirty & /*hero_image_2*/ 8 && !src_url_equal(img0.src, img0_src_value = /*hero_image_2*/ ctx[3].url)) {
+			if (dirty & /*hero_image_2*/ 4 && !src_url_equal(img0.src, img0_src_value = /*hero_image_2*/ ctx[2].url)) {
 				attr(img0, "src", img0_src_value);
 			}
 
-			if (dirty & /*hero_image_2*/ 8 && img0_alt_value !== (img0_alt_value = /*hero_image_2*/ ctx[3].alt)) {
+			if (dirty & /*hero_image_2*/ 4 && img0_alt_value !== (img0_alt_value = /*hero_image_2*/ ctx[2].alt)) {
 				attr(img0, "alt", img0_alt_value);
 			}
 
@@ -1518,24 +1518,27 @@ function instance($$self, $$props, $$invalidate) {
 	let { hero_image_1 } = $$props;
 	let { hero_image_2 } = $$props;
 	let { hero_description } = $$props;
+	let { hero_title1_instant } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(5, props = $$props.props);
 		if ('temp_image' in $$props) $$invalidate(0, temp_image = $$props.temp_image);
-		if ('hero_title1' in $$props) $$invalidate(1, hero_title1 = $$props.hero_title1);
-		if ('hero_title2' in $$props) $$invalidate(2, hero_title2 = $$props.hero_title2);
-		if ('hero_image_1' in $$props) $$invalidate(6, hero_image_1 = $$props.hero_image_1);
-		if ('hero_image_2' in $$props) $$invalidate(3, hero_image_2 = $$props.hero_image_2);
-		if ('hero_description' in $$props) $$invalidate(4, hero_description = $$props.hero_description);
+		if ('hero_title1' in $$props) $$invalidate(6, hero_title1 = $$props.hero_title1);
+		if ('hero_title2' in $$props) $$invalidate(1, hero_title2 = $$props.hero_title2);
+		if ('hero_image_1' in $$props) $$invalidate(7, hero_image_1 = $$props.hero_image_1);
+		if ('hero_image_2' in $$props) $$invalidate(2, hero_image_2 = $$props.hero_image_2);
+		if ('hero_description' in $$props) $$invalidate(3, hero_description = $$props.hero_description);
+		if ('hero_title1_instant' in $$props) $$invalidate(4, hero_title1_instant = $$props.hero_title1_instant);
 	};
 
 	return [
 		temp_image,
-		hero_title1,
 		hero_title2,
 		hero_image_2,
 		hero_description,
+		hero_title1_instant,
 		props,
+		hero_title1,
 		hero_image_1
 	];
 }
@@ -1547,11 +1550,12 @@ class Component extends SvelteComponent {
 		init(this, options, instance, create_fragment, safe_not_equal, {
 			props: 5,
 			temp_image: 0,
-			hero_title1: 1,
-			hero_title2: 2,
-			hero_image_1: 6,
-			hero_image_2: 3,
-			hero_description: 4
+			hero_title1: 6,
+			hero_title2: 1,
+			hero_image_1: 7,
+			hero_image_2: 2,
+			hero_description: 3,
+			hero_title1_instant: 4
 		});
 	}
 }
