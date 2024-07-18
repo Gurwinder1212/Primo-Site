@@ -536,7 +536,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (297:8) {#each accordions as accordion}
+// (308:8) {#each accordions as accordion}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -752,20 +752,31 @@ function instance($$self, $$props, $$invalidate) {
 	document.addEventListener('DOMContentLoaded', function () {
 		const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-		accordionHeaders.forEach(function (header) {
-			header.addEventListener('click', function () {
-				const content = this.nextElementSibling;
-				const icon = this.querySelector('.open-icon');
+		if (accordionHeaders.length === 0) {
+			alert('No accordion headers found.');
+		} else {
+			accordionHeaders.forEach(function (header, index) {
+				header.addEventListener('click', function () {
+					alert(`Header ${index + 1} clicked.`);
+					const content = this.nextElementSibling;
+					const icon = this.querySelector('.open-icon');
 
-				if (content.style.display === 'block') {
-					content.style.display = 'none';
-					icon.classList.remove('open');
-				} else {
-					content.style.display = 'block';
-					icon.classList.add('open');
-				}
+					if (!content) {
+						alert('No content found.');
+					} else if (!icon) {
+						alert('No icon found.');
+					} else {
+						if (content.style.display === 'block') {
+							content.style.display = 'none';
+							icon.classList.remove('open');
+						} else {
+							content.style.display = 'block';
+							icon.classList.add('open');
+						}
+					}
+				});
 			});
-		});
+		}
 	});
 
 	$$self.$$set = $$props => {
