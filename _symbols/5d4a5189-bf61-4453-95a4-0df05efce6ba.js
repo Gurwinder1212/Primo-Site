@@ -553,7 +553,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (154:4) {#each timeline as event}
+// (168:4) {#each timeline as event}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -617,12 +617,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "circle svelte-1j1vuml");
-			attr(h2, "class", "svelte-1j1vuml");
-			attr(h3, "class", "svelte-1j1vuml");
-			attr(p, "class", "svelte-1j1vuml");
-			attr(div1, "class", "event-content svelte-1j1vuml");
-			attr(div2, "class", "event svelte-1j1vuml");
+			attr(div0, "class", "circle svelte-qugomh");
+			attr(h2, "class", "svelte-qugomh");
+			attr(h3, "class", "svelte-qugomh");
+			attr(p, "class", "svelte-qugomh");
+			attr(div1, "class", "event-content svelte-qugomh");
+			attr(div2, "class", "event svelte-qugomh");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -681,7 +681,7 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "horizontal-timeline svelte-1j1vuml");
+			attr(div, "class", "horizontal-timeline svelte-qugomh");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -731,6 +731,10 @@ function instance($$self, $$props, $$invalidate) {
 
 	onMount(() => {
 		const events = document.querySelectorAll('.event');
+		let currentIndex = 0;
+
+		// Initially show the first event
+		events[currentIndex].classList.add('in-view');
 
 		const observerOptions = {
 			root: null,
@@ -752,6 +756,16 @@ function instance($$self, $$props, $$invalidate) {
 		events.forEach(event => {
 			observer.observe(event);
 		});
+
+		// Function to show the next event
+		const showNextEvent = () => {
+			events[currentIndex].classList.remove('in-view');
+			currentIndex = (currentIndex + 1) % events.length;
+			events[currentIndex].classList.add('in-view');
+		};
+
+		// Set interval to automatically show the next event every 3 seconds
+		setInterval(showNextEvent, 3000);
 	});
 
 	$$self.$$set = $$props => {
