@@ -571,10 +571,10 @@ function create_fragment(ctx) {
 			t1 = space();
 			div1 = element("div");
 			h3 = element("h3");
-			t2 = text(/*content_title*/ ctx[0]);
+			t2 = text(/*content_title*/ ctx[1]);
 			t3 = space();
 			p = element("p");
-			t4 = text(/*content_paragraph_1*/ ctx[1]);
+			t4 = text(/*content_paragraph_1*/ ctx[2]);
 			this.h();
 		},
 		l(nodes) {
@@ -604,12 +604,12 @@ function create_fragment(ctx) {
 			var div1_nodes = children(div1);
 			h3 = claim_element(div1_nodes, "H3", {});
 			var h3_nodes = children(h3);
-			t2 = claim_text(h3_nodes, /*content_title*/ ctx[0]);
+			t2 = claim_text(h3_nodes, /*content_title*/ ctx[1]);
 			h3_nodes.forEach(detach);
 			t3 = claim_space(div1_nodes);
 			p = claim_element(div1_nodes, "P", { class: true });
 			var p_nodes = children(p);
-			t4 = claim_text(p_nodes, /*content_paragraph_1*/ ctx[1]);
+			t4 = claim_text(p_nodes, /*content_paragraph_1*/ ctx[2]);
 			p_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
@@ -623,8 +623,8 @@ function create_fragment(ctx) {
 			set_custom_element_data(lottie_player, "mode", "normal");
 			set_custom_element_data(lottie_player, "class", "lottie svelte-1skabwk");
 			if (!src_url_equal(lottie_player.src, lottie_player_src_value = trianglesLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
-			if (!src_url_equal(img.src, img_src_value = /*content_image*/ ctx[2].url)) attr(img, "src", img_src_value);
-			attr(img, "alt", img_alt_value = /*content_image*/ ctx[2].alt);
+			if (!src_url_equal(img.src, img_src_value = /*content_image*/ ctx[0].url)) attr(img, "src", img_src_value);
+			attr(img, "alt", img_alt_value = /*content_image*/ ctx[0].alt);
 			attr(img, "class", "svelte-1skabwk");
 			attr(div0, "class", "img-wrapper svelte-1skabwk");
 			attr(p, "class", "p-large");
@@ -649,16 +649,16 @@ function create_fragment(ctx) {
 			append_hydration(p, t4);
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*content_image*/ 4 && !src_url_equal(img.src, img_src_value = /*content_image*/ ctx[2].url)) {
+			if (dirty & /*content_image*/ 1 && !src_url_equal(img.src, img_src_value = /*content_image*/ ctx[0].url)) {
 				attr(img, "src", img_src_value);
 			}
 
-			if (dirty & /*content_image*/ 4 && img_alt_value !== (img_alt_value = /*content_image*/ ctx[2].alt)) {
+			if (dirty & /*content_image*/ 1 && img_alt_value !== (img_alt_value = /*content_image*/ ctx[0].alt)) {
 				attr(img, "alt", img_alt_value);
 			}
 
-			if (dirty & /*content_title*/ 1) set_data(t2, /*content_title*/ ctx[0]);
-			if (dirty & /*content_paragraph_1*/ 2) set_data(t4, /*content_paragraph_1*/ ctx[1]);
+			if (dirty & /*content_title*/ 2) set_data(t2, /*content_title*/ ctx[1]);
+			if (dirty & /*content_paragraph_1*/ 4) set_data(t4, /*content_paragraph_1*/ ctx[2]);
 		},
 		i: noop,
 		o: noop,
@@ -672,18 +672,18 @@ const trianglesLottie = '{"nm":"Композиция 1","ddd":0,"h":600,"w":600,
 
 function instance($$self, $$props, $$invalidate) {
 	let { props } = $$props;
+	let { content_image } = $$props;
 	let { content_title } = $$props;
 	let { content_paragraph_1 } = $$props;
-	let { content_image } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(3, props = $$props.props);
-		if ('content_title' in $$props) $$invalidate(0, content_title = $$props.content_title);
-		if ('content_paragraph_1' in $$props) $$invalidate(1, content_paragraph_1 = $$props.content_paragraph_1);
-		if ('content_image' in $$props) $$invalidate(2, content_image = $$props.content_image);
+		if ('content_image' in $$props) $$invalidate(0, content_image = $$props.content_image);
+		if ('content_title' in $$props) $$invalidate(1, content_title = $$props.content_title);
+		if ('content_paragraph_1' in $$props) $$invalidate(2, content_paragraph_1 = $$props.content_paragraph_1);
 	};
 
-	return [content_title, content_paragraph_1, content_image, props];
+	return [content_image, content_title, content_paragraph_1, props];
 }
 
 class Component extends SvelteComponent {
@@ -692,9 +692,9 @@ class Component extends SvelteComponent {
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
 			props: 3,
-			content_title: 0,
-			content_paragraph_1: 1,
-			content_image: 2
+			content_image: 0,
+			content_title: 1,
+			content_paragraph_1: 2
 		});
 	}
 }
