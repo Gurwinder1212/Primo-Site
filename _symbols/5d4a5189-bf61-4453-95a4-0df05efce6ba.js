@@ -553,7 +553,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (158:4) {#each timeline as event}
+// (171:4) {#each timeline as event}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -617,12 +617,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "circle svelte-qugomh");
-			attr(h2, "class", "svelte-qugomh");
-			attr(h3, "class", "svelte-qugomh");
-			attr(p, "class", "svelte-qugomh");
-			attr(div1, "class", "event-content svelte-qugomh");
-			attr(div2, "class", "event svelte-qugomh");
+			attr(div0, "class", "circle svelte-1vfqf2n");
+			attr(h2, "class", "svelte-1vfqf2n");
+			attr(h3, "class", "svelte-1vfqf2n");
+			attr(p, "class", "svelte-1vfqf2n");
+			attr(div1, "class", "event-content svelte-1vfqf2n");
+			attr(div2, "class", "event svelte-1vfqf2n");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -681,7 +681,7 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "horizontal-timeline svelte-qugomh");
+			attr(div, "class", "horizontal-timeline svelte-1vfqf2n");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -732,25 +732,32 @@ function instance($$self, $$props, $$invalidate) {
 	onMount(() => {
 		const events = document.querySelectorAll('.event');
 		const initialVisibleEvents = 3;
-		let currentIndex = initialVisibleEvents;
+		let currentIndex = 0;
 
-		// Log the events to the console
-		console.log('All events:', events);
-
-		// Initially show the first 3 events
-		for (let i = 0; i < initialVisibleEvents; i++) {
-			console.log('Initially showing event:', i);
-			events[i].classList.add('in-view');
+		// Initially show the first 3 events with full opacity
+		for (let i = 0; i < events.length; i++) {
+			if (i < initialVisibleEvents) {
+				events[i].classList.add('in-view');
+				events[i].classList.add('active');
+			} else {
+				events[i].classList.add('inactive');
+			}
 		}
 
 		const showNextEvent = () => {
-			if (currentIndex < events.length) {
-				console.log('Showing next event:', currentIndex);
-				events[currentIndex].classList.add('in-view');
-				currentIndex++;
-			} else {
-				console.log('No more events to show');
-			}
+			// Reset all events to inactive
+			events.forEach(event => {
+				event.classList.remove('active');
+				event.classList.add('inactive');
+			});
+
+			// Show the next event with full opacity
+			events[currentIndex].classList.remove('inactive');
+
+			events[currentIndex].classList.add('active');
+
+			// Move to the next event
+			currentIndex = (currentIndex + 1) % events.length;
 		};
 
 		// Set interval to automatically show the next event every 3 seconds
