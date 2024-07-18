@@ -553,7 +553,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (168:4) {#each timeline as event}
+// (150:4) {#each timeline as event}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -731,37 +731,19 @@ function instance($$self, $$props, $$invalidate) {
 
 	onMount(() => {
 		const events = document.querySelectorAll('.event');
-		let currentIndex = 0;
+		const initialVisibleEvents = 3;
+		let currentIndex = initialVisibleEvents;
 
-		// Initially show the first event
-		events[currentIndex].classList.add('in-view');
+		// Initially show the first 3 events
+		for (let i = 0; i < initialVisibleEvents; i++) {
+			events[i].classList.add('in-view');
+		}
 
-		const observerOptions = {
-			root: null,
-			rootMargin: '0px',
-			threshold: 0.1
-		};
-
-		const observerCallback = (entries, observer) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('in-view');
-					observer.unobserve(entry.target);
-				}
-			});
-		};
-
-		const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-		events.forEach(event => {
-			observer.observe(event);
-		});
-
-		// Function to show the next event
 		const showNextEvent = () => {
-			events[currentIndex].classList.remove('in-view');
-			currentIndex = (currentIndex + 1) % events.length;
-			events[currentIndex].classList.add('in-view');
+			if (currentIndex < events.length) {
+				events[currentIndex].classList.add('in-view');
+				currentIndex++;
+			}
 		};
 
 		// Set interval to automatically show the next event every 3 seconds
