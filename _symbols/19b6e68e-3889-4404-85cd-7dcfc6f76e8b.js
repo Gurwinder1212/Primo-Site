@@ -755,7 +755,7 @@ function instance($$self, $$props, $$invalidate) {
 		accordionHeaders.forEach(function (header) {
 			header.addEventListener('click', function () {
 				const content = this.nextElementSibling;
-				const icon = this.querySelector('.icon');
+				const icon = this.querySelector('.open-icon');
 
 				if (content.style.display === 'block') {
 					content.style.display = 'none';
