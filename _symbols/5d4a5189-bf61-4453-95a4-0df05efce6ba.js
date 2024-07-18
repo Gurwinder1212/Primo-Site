@@ -553,7 +553,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (150:4) {#each timeline as event}
+// (158:4) {#each timeline as event}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -734,15 +734,22 @@ function instance($$self, $$props, $$invalidate) {
 		const initialVisibleEvents = 3;
 		let currentIndex = initialVisibleEvents;
 
+		// Log the events to the console
+		console.log('All events:', events);
+
 		// Initially show the first 3 events
 		for (let i = 0; i < initialVisibleEvents; i++) {
+			console.log('Initially showing event:', i);
 			events[i].classList.add('in-view');
 		}
 
 		const showNextEvent = () => {
 			if (currentIndex < events.length) {
+				console.log('Showing next event:', currentIndex);
 				events[currentIndex].classList.add('in-view');
 				currentIndex++;
+			} else {
+				console.log('No more events to show');
 			}
 		};
 
