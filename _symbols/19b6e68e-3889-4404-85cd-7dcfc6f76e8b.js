@@ -536,7 +536,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (304:4) {#each accordions as accordion}
+// (297:8) {#each accordions as accordion}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -597,12 +597,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "open-icon svelte-fejwf");
-			attr(span1, "class", "svelte-fejwf");
-			attr(div0, "class", "accordion-header svelte-fejwf");
-			attr(p, "class", "svelte-fejwf");
-			attr(div1, "class", "accordion-content svelte-fejwf");
-			attr(div2, "class", "accordion-item svelte-fejwf");
+			attr(span0, "class", "open-icon svelte-zo33f5");
+			attr(span1, "class", "svelte-zo33f5");
+			attr(div0, "class", "accordion-header svelte-zo33f5");
+			attr(p, "class", "svelte-zo33f5");
+			attr(div1, "class", "accordion-content svelte-zo33f5");
+			attr(div2, "class", "accordion-item svelte-zo33f5");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -685,12 +685,12 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h3, "class", "svelte-fejwf");
-			attr(div0, "class", "accordion svelte-fejwf");
+			attr(h3, "class", "svelte-zo33f5");
+			attr(div0, "class", "accordion svelte-zo33f5");
 			attr(div1, "id", "second");
-			attr(div1, "class", "svelte-fejwf");
-			attr(div2, "class", "wrapper svelte-fejwf");
-			attr(div3, "class", "container svelte-fejwf");
+			attr(div1, "class", "svelte-zo33f5");
+			attr(div2, "class", "wrapper svelte-zo33f5");
+			attr(div3, "class", "container svelte-zo33f5");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
