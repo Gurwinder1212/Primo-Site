@@ -1,4 +1,4 @@
-// New Block - Updated July 18, 2024
+// New Block - Updated July 19, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -668,12 +668,12 @@ function create_each_block_2(ctx) {
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*card*/ ctx[17].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*card*/ ctx[17].image.alt);
-			attr(div0, "class", "img_inner svelte-h2loeq");
+			attr(div0, "class", "img_inner svelte-1uuyshk");
 			attr(h61, "class", "h800");
-			attr(div2, "class", "card-title-wrapper svelte-h2loeq");
+			attr(div2, "class", "card-title-wrapper svelte-1uuyshk");
 			attr(p, "class", "p-medium");
-			attr(div3, "class", "card-content-wrapper svelte-h2loeq");
-			attr(div4, "class", "card-wrapper slider svelte-h2loeq");
+			attr(div3, "class", "card-content-wrapper svelte-1uuyshk");
+			attr(div4, "class", "card-wrapper slider svelte-1uuyshk");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div4, anchor);
@@ -789,12 +789,12 @@ function create_each_block_1(ctx) {
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*card*/ ctx[17].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*card*/ ctx[17].image.alt);
-			attr(img, "class", "svelte-h2loeq");
+			attr(img, "class", "svelte-1uuyshk");
 			attr(h61, "class", "h800");
-			attr(div1, "class", "card-title-wrapper svelte-h2loeq");
+			attr(div1, "class", "card-title-wrapper svelte-1uuyshk");
 			attr(p, "class", "p-medium");
-			attr(div2, "class", "card-content-wrapper svelte-h2loeq");
-			attr(div3, "class", "card-wrapper slider svelte-h2loeq");
+			attr(div2, "class", "card-content-wrapper svelte-1uuyshk");
+			attr(div3, "class", "card-wrapper slider svelte-1uuyshk");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -864,7 +864,7 @@ function create_each_block(ctx) {
 			attr(input, "name", "slider-radio");
 			input.value = /*i*/ ctx[16];
 			input.checked = input_checked_value = /*select*/ ctx[5] == /*i*/ ctx[16];
-			attr(input, "class", "svelte-h2loeq");
+			attr(input, "class", "svelte-1uuyshk");
 		},
 		m(target, anchor) {
 			insert_hydration(target, input, anchor);
@@ -1029,18 +1029,18 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h3, "class", "svelte-h2loeq");
-			attr(div0, "class", "hero-text-container1 svelte-h2loeq");
-			attr(h2, "class", "svelte-h2loeq");
-			attr(div1, "class", "hero-text-container2 svelte-h2loeq");
-			attr(div2, "class", "content-header-wrapper svelte-h2loeq");
-			attr(div3, "class", "card-container-desktop none svelte-h2loeq");
-			attr(div4, "class", "content-wrapper svelte-h2loeq");
-			attr(div5, "class", "siema svelte-h2loeq");
-			attr(div6, "class", "card-container-mobile slidewoo svelte-h2loeq");
-			attr(div7, "class", "bullet svelte-h2loeq");
-			attr(div8, "class", "wrapper svelte-h2loeq");
-			attr(div9, "class", "container svelte-h2loeq");
+			attr(h3, "class", "svelte-1uuyshk");
+			attr(div0, "class", "hero-text-container1 svelte-1uuyshk");
+			attr(h2, "class", "svelte-1uuyshk");
+			attr(div1, "class", "hero-text-container2 svelte-1uuyshk");
+			attr(div2, "class", "content-header-wrapper svelte-1uuyshk");
+			attr(div3, "class", "card-container-desktop slidewoo svelte-1uuyshk");
+			attr(div4, "class", "content-wrapper svelte-1uuyshk");
+			attr(div5, "class", "siema svelte-1uuyshk");
+			attr(div6, "class", "card-container-mobile  svelte-1uuyshk");
+			attr(div7, "class", "bullet svelte-1uuyshk");
+			attr(div8, "class", "wrapper svelte-1uuyshk");
+			attr(div9, "class", "container svelte-1uuyshk");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div9, anchor);
@@ -1194,7 +1194,7 @@ function instance($$self, $$props, $$invalidate) {
 					0: 1, // 2 items for viewport wider than 800px
 					540: 2,
 					865: 3, // 3 items for viewport wider than 1240px
-					1900: 3
+					1024: 3
 				},
 				startIndex: 0,
 				draggable: true,

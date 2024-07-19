@@ -1,4 +1,4 @@
-// New Block - Updated July 18, 2024
+// New Block - Updated July 19, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -275,6 +275,9 @@ function set_data(text, data) {
         return;
     text.data = data;
 }
+function toggle_class(element, name, toggle) {
+    element.classList[toggle ? 'add' : 'remove'](name);
+}
 
 let current_component;
 function set_current_component(component) {
@@ -550,25 +553,26 @@ class SvelteComponent {
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
 	child_ctx[2] = list[i];
+	child_ctx[4] = i;
 	return child_ctx;
 }
 
-// (171:4) {#each timeline as event}
+// (157:4) {#each timeline as event, i}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
 	let t0;
 	let div1;
 	let h2;
-	let t1_value = /*event*/ ctx[2].time_date + "";
+	let t1_value = /*event*/ ctx[2].year + "";
 	let t1;
 	let t2;
 	let h3;
-	let t3_value = /*event*/ ctx[2].time_heading + "";
+	let t3_value = /*event*/ ctx[2].heading + "";
 	let t3;
 	let t4;
 	let p;
-	let t5_value = /*event*/ ctx[2].time_content + "";
+	let t5_value = /*event*/ ctx[2].content + "";
 	let t5;
 	let t6;
 
@@ -617,12 +621,14 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "circle svelte-1vfqf2n");
-			attr(h2, "class", "svelte-1vfqf2n");
-			attr(h3, "class", "svelte-1vfqf2n");
-			attr(p, "class", "svelte-1vfqf2n");
-			attr(div1, "class", "event-content svelte-1vfqf2n");
-			attr(div2, "class", "event svelte-1vfqf2n");
+			attr(div0, "class", "circle svelte-km3ocn");
+			attr(h2, "class", "svelte-km3ocn");
+			attr(h3, "class", "svelte-km3ocn");
+			attr(p, "class", "svelte-km3ocn");
+			attr(div1, "class", "event-content svelte-km3ocn");
+			attr(div2, "class", "event svelte-km3ocn");
+			toggle_class(div2, "active", /*i*/ ctx[4] === 0);
+			toggle_class(div2, "inactive", /*i*/ ctx[4] !== 0);
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -640,9 +646,9 @@ function create_each_block(ctx) {
 			append_hydration(div2, t6);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*timeline*/ 1 && t1_value !== (t1_value = /*event*/ ctx[2].time_date + "")) set_data(t1, t1_value);
-			if (dirty & /*timeline*/ 1 && t3_value !== (t3_value = /*event*/ ctx[2].time_heading + "")) set_data(t3, t3_value);
-			if (dirty & /*timeline*/ 1 && t5_value !== (t5_value = /*event*/ ctx[2].time_content + "")) set_data(t5, t5_value);
+			if (dirty & /*timeline*/ 1 && t1_value !== (t1_value = /*event*/ ctx[2].year + "")) set_data(t1, t1_value);
+			if (dirty & /*timeline*/ 1 && t3_value !== (t3_value = /*event*/ ctx[2].heading + "")) set_data(t3, t3_value);
+			if (dirty & /*timeline*/ 1 && t5_value !== (t5_value = /*event*/ ctx[2].content + "")) set_data(t5, t5_value);
 		},
 		d(detaching) {
 			if (detaching) detach(div2);
@@ -681,7 +687,7 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "horizontal-timeline svelte-1vfqf2n");
+			attr(div, "class", "horizontal-timeline svelte-km3ocn");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -730,34 +736,27 @@ function instance($$self, $$props, $$invalidate) {
 	let { timeline } = $$props;
 
 	onMount(() => {
+		document.querySelector('.horizontal-timeline');
 		const events = document.querySelectorAll('.event');
-		const initialVisibleEvents = 3;
 		let currentIndex = 0;
-
-		// Initially show the first 3 events with full opacity
-		for (let i = 0; i < events.length; i++) {
-			if (i < initialVisibleEvents) {
-				events[i].classList.add('in-view');
-				events[i].classList.add('active');
-			} else {
-				events[i].classList.add('inactive');
-			}
-		}
+		const eventWidth = events[0].offsetWidth;
 
 		const showNextEvent = () => {
-			// Reset all events to inactive
-			events.forEach(event => {
+			events.forEach((event, index) => {
 				event.classList.remove('active');
 				event.classList.add('inactive');
+
+				if (index >= currentIndex && index < currentIndex + 3) {
+					event.style.transform = `translateX(-${eventWidth * currentIndex}px)`;
+					event.classList.add('active');
+				}
 			});
 
-			// Show the next event with full opacity
-			events[currentIndex].classList.remove('inactive');
-
-			events[currentIndex].classList.add('active');
-
-			// Move to the next event
 			currentIndex = (currentIndex + 1) % events.length;
+
+			if (currentIndex + 3 > events.length) {
+				currentIndex = 0;
+			}
 		};
 
 		// Set interval to automatically show the next event every 3 seconds
