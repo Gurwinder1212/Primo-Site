@@ -564,15 +564,15 @@ function create_each_block(ctx) {
 	let t0;
 	let div1;
 	let h2;
-	let t1_value = /*event*/ ctx[2].year + "";
+	let t1_value = /*event*/ ctx[2].time_date + "";
 	let t1;
 	let t2;
 	let h3;
-	let t3_value = /*event*/ ctx[2].heading + "";
+	let t3_value = /*event*/ ctx[2].time_heading + "";
 	let t3;
 	let t4;
 	let p;
-	let t5_value = /*event*/ ctx[2].content + "";
+	let t5_value = /*event*/ ctx[2].time_content + "";
 	let t5;
 	let t6;
 
@@ -646,9 +646,9 @@ function create_each_block(ctx) {
 			append_hydration(div2, t6);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*timeline*/ 1 && t1_value !== (t1_value = /*event*/ ctx[2].year + "")) set_data(t1, t1_value);
-			if (dirty & /*timeline*/ 1 && t3_value !== (t3_value = /*event*/ ctx[2].heading + "")) set_data(t3, t3_value);
-			if (dirty & /*timeline*/ 1 && t5_value !== (t5_value = /*event*/ ctx[2].content + "")) set_data(t5, t5_value);
+			if (dirty & /*timeline*/ 1 && t1_value !== (t1_value = /*event*/ ctx[2].time_date + "")) set_data(t1, t1_value);
+			if (dirty & /*timeline*/ 1 && t3_value !== (t3_value = /*event*/ ctx[2].time_heading + "")) set_data(t3, t3_value);
+			if (dirty & /*timeline*/ 1 && t5_value !== (t5_value = /*event*/ ctx[2].time_content + "")) set_data(t5, t5_value);
 		},
 		d(detaching) {
 			if (detaching) detach(div2);
