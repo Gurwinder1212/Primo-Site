@@ -557,7 +557,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (178:4) {#each timeline as event, i}
+// (185:8) {#each timeline as event, i}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -621,12 +621,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "circle svelte-lipdqp");
-			attr(h2, "class", "svelte-lipdqp");
-			attr(h3, "class", "svelte-lipdqp");
-			attr(p, "class", "svelte-lipdqp");
-			attr(div1, "class", "event-content svelte-lipdqp");
-			attr(div2, "class", "event svelte-lipdqp");
+			attr(div0, "class", "circle svelte-oj321k");
+			attr(h2, "class", "svelte-oj321k");
+			attr(h3, "class", "svelte-oj321k");
+			attr(p, "class", "svelte-oj321k");
+			attr(div1, "class", "event-content svelte-oj321k");
+			attr(div2, "class", "event svelte-oj321k");
 			toggle_class(div2, "active", /*i*/ ctx[4] === 0);
 			toggle_class(div2, "inactive", /*i*/ ctx[4] !== 0);
 		},
@@ -657,7 +657,8 @@ function create_each_block(ctx) {
 }
 
 function create_fragment(ctx) {
-	let div;
+	let div1;
+	let div0;
 	let each_value = /*timeline*/ ctx[0];
 	let each_blocks = [];
 
@@ -667,7 +668,8 @@ function create_fragment(ctx) {
 
 	return {
 		c() {
-			div = element("div");
+			div1 = element("div");
+			div0 = element("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
@@ -676,25 +678,30 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div = claim_element(nodes, "DIV", { class: true });
-			var div_nodes = children(div);
+			div1 = claim_element(nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(div_nodes);
+				each_blocks[i].l(div0_nodes);
 			}
 
-			div_nodes.forEach(detach);
+			div0_nodes.forEach(detach);
+			div1_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(div, "class", "horizontal-timeline svelte-lipdqp");
+			attr(div0, "class", "horizontal-timeline svelte-oj321k");
+			attr(div1, "class", "horizontal-timeline-wrapper svelte-oj321k");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div, anchor);
+			insert_hydration(target, div1, anchor);
+			append_hydration(div1, div0);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(div, null);
+					each_blocks[i].m(div0, null);
 				}
 			}
 		},
@@ -711,7 +718,7 @@ function create_fragment(ctx) {
 					} else {
 						each_blocks[i] = create_each_block(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(div, null);
+						each_blocks[i].m(div0, null);
 					}
 				}
 
@@ -725,7 +732,7 @@ function create_fragment(ctx) {
 		i: noop,
 		o: noop,
 		d(detaching) {
-			if (detaching) detach(div);
+			if (detaching) detach(div1);
 			destroy_each(each_blocks, detaching);
 		}
 	};
@@ -737,7 +744,9 @@ function instance($$self, $$props, $$invalidate) {
 
 	onMount(() => {
 		const events = document.querySelectorAll('.event');
+		const timeline = document.querySelector('.horizontal-timeline');
 		let currentIndex = 0;
+		const visibleEvents = 3; // Number of events visible at one time
 
 		const showNextEvent = () => {
 			// Deactivate all events
@@ -750,6 +759,14 @@ function instance($$self, $$props, $$invalidate) {
 			events[currentIndex].classList.add('active');
 
 			events[currentIndex].classList.remove('inactive');
+
+			// Slide the timeline if necessary
+			if (currentIndex >= visibleEvents) {
+				const offset = -(currentIndex - visibleEvents + 1) * (100 / visibleEvents);
+				timeline.style.transform = `translateX(${offset}%)`;
+			} else {
+				timeline.style.transform = 'translateX(0)';
+			}
 
 			// Move to the next event
 			currentIndex = (currentIndex + 1) % events.length;
