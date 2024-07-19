@@ -621,12 +621,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "circle svelte-tjx3hu");
-			attr(h2, "class", "svelte-tjx3hu");
-			attr(h3, "class", "svelte-tjx3hu");
-			attr(p, "class", "svelte-tjx3hu");
-			attr(div1, "class", "event-content svelte-tjx3hu");
-			attr(div2, "class", "event svelte-tjx3hu");
+			attr(div0, "class", "circle svelte-tzjpy");
+			attr(h2, "class", "svelte-tzjpy");
+			attr(h3, "class", "svelte-tzjpy");
+			attr(p, "class", "svelte-tzjpy");
+			attr(div1, "class", "event-content svelte-tzjpy");
+			attr(div2, "class", "event svelte-tzjpy");
 			toggle_class(div2, "active", /*i*/ ctx[4] === 0);
 			toggle_class(div2, "inactive", /*i*/ ctx[4] !== 0);
 		},
@@ -687,7 +687,7 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "horizontal-timeline svelte-tjx3hu");
+			attr(div, "class", "horizontal-timeline svelte-tzjpy");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
