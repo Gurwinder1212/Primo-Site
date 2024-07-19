@@ -2828,7 +2828,7 @@ function get_each_context_1(ctx, list, i) {
 	return child_ctx;
 }
 
-// (104:6) {#if person.image.url}
+// (144:6) {#if person.image.url}
 function create_if_block(ctx) {
 	let figure;
 	let img;
@@ -2851,8 +2851,8 @@ function create_if_block(ctx) {
 		h() {
 			attr(img, "alt", img_alt_value = /*person*/ ctx[3].image.alt);
 			if (!src_url_equal(img.src, img_src_value = /*person*/ ctx[3].image.url)) attr(img, "src", img_src_value);
-			attr(img, "class", "svelte-lezwbr");
-			attr(figure, "class", "svelte-lezwbr");
+			attr(img, "class", "svelte-1pla4hr");
+			attr(figure, "class", "svelte-1pla4hr");
 		},
 		m(target, anchor) {
 			insert_hydration(target, figure, anchor);
@@ -2873,7 +2873,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (115:10) {#each person.social_links as {link, icon}}
+// (155:10) {#each person.social_links as {link, icon}}
 function create_each_block_1(ctx) {
 	let a;
 	let icon;
@@ -2906,7 +2906,7 @@ function create_each_block_1(ctx) {
 		h() {
 			attr(a, "href", a_href_value = /*link*/ ctx[6].url);
 			attr(a, "aria-label", a_aria_label_value = /*link*/ ctx[6].label);
-			attr(a, "class", "svelte-lezwbr");
+			attr(a, "class", "svelte-1pla4hr");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -2943,7 +2943,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (102:4) {#each people as person}
+// (142:4) {#each people as person}
 function create_each_block(ctx) {
 	let li;
 	let t0;
@@ -3028,12 +3028,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "name svelte-lezwbr");
-			attr(span1, "class", "title svelte-lezwbr");
-			attr(div0, "class", "details svelte-lezwbr");
-			attr(div1, "class", "social svelte-lezwbr");
+			attr(span0, "class", "name svelte-1pla4hr");
+			attr(span1, "class", "title svelte-1pla4hr");
+			attr(div0, "class", "details svelte-1pla4hr");
+			attr(div1, "class", "social svelte-1pla4hr");
 			attr(div2, "class", "info");
-			attr(li, "class", "svelte-lezwbr");
+			attr(li, "class", "svelte-1pla4hr");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
@@ -3129,6 +3129,7 @@ function create_each_block(ctx) {
 }
 
 function create_fragment(ctx) {
+	let div;
 	let section;
 	let h2;
 	let t0;
@@ -3148,6 +3149,7 @@ function create_fragment(ctx) {
 
 	return {
 		c() {
+			div = element("div");
 			section = element("section");
 			h2 = element("h2");
 			t0 = text(/*heading*/ ctx[1]);
@@ -3161,7 +3163,9 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			section = claim_element(nodes, "SECTION", { class: true });
+			div = claim_element(nodes, "DIV", { class: true });
+			var div_nodes = children(div);
+			section = claim_element(div_nodes, "SECTION", { class: true });
 			var section_nodes = children(section);
 			h2 = claim_element(section_nodes, "H2", { class: true });
 			var h2_nodes = children(h2);
@@ -3177,15 +3181,18 @@ function create_fragment(ctx) {
 
 			ul_nodes.forEach(detach);
 			section_nodes.forEach(detach);
+			div_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(h2, "class", "heading svelte-lezwbr");
-			attr(ul, "class", "cards svelte-lezwbr");
-			attr(section, "class", "our_team svelte-lezwbr");
+			attr(h2, "class", "heading svelte-1pla4hr");
+			attr(ul, "class", "cards svelte-1pla4hr");
+			attr(section, "class", "our_team svelte-1pla4hr");
+			attr(div, "class", "our_team_main svelte-1pla4hr");
 		},
 		m(target, anchor) {
-			insert_hydration(target, section, anchor);
+			insert_hydration(target, div, anchor);
+			append_hydration(div, section);
 			append_hydration(section, h2);
 			append_hydration(h2, t0);
 			append_hydration(section, t1);
@@ -3248,7 +3255,7 @@ function create_fragment(ctx) {
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(section);
+			if (detaching) detach(div);
 			destroy_each(each_blocks, detaching);
 		}
 	};
