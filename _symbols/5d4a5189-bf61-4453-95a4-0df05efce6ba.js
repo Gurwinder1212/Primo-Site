@@ -557,7 +557,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (172:4) {#each timeline as event, i}
+// (174:4) {#each timeline as event, i}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -621,12 +621,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "circle svelte-1ls43hp");
-			attr(h2, "class", "svelte-1ls43hp");
-			attr(h3, "class", "svelte-1ls43hp");
-			attr(p, "class", "svelte-1ls43hp");
-			attr(div1, "class", "event-content svelte-1ls43hp");
-			attr(div2, "class", "event svelte-1ls43hp");
+			attr(div0, "class", "circle svelte-1blgl7x");
+			attr(h2, "class", "svelte-1blgl7x");
+			attr(h3, "class", "svelte-1blgl7x");
+			attr(p, "class", "svelte-1blgl7x");
+			attr(div1, "class", "event-content svelte-1blgl7x");
+			attr(div2, "class", "event svelte-1blgl7x");
 			toggle_class(div2, "active", /*i*/ ctx[4] === 0);
 			toggle_class(div2, "inactive", /*i*/ ctx[4] !== 0);
 		},
@@ -687,7 +687,7 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "horizontal-timeline svelte-1ls43hp");
+			attr(div, "class", "horizontal-timeline svelte-1blgl7x");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
