@@ -557,7 +557,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (157:4) {#each timeline as event, i}
+// (156:4) {#each timeline as event, i}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -736,31 +736,30 @@ function instance($$self, $$props, $$invalidate) {
 	let { timeline } = $$props;
 
 	onMount(() => {
-		document.querySelector('.horizontal-timeline');
 		const events = document.querySelectorAll('.event');
 		let currentIndex = 0;
-		const eventWidth = events[0].offsetWidth;
 
 		const showNextEvent = () => {
-			events.forEach((event, index) => {
+			// Deactivate all events
+			events.forEach(event => {
 				event.classList.remove('active');
 				event.classList.add('inactive');
-
-				if (index >= currentIndex && index < currentIndex + 3) {
-					event.style.transform = `translateX(-${eventWidth * currentIndex}px)`;
-					event.classList.add('active');
-				}
 			});
 
-			currentIndex = (currentIndex + 1) % events.length;
+			// Activate the current event
+			events[currentIndex].classList.add('active');
 
-			if (currentIndex + 3 > events.length) {
-				currentIndex = 0;
-			}
+			events[currentIndex].classList.remove('inactive');
+
+			// Move to the next event
+			currentIndex = (currentIndex + 1) % events.length;
 		};
 
 		// Set interval to automatically show the next event every 3 seconds
 		setInterval(showNextEvent, 3000);
+
+		// Initially show the first event as active
+		showNextEvent();
 	});
 
 	$$self.$$set = $$props => {
