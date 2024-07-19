@@ -621,12 +621,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "circle svelte-km3ocn");
-			attr(h2, "class", "svelte-km3ocn");
-			attr(h3, "class", "svelte-km3ocn");
-			attr(p, "class", "svelte-km3ocn");
-			attr(div1, "class", "event-content svelte-km3ocn");
-			attr(div2, "class", "event svelte-km3ocn");
+			attr(div0, "class", "circle svelte-1kcmzgi");
+			attr(h2, "class", "svelte-1kcmzgi");
+			attr(h3, "class", "svelte-1kcmzgi");
+			attr(p, "class", "svelte-1kcmzgi");
+			attr(div1, "class", "event-content svelte-1kcmzgi");
+			attr(div2, "class", "event svelte-1kcmzgi");
 			toggle_class(div2, "active", /*i*/ ctx[4] === 0);
 			toggle_class(div2, "inactive", /*i*/ ctx[4] !== 0);
 		},
@@ -687,7 +687,7 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "horizontal-timeline svelte-km3ocn");
+			attr(div, "class", "horizontal-timeline svelte-1kcmzgi");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
