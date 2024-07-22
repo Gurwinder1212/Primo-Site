@@ -1,4 +1,4 @@
-// New Block - Updated July 19, 2024
+// New Block - Updated July 22, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -693,7 +693,7 @@ function create_fragment(ctx) {
 		},
 		h() {
 			attr(div0, "class", "horizontal-timeline svelte-1oo1v5u");
-			attr(div1, "class", "horizontal-timeline-wrapper svelte-1oo1v5u");
+			attr(div1, "class", "horizontal-timeline-wrapper none svelte-1oo1v5u");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
