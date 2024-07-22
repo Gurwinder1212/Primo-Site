@@ -561,10 +561,10 @@ function create_fragment(ctx) {
 	let lottie_player0_src_value;
 	let t1;
 	let div0;
-	let a0;
+	let a;
 	let t2_value = /*content_action*/ ctx[1].label + "";
 	let t2;
-	let a0_href_value;
+	let a_href_value;
 	let t3;
 	let div9;
 	let div8;
@@ -577,10 +577,6 @@ function create_fragment(ctx) {
 	let lottie_player1_src_value;
 	let t4;
 	let div5;
-	let a1;
-	let t5_value = /*content_action*/ ctx[1].label + "";
-	let t5;
-	let a1_href_value;
 
 	return {
 		c() {
@@ -593,7 +589,7 @@ function create_fragment(ctx) {
 			lottie_player0 = element("lottie-player");
 			t1 = space();
 			div0 = element("div");
-			a0 = element("a");
+			a = element("a");
 			t2 = text(t2_value);
 			t3 = space();
 			div9 = element("div");
@@ -604,8 +600,6 @@ function create_fragment(ctx) {
 			lottie_player1 = element("lottie-player");
 			t4 = space();
 			div5 = element("div");
-			a1 = element("a");
-			t5 = text(t5_value);
 			this.h();
 		},
 		l(nodes) {
@@ -632,10 +626,10 @@ function create_fragment(ctx) {
 			t1 = claim_space(div1_nodes);
 			div0 = claim_element(div1_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
-			a0 = claim_element(div0_nodes, "A", { href: true, class: true });
-			var a0_nodes = children(a0);
-			t2 = claim_text(a0_nodes, t2_value);
-			a0_nodes.forEach(detach);
+			a = claim_element(div0_nodes, "A", { href: true, class: true });
+			var a_nodes = children(a);
+			t2 = claim_text(a_nodes, t2_value);
+			a_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
@@ -671,10 +665,6 @@ function create_fragment(ctx) {
 			t4 = claim_space(div6_nodes);
 			div5 = claim_element(div6_nodes, "DIV", { class: true });
 			var div5_nodes = children(div5);
-			a1 = claim_element(div5_nodes, "A", { href: true, class: true });
-			var a1_nodes = children(a1);
-			t5 = claim_text(a1_nodes, t5_value);
-			a1_nodes.forEach(detach);
 			div5_nodes.forEach(detach);
 			div6_nodes.forEach(detach);
 			div7_nodes.forEach(detach);
@@ -691,8 +681,8 @@ function create_fragment(ctx) {
 			set_custom_element_data(lottie_player0, "mode", "normal");
 			set_custom_element_data(lottie_player0, "class", "lottie svelte-x50bhh");
 			if (!src_url_equal(lottie_player0.src, lottie_player0_src_value = eyesLottie)) set_custom_element_data(lottie_player0, "src", lottie_player0_src_value);
-			attr(a0, "href", a0_href_value = /*content_action*/ ctx[1].url);
-			attr(a0, "class", "primary-small-button svelte-x50bhh");
+			attr(a, "href", a_href_value = /*content_action*/ ctx[1].url);
+			attr(a, "class", "primary-small-button svelte-x50bhh");
 			attr(div0, "class", "button-wrapper svelte-x50bhh");
 			attr(div1, "class", "content-2 svelte-x50bhh");
 			attr(div2, "class", "section-container content svelte-x50bhh");
@@ -707,8 +697,6 @@ function create_fragment(ctx) {
 			set_custom_element_data(lottie_player1, "mode", "normal");
 			set_custom_element_data(lottie_player1, "class", "lottie svelte-x50bhh");
 			if (!src_url_equal(lottie_player1.src, lottie_player1_src_value = eyesLottie)) set_custom_element_data(lottie_player1, "src", lottie_player1_src_value);
-			attr(a1, "href", a1_href_value = /*content_action*/ ctx[1].url);
-			attr(a1, "class", "primary-small-button svelte-x50bhh");
 			attr(div5, "class", "button-wrapper svelte-x50bhh");
 			attr(div6, "class", "content-2 svelte-x50bhh");
 			attr(div7, "class", "section-container content svelte-x50bhh");
@@ -727,8 +715,8 @@ function create_fragment(ctx) {
 			append_hydration(div1, lottie_player0);
 			append_hydration(div1, t1);
 			append_hydration(div1, div0);
-			append_hydration(div0, a0);
-			append_hydration(a0, t2);
+			append_hydration(div0, a);
+			append_hydration(a, t2);
 			insert_hydration(target, t3, anchor);
 			insert_hydration(target, div9, anchor);
 			append_hydration(div9, div8);
@@ -738,8 +726,6 @@ function create_fragment(ctx) {
 			append_hydration(div6, lottie_player1);
 			append_hydration(div6, t4);
 			append_hydration(div6, div5);
-			append_hydration(div5, a1);
-			append_hydration(a1, t5);
 		},
 		p(ctx, [dirty]) {
 			if (dirty & /*content_image*/ 1 && !src_url_equal(img0.src, img0_src_value = /*content_image*/ ctx[0].url)) {
@@ -752,8 +738,8 @@ function create_fragment(ctx) {
 
 			if (dirty & /*content_action*/ 2 && t2_value !== (t2_value = /*content_action*/ ctx[1].label + "")) set_data(t2, t2_value);
 
-			if (dirty & /*content_action*/ 2 && a0_href_value !== (a0_href_value = /*content_action*/ ctx[1].url)) {
-				attr(a0, "href", a0_href_value);
+			if (dirty & /*content_action*/ 2 && a_href_value !== (a_href_value = /*content_action*/ ctx[1].url)) {
+				attr(a, "href", a_href_value);
 			}
 
 			if (dirty & /*content_image*/ 1 && !src_url_equal(img1.src, img1_src_value = /*content_image*/ ctx[0].url)) {
@@ -762,12 +748,6 @@ function create_fragment(ctx) {
 
 			if (dirty & /*content_image*/ 1 && img1_alt_value !== (img1_alt_value = /*content_image*/ ctx[0].alt)) {
 				attr(img1, "alt", img1_alt_value);
-			}
-
-			if (dirty & /*content_action*/ 2 && t5_value !== (t5_value = /*content_action*/ ctx[1].label + "")) set_data(t5, t5_value);
-
-			if (dirty & /*content_action*/ 2 && a1_href_value !== (a1_href_value = /*content_action*/ ctx[1].url)) {
-				attr(a1, "href", a1_href_value);
 			}
 		},
 		i: noop,
