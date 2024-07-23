@@ -553,7 +553,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (318:8) {#each accordions as accordion}
+// (330:8) {#each accordions as accordion}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -614,12 +614,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "open-icon svelte-1u7up8z");
-			attr(span1, "class", "svelte-1u7up8z");
-			attr(div0, "class", "accordion-header svelte-1u7up8z");
-			attr(p, "class", "svelte-1u7up8z");
-			attr(div1, "class", "accordion-content svelte-1u7up8z");
-			attr(div2, "class", "accordion-item svelte-1u7up8z");
+			attr(span0, "class", "open-icon svelte-u9t1tb");
+			attr(span1, "class", "svelte-u9t1tb");
+			attr(div0, "class", "accordion-header svelte-u9t1tb");
+			attr(p, "class", "svelte-u9t1tb");
+			attr(div1, "class", "accordion-content svelte-u9t1tb");
+			attr(div2, "class", "accordion-item svelte-u9t1tb");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -702,12 +702,12 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h3, "class", "svelte-1u7up8z");
-			attr(div0, "class", "accordion svelte-1u7up8z");
+			attr(h3, "class", "svelte-u9t1tb");
+			attr(div0, "class", "accordion svelte-u9t1tb");
 			attr(div1, "id", "second");
-			attr(div1, "class", "svelte-1u7up8z");
-			attr(div2, "class", "wrapper svelte-1u7up8z");
-			attr(div3, "class", "container svelte-1u7up8z");
+			attr(div1, "class", "svelte-u9t1tb");
+			attr(div2, "class", "wrapper svelte-u9t1tb");
+			attr(div3, "class", "container svelte-u9t1tb");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -775,15 +775,17 @@ function instance($$self, $$props, $$invalidate) {
 				const content = this.nextElementSibling;
 				const icon = this.querySelector('.open-icon');
 
-				// Toggle display of content
+				// Toggle display of content and add/remove background color to icon
 				if (content.style.display === 'block') {
 					content.style.display = 'none';
 					icon.textContent = '+';
 					icon.classList.remove('open');
+					icon.style.backgroundColor = ''; // Remove background color from icon
 				} else {
 					content.style.display = 'block';
 					icon.textContent = '-';
 					icon.classList.add('open');
+					icon.style.backgroundColor = '#FF4FA3'; // Add background color to icon
 				}
 			});
 		});
