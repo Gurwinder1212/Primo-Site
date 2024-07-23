@@ -557,7 +557,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (185:8) {#each timeline as event, i}
+// (189:8) {#each timeline as event, i}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -621,12 +621,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "circle svelte-1244e43");
-			attr(h2, "class", "svelte-1244e43");
-			attr(h3, "class", "svelte-1244e43");
-			attr(p, "class", "svelte-1244e43");
-			attr(div1, "class", "event-content svelte-1244e43");
-			attr(div2, "class", "event svelte-1244e43");
+			attr(div0, "class", "circle svelte-1lwipe");
+			attr(h2, "class", "svelte-1lwipe");
+			attr(h3, "class", "svelte-1lwipe");
+			attr(p, "class", "svelte-1lwipe");
+			attr(div1, "class", "event-content svelte-1lwipe");
+			attr(div2, "class", "event svelte-1lwipe");
 			toggle_class(div2, "active", /*i*/ ctx[4] === 0);
 			toggle_class(div2, "inactive", /*i*/ ctx[4] !== 0);
 		},
@@ -658,6 +658,9 @@ function create_each_block(ctx) {
 
 function create_fragment(ctx) {
 	let div1;
+	let h2;
+	let t0;
+	let t1;
 	let div0;
 	let each_value = /*timeline*/ ctx[0];
 	let each_blocks = [];
@@ -669,6 +672,9 @@ function create_fragment(ctx) {
 	return {
 		c() {
 			div1 = element("div");
+			h2 = element("h2");
+			t0 = text("How it's started");
+			t1 = space();
 			div0 = element("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -680,6 +686,11 @@ function create_fragment(ctx) {
 		l(nodes) {
 			div1 = claim_element(nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
+			h2 = claim_element(div1_nodes, "H2", { class: true });
+			var h2_nodes = children(h2);
+			t0 = claim_text(h2_nodes, "How it's started");
+			h2_nodes.forEach(detach);
+			t1 = claim_space(div1_nodes);
 			div0 = claim_element(div1_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
 
@@ -692,11 +703,15 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div0, "class", "horizontal-timeline svelte-1244e43");
-			attr(div1, "class", "horizontal-timeline-wrapper svelte-1244e43");
+			attr(h2, "class", "h2_about svelte-1lwipe");
+			attr(div0, "class", "horizontal-timeline svelte-1lwipe");
+			attr(div1, "class", "horizontal-timeline-wrapper svelte-1lwipe");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div1, anchor);
+			append_hydration(div1, h2);
+			append_hydration(h2, t0);
+			append_hydration(div1, t1);
 			append_hydration(div1, div0);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
