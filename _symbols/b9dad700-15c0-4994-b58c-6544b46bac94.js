@@ -1383,7 +1383,7 @@ function create_fragment(ctx) {
 			img0 = element("img");
 			t0 = space();
 			p0 = element("p");
-			t1 = text(/*logo_below_text*/ ctx[2]);
+			t1 = text(/*logo_below_text*/ ctx[5]);
 			t2 = space();
 			p1 = element("p");
 			t3 = text("© ");
@@ -1425,7 +1425,7 @@ function create_fragment(ctx) {
 			t0 = claim_space(div0_nodes);
 			p0 = claim_element(div0_nodes, "P", { class: true });
 			var p0_nodes = children(p0);
-			t1 = claim_text(p0_nodes, /*logo_below_text*/ ctx[2]);
+			t1 = claim_text(p0_nodes, /*logo_below_text*/ ctx[5]);
 			p0_nodes.forEach(detach);
 			t2 = claim_space(div0_nodes);
 			p1 = claim_element(div0_nodes, "P", { class: true });
@@ -1504,16 +1504,16 @@ function create_fragment(ctx) {
 			attr(ul, "class", "svelte-hraxix");
 			attr(div1, "class", "footer-center svelte-hraxix");
 			attr(img1, "id", "linkedin-social");
-			if (!src_url_equal(img1.src, img1_src_value = /*linkedin_social*/ ctx[3].url)) attr(img1, "src", img1_src_value);
-			attr(img1, "alt", img1_alt_value = /*linkedin_social*/ ctx[3].alt);
+			if (!src_url_equal(img1.src, img1_src_value = /*linkedin_social*/ ctx[4].url)) attr(img1, "src", img1_src_value);
+			attr(img1, "alt", img1_alt_value = /*linkedin_social*/ ctx[4].alt);
 			attr(img1, "class", "svelte-hraxix");
 			attr(img2, "id", "facebook-social");
-			if (!src_url_equal(img2.src, img2_src_value = /*facebook_social*/ ctx[4].url)) attr(img2, "src", img2_src_value);
-			attr(img2, "alt", img2_alt_value = /*facebook_social*/ ctx[4].alt);
+			if (!src_url_equal(img2.src, img2_src_value = /*facebook_social*/ ctx[3].url)) attr(img2, "src", img2_src_value);
+			attr(img2, "alt", img2_alt_value = /*facebook_social*/ ctx[3].alt);
 			attr(img2, "class", "svelte-hraxix");
 			attr(img3, "id", "twitter-social");
-			if (!src_url_equal(img3.src, img3_src_value = /*twitter_social*/ ctx[5].url)) attr(img3, "src", img3_src_value);
-			attr(img3, "alt", img3_alt_value = /*twitter_social*/ ctx[5].alt);
+			if (!src_url_equal(img3.src, img3_src_value = /*twitter_social*/ ctx[2].url)) attr(img3, "src", img3_src_value);
+			attr(img3, "alt", img3_alt_value = /*twitter_social*/ ctx[2].alt);
 			attr(img3, "class", "svelte-hraxix");
 			attr(div2, "class", "social-media svelte-hraxix");
 			attr(div3, "class", "footer-right svelte-hraxix");
@@ -1566,7 +1566,7 @@ function create_fragment(ctx) {
 				attr(img0, "alt", img0_alt_value);
 			}
 
-			if (dirty & /*logo_below_text*/ 4) set_data(t1, /*logo_below_text*/ ctx[2]);
+			if (dirty & /*logo_below_text*/ 32) set_data(t1, /*logo_below_text*/ ctx[5]);
 
 			if (dirty & /*nav*/ 1) {
 				each_value = /*nav*/ ctx[0];
@@ -1591,27 +1591,27 @@ function create_fragment(ctx) {
 				each_blocks.length = each_value.length;
 			}
 
-			if (dirty & /*linkedin_social*/ 8 && !src_url_equal(img1.src, img1_src_value = /*linkedin_social*/ ctx[3].url)) {
+			if (dirty & /*linkedin_social*/ 16 && !src_url_equal(img1.src, img1_src_value = /*linkedin_social*/ ctx[4].url)) {
 				attr(img1, "src", img1_src_value);
 			}
 
-			if (dirty & /*linkedin_social*/ 8 && img1_alt_value !== (img1_alt_value = /*linkedin_social*/ ctx[3].alt)) {
+			if (dirty & /*linkedin_social*/ 16 && img1_alt_value !== (img1_alt_value = /*linkedin_social*/ ctx[4].alt)) {
 				attr(img1, "alt", img1_alt_value);
 			}
 
-			if (dirty & /*facebook_social*/ 16 && !src_url_equal(img2.src, img2_src_value = /*facebook_social*/ ctx[4].url)) {
+			if (dirty & /*facebook_social*/ 8 && !src_url_equal(img2.src, img2_src_value = /*facebook_social*/ ctx[3].url)) {
 				attr(img2, "src", img2_src_value);
 			}
 
-			if (dirty & /*facebook_social*/ 16 && img2_alt_value !== (img2_alt_value = /*facebook_social*/ ctx[4].alt)) {
+			if (dirty & /*facebook_social*/ 8 && img2_alt_value !== (img2_alt_value = /*facebook_social*/ ctx[3].alt)) {
 				attr(img2, "alt", img2_alt_value);
 			}
 
-			if (dirty & /*twitter_social*/ 32 && !src_url_equal(img3.src, img3_src_value = /*twitter_social*/ ctx[5].url)) {
+			if (dirty & /*twitter_social*/ 4 && !src_url_equal(img3.src, img3_src_value = /*twitter_social*/ ctx[2].url)) {
 				attr(img3, "src", img3_src_value);
 			}
 
-			if (dirty & /*twitter_social*/ 32 && img3_alt_value !== (img3_alt_value = /*twitter_social*/ ctx[5].alt)) {
+			if (dirty & /*twitter_social*/ 4 && img3_alt_value !== (img3_alt_value = /*twitter_social*/ ctx[2].alt)) {
 				attr(img3, "alt", img3_alt_value);
 			}
 		},
@@ -1629,29 +1629,29 @@ function instance($$self, $$props, $$invalidate) {
 	let { nav } = $$props;
 	let { copyright } = $$props;
 	let { logo_footer } = $$props;
-	let { logo_below_text } = $$props;
-	let { linkedin_social } = $$props;
-	let { facebook_social } = $$props;
 	let { twitter_social } = $$props;
+	let { facebook_social } = $$props;
+	let { linkedin_social } = $$props;
+	let { logo_below_text } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(6, props = $$props.props);
 		if ('nav' in $$props) $$invalidate(0, nav = $$props.nav);
 		if ('copyright' in $$props) $$invalidate(7, copyright = $$props.copyright);
 		if ('logo_footer' in $$props) $$invalidate(1, logo_footer = $$props.logo_footer);
-		if ('logo_below_text' in $$props) $$invalidate(2, logo_below_text = $$props.logo_below_text);
-		if ('linkedin_social' in $$props) $$invalidate(3, linkedin_social = $$props.linkedin_social);
-		if ('facebook_social' in $$props) $$invalidate(4, facebook_social = $$props.facebook_social);
-		if ('twitter_social' in $$props) $$invalidate(5, twitter_social = $$props.twitter_social);
+		if ('twitter_social' in $$props) $$invalidate(2, twitter_social = $$props.twitter_social);
+		if ('facebook_social' in $$props) $$invalidate(3, facebook_social = $$props.facebook_social);
+		if ('linkedin_social' in $$props) $$invalidate(4, linkedin_social = $$props.linkedin_social);
+		if ('logo_below_text' in $$props) $$invalidate(5, logo_below_text = $$props.logo_below_text);
 	};
 
 	return [
 		nav,
 		logo_footer,
-		logo_below_text,
-		linkedin_social,
-		facebook_social,
 		twitter_social,
+		facebook_social,
+		linkedin_social,
+		logo_below_text,
 		props,
 		copyright
 	];
@@ -1666,10 +1666,10 @@ class Component extends SvelteComponent {
 			nav: 0,
 			copyright: 7,
 			logo_footer: 1,
-			logo_below_text: 2,
-			linkedin_social: 3,
-			facebook_social: 4,
-			twitter_social: 5
+			twitter_social: 2,
+			facebook_social: 3,
+			linkedin_social: 4,
+			logo_below_text: 5
 		});
 	}
 }

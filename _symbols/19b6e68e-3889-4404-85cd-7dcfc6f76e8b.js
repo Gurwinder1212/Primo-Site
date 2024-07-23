@@ -553,7 +553,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (300:8) {#each accordions as accordion}
+// (330:8) {#each accordions as accordion}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -575,7 +575,7 @@ function create_each_block(ctx) {
 			div2 = element("div");
 			div0 = element("div");
 			span0 = element("span");
-			t0 = text("➕");
+			t0 = text("+");
 			t1 = space();
 			span1 = element("span");
 			t2 = text(t2_value);
@@ -593,7 +593,7 @@ function create_each_block(ctx) {
 			var div0_nodes = children(div0);
 			span0 = claim_element(div0_nodes, "SPAN", { class: true });
 			var span0_nodes = children(span0);
-			t0 = claim_text(span0_nodes, "➕");
+			t0 = claim_text(span0_nodes, "+");
 			span0_nodes.forEach(detach);
 			t1 = claim_space(div0_nodes);
 			span1 = claim_element(div0_nodes, "SPAN", { class: true });
@@ -614,12 +614,12 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "open-icon svelte-zo33f5");
-			attr(span1, "class", "svelte-zo33f5");
-			attr(div0, "class", "accordion-header svelte-zo33f5");
-			attr(p, "class", "svelte-zo33f5");
-			attr(div1, "class", "accordion-content svelte-zo33f5");
-			attr(div2, "class", "accordion-item svelte-zo33f5");
+			attr(span0, "class", "open-icon svelte-u9t1tb");
+			attr(span1, "class", "svelte-u9t1tb");
+			attr(div0, "class", "accordion-header svelte-u9t1tb");
+			attr(p, "class", "svelte-u9t1tb");
+			attr(div1, "class", "accordion-content svelte-u9t1tb");
+			attr(div2, "class", "accordion-item svelte-u9t1tb");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -702,12 +702,12 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h3, "class", "svelte-zo33f5");
-			attr(div0, "class", "accordion svelte-zo33f5");
+			attr(h3, "class", "svelte-u9t1tb");
+			attr(div0, "class", "accordion svelte-u9t1tb");
 			attr(div1, "id", "second");
-			attr(div1, "class", "svelte-zo33f5");
-			attr(div2, "class", "wrapper svelte-zo33f5");
-			attr(div3, "class", "container svelte-zo33f5");
+			attr(div1, "class", "svelte-u9t1tb");
+			attr(div2, "class", "wrapper svelte-u9t1tb");
+			attr(div3, "class", "container svelte-u9t1tb");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -775,12 +775,17 @@ function instance($$self, $$props, $$invalidate) {
 				const content = this.nextElementSibling;
 				const icon = this.querySelector('.open-icon');
 
+				// Toggle display of content and add/remove background color to icon
 				if (content.style.display === 'block') {
 					content.style.display = 'none';
+					icon.textContent = '+';
 					icon.classList.remove('open');
+					icon.style.backgroundColor = ''; // Remove background color from icon
 				} else {
 					content.style.display = 'block';
+					icon.textContent = '-';
 					icon.classList.add('open');
+					icon.style.backgroundColor = '#FF4FA3'; // Add background color to icon
 				}
 			});
 		});
