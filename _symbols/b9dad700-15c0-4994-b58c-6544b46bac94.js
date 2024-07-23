@@ -1,4 +1,4 @@
-// Site Footer - Updated July 22, 2024
+// Site Footer - Updated July 23, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -14,6 +14,14 @@ function is_function(thing) {
 }
 function safe_not_equal(a, b) {
     return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+}
+let src_url_equal_anchor;
+function src_url_equal(element_src, url) {
+    if (!src_url_equal_anchor) {
+        src_url_equal_anchor = document.createElement('a');
+    }
+    src_url_equal_anchor.href = url;
+    return element_src === src_url_equal_anchor.href;
 }
 function is_empty(obj) {
     return Object.keys(obj).length === 0;
@@ -1257,81 +1265,108 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[4] = list[i].link;
+	child_ctx[8] = list[i].link;
 	return child_ctx;
 }
 
-// (75:4) {#each nav as { link }}
+// (102:20) {#each nav as { link }}
 function create_each_block(ctx) {
-	let h6;
+	let li;
 	let a;
-	let t0_value = /*link*/ ctx[4].label + "";
-	let t0;
-	let a_target_value;
+	let t_value = /*link*/ ctx[8].label + "";
+	let t;
 	let a_href_value;
-	let t1;
+	let a_target_value;
 
 	return {
 		c() {
-			h6 = element("h6");
+			li = element("li");
 			a = element("a");
-			t0 = text(t0_value);
-			t1 = space();
+			t = text(t_value);
 			this.h();
 		},
 		l(nodes) {
-			h6 = claim_element(nodes, "H6", { id: true, class: true });
-			var h6_nodes = children(h6);
-			a = claim_element(h6_nodes, "A", { target: true, class: true, href: true });
+			li = claim_element(nodes, "LI", { class: true });
+			var li_nodes = children(li);
+			a = claim_element(li_nodes, "A", { href: true, target: true, class: true });
 			var a_nodes = children(a);
-			t0 = claim_text(a_nodes, t0_value);
+			t = claim_text(a_nodes, t_value);
 			a_nodes.forEach(detach);
-			t1 = claim_space(h6_nodes);
-			h6_nodes.forEach(detach);
+			li_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(a, "target", a_target_value = /*link*/ ctx[4].label.includes('Whitepaper')
+			attr(a, "href", a_href_value = /*link*/ ctx[8].url);
+
+			attr(a, "target", a_target_value = /*link*/ ctx[8].label.includes('Whitepaper')
 			? '_blank'
 			: '_self');
 
-			attr(a, "class", "link svelte-1hycevv");
-			attr(a, "href", a_href_value = /*link*/ ctx[4].url);
-			attr(h6, "id", "links");
-			attr(h6, "class", "h950 svelte-1hycevv");
+			attr(a, "class", "svelte-b4ko14");
+			attr(li, "class", "svelte-b4ko14");
 		},
 		m(target, anchor) {
-			insert_hydration(target, h6, anchor);
-			append_hydration(h6, a);
-			append_hydration(a, t0);
-			append_hydration(h6, t1);
+			insert_hydration(target, li, anchor);
+			append_hydration(li, a);
+			append_hydration(a, t);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*nav*/ 1 && t0_value !== (t0_value = /*link*/ ctx[4].label + "")) set_data(t0, t0_value);
+			if (dirty & /*nav*/ 1 && t_value !== (t_value = /*link*/ ctx[8].label + "")) set_data(t, t_value);
 
-			if (dirty & /*nav*/ 1 && a_target_value !== (a_target_value = /*link*/ ctx[4].label.includes('Whitepaper')
+			if (dirty & /*nav*/ 1 && a_href_value !== (a_href_value = /*link*/ ctx[8].url)) {
+				attr(a, "href", a_href_value);
+			}
+
+			if (dirty & /*nav*/ 1 && a_target_value !== (a_target_value = /*link*/ ctx[8].label.includes('Whitepaper')
 			? '_blank'
 			: '_self')) {
 				attr(a, "target", a_target_value);
 			}
-
-			if (dirty & /*nav*/ 1 && a_href_value !== (a_href_value = /*link*/ ctx[4].url)) {
-				attr(a, "href", a_href_value);
-			}
 		},
 		d(detaching) {
-			if (detaching) detach(h6);
+			if (detaching) detach(li);
 		}
 	};
 }
 
 function create_fragment(ctx) {
 	let footer;
-	let nav_1;
+	let div4;
+	let div0;
+	let h1;
+	let img0;
+	let img0_src_value;
+	let img0_alt_value;
 	let t0;
-	let span;
-	let p;
+	let p0;
 	let t1;
+	let t2;
+	let p1;
+	let t3;
+	let t4_value = new Date().getFullYear() + "";
+	let t4;
+	let t5;
+	let t6;
+	let div1;
+	let h2;
+	let t7;
+	let t8;
+	let nav_1;
+	let ul;
+	let t9;
+	let div3;
+	let div2;
+	let img1;
+	let img1_src_value;
+	let img1_alt_value;
+	let t10;
+	let img2;
+	let img2_src_value;
+	let img2_alt_value;
+	let t11;
+	let img3;
+	let img3_src_value;
+	let img3_alt_value;
 	let each_value = /*nav*/ ctx[0];
 	let each_blocks = [];
 
@@ -1342,63 +1377,197 @@ function create_fragment(ctx) {
 	return {
 		c() {
 			footer = element("footer");
+			div4 = element("div");
+			div0 = element("div");
+			h1 = element("h1");
+			img0 = element("img");
+			t0 = space();
+			p0 = element("p");
+			t1 = text(/*logo_below_text*/ ctx[2]);
+			t2 = space();
+			p1 = element("p");
+			t3 = text("© ");
+			t4 = text(t4_value);
+			t5 = text(" UNLOK. All rights reserved.");
+			t6 = space();
+			div1 = element("div");
+			h2 = element("h2");
+			t7 = text("Explore");
+			t8 = space();
 			nav_1 = element("nav");
+			ul = element("ul");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
-			t0 = space();
-			span = element("span");
-			p = element("p");
-			t1 = text(/*copyright*/ ctx[1]);
+			t9 = space();
+			div3 = element("div");
+			div2 = element("div");
+			img1 = element("img");
+			t10 = space();
+			img2 = element("img");
+			t11 = space();
+			img3 = element("img");
 			this.h();
 		},
 		l(nodes) {
 			footer = claim_element(nodes, "FOOTER", { class: true });
 			var footer_nodes = children(footer);
-			nav_1 = claim_element(footer_nodes, "NAV", { class: true });
+			div4 = claim_element(footer_nodes, "DIV", { class: true });
+			var div4_nodes = children(div4);
+			div0 = claim_element(div4_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+			h1 = claim_element(div0_nodes, "H1", { class: true });
+			var h1_nodes = children(h1);
+			img0 = claim_element(h1_nodes, "IMG", { id: true, src: true, alt: true });
+			h1_nodes.forEach(detach);
+			t0 = claim_space(div0_nodes);
+			p0 = claim_element(div0_nodes, "P", { class: true });
+			var p0_nodes = children(p0);
+			t1 = claim_text(p0_nodes, /*logo_below_text*/ ctx[2]);
+			p0_nodes.forEach(detach);
+			t2 = claim_space(div0_nodes);
+			p1 = claim_element(div0_nodes, "P", { class: true });
+			var p1_nodes = children(p1);
+			t3 = claim_text(p1_nodes, "© ");
+			t4 = claim_text(p1_nodes, t4_value);
+			t5 = claim_text(p1_nodes, " UNLOK. All rights reserved.");
+			p1_nodes.forEach(detach);
+			div0_nodes.forEach(detach);
+			t6 = claim_space(div4_nodes);
+			div1 = claim_element(div4_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			h2 = claim_element(div1_nodes, "H2", { class: true });
+			var h2_nodes = children(h2);
+			t7 = claim_text(h2_nodes, "Explore");
+			h2_nodes.forEach(detach);
+			t8 = claim_space(div1_nodes);
+			nav_1 = claim_element(div1_nodes, "NAV", {});
 			var nav_1_nodes = children(nav_1);
+			ul = claim_element(nav_1_nodes, "UL", { class: true });
+			var ul_nodes = children(ul);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(nav_1_nodes);
+				each_blocks[i].l(ul_nodes);
 			}
 
+			ul_nodes.forEach(detach);
 			nav_1_nodes.forEach(detach);
-			t0 = claim_space(footer_nodes);
-			span = claim_element(footer_nodes, "SPAN", { class: true });
-			var span_nodes = children(span);
-			p = claim_element(span_nodes, "P", { id: true, class: true });
-			var p_nodes = children(p);
-			t1 = claim_text(p_nodes, /*copyright*/ ctx[1]);
-			p_nodes.forEach(detach);
-			span_nodes.forEach(detach);
+			div1_nodes.forEach(detach);
+			t9 = claim_space(div4_nodes);
+			div3 = claim_element(div4_nodes, "DIV", { class: true });
+			var div3_nodes = children(div3);
+			div2 = claim_element(div3_nodes, "DIV", { class: true });
+			var div2_nodes = children(div2);
+
+			img1 = claim_element(div2_nodes, "IMG", {
+				id: true,
+				src: true,
+				alt: true,
+				class: true
+			});
+
+			t10 = claim_space(div2_nodes);
+
+			img2 = claim_element(div2_nodes, "IMG", {
+				id: true,
+				src: true,
+				alt: true,
+				class: true
+			});
+
+			t11 = claim_space(div2_nodes);
+
+			img3 = claim_element(div2_nodes, "IMG", {
+				id: true,
+				src: true,
+				alt: true,
+				class: true
+			});
+
+			div2_nodes.forEach(detach);
+			div3_nodes.forEach(detach);
+			div4_nodes.forEach(detach);
 			footer_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(nav_1, "class", "svelte-1hycevv");
-			attr(p, "id", "copyright");
-			attr(p, "class", "p-small svelte-1hycevv");
-			attr(span, "class", "svelte-1hycevv");
-			attr(footer, "class", "section-container svelte-1hycevv");
+			attr(img0, "id", "logo-footer");
+			if (!src_url_equal(img0.src, img0_src_value = /*logo_footer*/ ctx[1].url)) attr(img0, "src", img0_src_value);
+			attr(img0, "alt", img0_alt_value = /*logo_footer*/ ctx[1].alt);
+			attr(h1, "class", "svelte-b4ko14");
+			attr(p0, "class", "logo_below_text svelte-b4ko14");
+			attr(p1, "class", "copy_below svelte-b4ko14");
+			attr(div0, "class", "footer-left svelte-b4ko14");
+			attr(h2, "class", "svelte-b4ko14");
+			attr(ul, "class", "svelte-b4ko14");
+			attr(div1, "class", "footer-center svelte-b4ko14");
+			attr(img1, "id", "linkedin-social");
+			if (!src_url_equal(img1.src, img1_src_value = /*linkedin_social*/ ctx[3].url)) attr(img1, "src", img1_src_value);
+			attr(img1, "alt", img1_alt_value = /*linkedin_social*/ ctx[3].alt);
+			attr(img1, "class", "svelte-b4ko14");
+			attr(img2, "id", "facebook-social");
+			if (!src_url_equal(img2.src, img2_src_value = /*facebook_social*/ ctx[4].url)) attr(img2, "src", img2_src_value);
+			attr(img2, "alt", img2_alt_value = /*facebook_social*/ ctx[4].alt);
+			attr(img2, "class", "svelte-b4ko14");
+			attr(img3, "id", "twitter-social");
+			if (!src_url_equal(img3.src, img3_src_value = /*twitter_social*/ ctx[5].url)) attr(img3, "src", img3_src_value);
+			attr(img3, "alt", img3_alt_value = /*twitter_social*/ ctx[5].alt);
+			attr(img3, "class", "svelte-b4ko14");
+			attr(div2, "class", "social-media svelte-b4ko14");
+			attr(div3, "class", "footer-right svelte-b4ko14");
+			attr(div4, "class", "footer-content svelte-b4ko14");
+			attr(footer, "class", "svelte-b4ko14");
 		},
 		m(target, anchor) {
 			insert_hydration(target, footer, anchor);
-			append_hydration(footer, nav_1);
+			append_hydration(footer, div4);
+			append_hydration(div4, div0);
+			append_hydration(div0, h1);
+			append_hydration(h1, img0);
+			append_hydration(div0, t0);
+			append_hydration(div0, p0);
+			append_hydration(p0, t1);
+			append_hydration(div0, t2);
+			append_hydration(div0, p1);
+			append_hydration(p1, t3);
+			append_hydration(p1, t4);
+			append_hydration(p1, t5);
+			append_hydration(div4, t6);
+			append_hydration(div4, div1);
+			append_hydration(div1, h2);
+			append_hydration(h2, t7);
+			append_hydration(div1, t8);
+			append_hydration(div1, nav_1);
+			append_hydration(nav_1, ul);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(nav_1, null);
+					each_blocks[i].m(ul, null);
 				}
 			}
 
-			append_hydration(footer, t0);
-			append_hydration(footer, span);
-			append_hydration(span, p);
-			append_hydration(p, t1);
+			append_hydration(div4, t9);
+			append_hydration(div4, div3);
+			append_hydration(div3, div2);
+			append_hydration(div2, img1);
+			append_hydration(div2, t10);
+			append_hydration(div2, img2);
+			append_hydration(div2, t11);
+			append_hydration(div2, img3);
 		},
 		p(ctx, [dirty]) {
+			if (dirty & /*logo_footer*/ 2 && !src_url_equal(img0.src, img0_src_value = /*logo_footer*/ ctx[1].url)) {
+				attr(img0, "src", img0_src_value);
+			}
+
+			if (dirty & /*logo_footer*/ 2 && img0_alt_value !== (img0_alt_value = /*logo_footer*/ ctx[1].alt)) {
+				attr(img0, "alt", img0_alt_value);
+			}
+
+			if (dirty & /*logo_below_text*/ 4) set_data(t1, /*logo_below_text*/ ctx[2]);
+
 			if (dirty & /*nav*/ 1) {
 				each_value = /*nav*/ ctx[0];
 				let i;
@@ -1411,7 +1580,7 @@ function create_fragment(ctx) {
 					} else {
 						each_blocks[i] = create_each_block(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(nav_1, null);
+						each_blocks[i].m(ul, null);
 					}
 				}
 
@@ -1422,7 +1591,29 @@ function create_fragment(ctx) {
 				each_blocks.length = each_value.length;
 			}
 
-			if (dirty & /*copyright*/ 2) set_data(t1, /*copyright*/ ctx[1]);
+			if (dirty & /*linkedin_social*/ 8 && !src_url_equal(img1.src, img1_src_value = /*linkedin_social*/ ctx[3].url)) {
+				attr(img1, "src", img1_src_value);
+			}
+
+			if (dirty & /*linkedin_social*/ 8 && img1_alt_value !== (img1_alt_value = /*linkedin_social*/ ctx[3].alt)) {
+				attr(img1, "alt", img1_alt_value);
+			}
+
+			if (dirty & /*facebook_social*/ 16 && !src_url_equal(img2.src, img2_src_value = /*facebook_social*/ ctx[4].url)) {
+				attr(img2, "src", img2_src_value);
+			}
+
+			if (dirty & /*facebook_social*/ 16 && img2_alt_value !== (img2_alt_value = /*facebook_social*/ ctx[4].alt)) {
+				attr(img2, "alt", img2_alt_value);
+			}
+
+			if (dirty & /*twitter_social*/ 32 && !src_url_equal(img3.src, img3_src_value = /*twitter_social*/ ctx[5].url)) {
+				attr(img3, "src", img3_src_value);
+			}
+
+			if (dirty & /*twitter_social*/ 32 && img3_alt_value !== (img3_alt_value = /*twitter_social*/ ctx[5].alt)) {
+				attr(img3, "alt", img3_alt_value);
+			}
 		},
 		i: noop,
 		o: noop,
@@ -1436,17 +1627,34 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { props } = $$props;
 	let { nav } = $$props;
-	let { social } = $$props;
 	let { copyright } = $$props;
+	let { logo_footer } = $$props;
+	let { logo_below_text } = $$props;
+	let { linkedin_social } = $$props;
+	let { facebook_social } = $$props;
+	let { twitter_social } = $$props;
 
 	$$self.$$set = $$props => {
-		if ('props' in $$props) $$invalidate(2, props = $$props.props);
+		if ('props' in $$props) $$invalidate(6, props = $$props.props);
 		if ('nav' in $$props) $$invalidate(0, nav = $$props.nav);
-		if ('social' in $$props) $$invalidate(3, social = $$props.social);
-		if ('copyright' in $$props) $$invalidate(1, copyright = $$props.copyright);
+		if ('copyright' in $$props) $$invalidate(7, copyright = $$props.copyright);
+		if ('logo_footer' in $$props) $$invalidate(1, logo_footer = $$props.logo_footer);
+		if ('logo_below_text' in $$props) $$invalidate(2, logo_below_text = $$props.logo_below_text);
+		if ('linkedin_social' in $$props) $$invalidate(3, linkedin_social = $$props.linkedin_social);
+		if ('facebook_social' in $$props) $$invalidate(4, facebook_social = $$props.facebook_social);
+		if ('twitter_social' in $$props) $$invalidate(5, twitter_social = $$props.twitter_social);
 	};
 
-	return [nav, copyright, props, social];
+	return [
+		nav,
+		logo_footer,
+		logo_below_text,
+		linkedin_social,
+		facebook_social,
+		twitter_social,
+		props,
+		copyright
+	];
 }
 
 class Component extends SvelteComponent {
@@ -1454,10 +1662,14 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			props: 2,
+			props: 6,
 			nav: 0,
-			social: 3,
-			copyright: 1
+			copyright: 7,
+			logo_footer: 1,
+			logo_below_text: 2,
+			linkedin_social: 3,
+			facebook_social: 4,
+			twitter_social: 5
 		});
 	}
 }
