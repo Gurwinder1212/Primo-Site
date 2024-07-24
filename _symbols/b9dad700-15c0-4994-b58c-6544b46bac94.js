@@ -1302,8 +1302,8 @@ function create_each_block(ctx) {
 			? '_blank'
 			: '_self');
 
-			attr(a, "class", "svelte-hraxix");
-			attr(li, "class", "svelte-hraxix");
+			attr(a, "class", "svelte-1tbdd5r");
+			attr(li, "class", "svelte-1tbdd5r");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
@@ -1496,29 +1496,29 @@ function create_fragment(ctx) {
 			attr(img0, "id", "logo-footer");
 			if (!src_url_equal(img0.src, img0_src_value = /*logo_footer*/ ctx[1].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*logo_footer*/ ctx[1].alt);
-			attr(h1, "class", "svelte-hraxix");
-			attr(p0, "class", "logo_below_text svelte-hraxix");
-			attr(p1, "class", "copy_below svelte-hraxix");
-			attr(div0, "class", "footer-left svelte-hraxix");
-			attr(h2, "class", "svelte-hraxix");
-			attr(ul, "class", "svelte-hraxix");
-			attr(div1, "class", "footer-center svelte-hraxix");
+			attr(h1, "class", "svelte-1tbdd5r");
+			attr(p0, "class", "logo_below_text svelte-1tbdd5r");
+			attr(p1, "class", "copy_below svelte-1tbdd5r");
+			attr(div0, "class", "footer-left svelte-1tbdd5r");
+			attr(h2, "class", "svelte-1tbdd5r");
+			attr(ul, "class", "svelte-1tbdd5r");
+			attr(div1, "class", "footer-center svelte-1tbdd5r");
 			attr(img1, "id", "linkedin-social");
 			if (!src_url_equal(img1.src, img1_src_value = /*linkedin_social*/ ctx[4].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*linkedin_social*/ ctx[4].alt);
-			attr(img1, "class", "svelte-hraxix");
+			attr(img1, "class", "svelte-1tbdd5r");
 			attr(img2, "id", "facebook-social");
 			if (!src_url_equal(img2.src, img2_src_value = /*facebook_social*/ ctx[3].url)) attr(img2, "src", img2_src_value);
 			attr(img2, "alt", img2_alt_value = /*facebook_social*/ ctx[3].alt);
-			attr(img2, "class", "svelte-hraxix");
+			attr(img2, "class", "svelte-1tbdd5r");
 			attr(img3, "id", "twitter-social");
 			if (!src_url_equal(img3.src, img3_src_value = /*twitter_social*/ ctx[2].url)) attr(img3, "src", img3_src_value);
 			attr(img3, "alt", img3_alt_value = /*twitter_social*/ ctx[2].alt);
-			attr(img3, "class", "svelte-hraxix");
-			attr(div2, "class", "social-media svelte-hraxix");
-			attr(div3, "class", "footer-right svelte-hraxix");
-			attr(div4, "class", "footer-content svelte-hraxix");
-			attr(footer, "class", "svelte-hraxix");
+			attr(img3, "class", "svelte-1tbdd5r");
+			attr(div2, "class", "social-media svelte-1tbdd5r");
+			attr(div3, "class", "footer-right svelte-1tbdd5r");
+			attr(div4, "class", "footer-content svelte-1tbdd5r");
+			attr(footer, "class", "svelte-1tbdd5r");
 		},
 		m(target, anchor) {
 			insert_hydration(target, footer, anchor);
