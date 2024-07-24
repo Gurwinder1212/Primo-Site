@@ -702,7 +702,7 @@ function create_fragment(ctx) {
 			attr(div7, "class", "section-container content svelte-x50bhh");
 			attr(div7, "style", "background: #f4f9fc;/* padding: 2em; */");
 			attr(div8, "class", "wrapper svelte-x50bhh svelte-x50bhh");
-			attr(div9, "class", "container svelte-x50bhh");
+			attr(div9, "class", "container none svelte-x50bhh");
 			set_style(div9, "background", "#fff");
 		},
 		m(target, anchor) {
