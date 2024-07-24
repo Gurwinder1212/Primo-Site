@@ -727,37 +727,37 @@ function create_fragment(ctx) {
 		},
 		h() {
 			attr(p0, "class", "p-large");
-			attr(div0, "class", "section-container content svelte-1skabwk");
+			attr(div0, "class", "section-container content svelte-u7r2s3");
 			attr(img0, "id", "content-image-desktop");
 			if (!src_url_equal(img0.src, img0_src_value = /*content_image_desktop*/ ctx[4].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*content_image_desktop*/ ctx[4].alt);
-			attr(img0, "class", "svelte-1skabwk");
-			attr(div1, "class", "content-image-wrapper svelte-1skabwk");
+			attr(img0, "class", "svelte-u7r2s3");
+			attr(div1, "class", "content-image-wrapper svelte-u7r2s3");
 			attr(img1, "id", "content-image-mobile");
 			if (!src_url_equal(img1.src, img1_src_value = /*content_image_mobile*/ ctx[3].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*content_image_mobile*/ ctx[3].alt);
-			attr(img1, "class", "svelte-1skabwk");
-			attr(a0, "class", "primary-large-button svelte-1skabwk");
+			attr(img1, "class", "svelte-u7r2s3");
+			attr(a0, "class", "primary-large-button svelte-u7r2s3");
 			attr(a0, "href", a0_href_value = /*action_button*/ ctx[0].url);
-			attr(div2, "class", "button-wrapper svelte-1skabwk");
-			attr(div3, "class", "wrapper svelte-1skabwk");
-			attr(div4, "class", "container none svelte-1skabwk");
+			attr(div2, "class", "button-wrapper svelte-u7r2s3");
+			attr(div3, "class", "wrapper svelte-u7r2s3");
+			attr(div4, "class", "container none svelte-u7r2s3");
 			attr(p1, "class", "p-large");
-			attr(a1, "class", "primary-large-button svelte-1skabwk");
+			attr(a1, "class", "primary-large-button svelte-u7r2s3");
 			attr(a1, "href", a1_href_value = /*action_button*/ ctx[0].url);
-			attr(div5, "class", "button-wrapper svelte-1skabwk");
+			attr(div5, "class", "button-wrapper svelte-u7r2s3");
 			set_custom_element_data(lottie_player, "autoplay", "");
 			set_custom_element_data(lottie_player, "loop", "");
 			set_custom_element_data(lottie_player, "mode", "normal");
-			set_custom_element_data(lottie_player, "class", "lottie svelte-1skabwk");
+			set_custom_element_data(lottie_player, "class", "lottie svelte-u7r2s3");
 			if (!src_url_equal(lottie_player.src, lottie_player_src_value = trianglesLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
 			if (!src_url_equal(img2.src, img2_src_value = /*content_image_desktop*/ ctx[4].url)) attr(img2, "src", img2_src_value);
 			attr(img2, "alt", img2_alt_value = /*content_image_desktop*/ ctx[4].alt);
-			attr(img2, "class", "svelte-1skabwk");
-			attr(div7, "class", "img-wrapper svelte-1skabwk");
-			attr(div8, "class", "section-container content svelte-1skabwk");
-			attr(div9, "class", "wrapper svelte-1skabwk");
-			attr(div10, "class", "container svelte-1skabwk");
+			attr(img2, "class", "svelte-u7r2s3");
+			attr(div7, "class", "img-wrapper svelte-u7r2s3");
+			attr(div8, "class", "section-container content svelte-u7r2s3");
+			attr(div9, "class", "wrapper svelte-u7r2s3");
+			attr(div10, "class", "container svelte-u7r2s3");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div4, anchor);
