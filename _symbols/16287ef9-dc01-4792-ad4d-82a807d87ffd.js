@@ -630,7 +630,7 @@ function create_fragment(ctx) {
 			attr(p, "class", "p-large");
 			attr(div2, "class", "section-container content svelte-1skabwk");
 			attr(div3, "class", "wrapper svelte-1skabwk");
-			attr(div4, "class", "container svelte-1skabwk");
+			attr(div4, "class", "container none svelte-1skabwk");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div4, anchor);
