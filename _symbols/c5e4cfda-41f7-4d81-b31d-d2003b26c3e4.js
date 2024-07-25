@@ -1372,11 +1372,11 @@ function create_fragment(ctx) {
 			div6 = element("div");
 			div0 = element("div");
 			h10 = element("h1");
-			t0 = text(/*hero_title1*/ ctx[1]);
+			t0 = text(/*hero_title1*/ ctx[2]);
 			t1 = space();
 			div1 = element("div");
 			h11 = element("h1");
-			t2 = text(/*hero_title2*/ ctx[2]);
+			t2 = text(/*hero_title2*/ ctx[3]);
 			t3 = space();
 			div3 = element("div");
 			div2 = element("div");
@@ -1387,7 +1387,7 @@ function create_fragment(ctx) {
 
 			t4 = space();
 			p = element("p");
-			t5 = text(/*hero_description*/ ctx[3]);
+			t5 = text(/*hero_description*/ ctx[5]);
 			t6 = space();
 			div5 = element("div");
 			div4 = element("div");
@@ -1416,7 +1416,7 @@ function create_fragment(ctx) {
 			var div0_nodes = children(div0);
 			h10 = claim_element(div0_nodes, "H1", { class: true });
 			var h10_nodes = children(h10);
-			t0 = claim_text(h10_nodes, /*hero_title1*/ ctx[1]);
+			t0 = claim_text(h10_nodes, /*hero_title1*/ ctx[2]);
 			h10_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			t1 = claim_space(div6_nodes);
@@ -1424,7 +1424,7 @@ function create_fragment(ctx) {
 			var div1_nodes = children(div1);
 			h11 = claim_element(div1_nodes, "H1", { class: true });
 			var h11_nodes = children(h11);
-			t2 = claim_text(h11_nodes, /*hero_title2*/ ctx[2]);
+			t2 = claim_text(h11_nodes, /*hero_title2*/ ctx[3]);
 			h11_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
 			t3 = claim_space(div6_nodes);
@@ -1441,7 +1441,7 @@ function create_fragment(ctx) {
 			t4 = claim_space(div3_nodes);
 			p = claim_element(div3_nodes, "P", { class: true });
 			var p_nodes = children(p);
-			t5 = claim_text(p_nodes, /*hero_description*/ ctx[3]);
+			t5 = claim_text(p_nodes, /*hero_description*/ ctx[5]);
 			p_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
 			t6 = claim_space(div6_nodes);
@@ -1486,8 +1486,8 @@ function create_fragment(ctx) {
 			set_custom_element_data(lottie_player, "class", "hero-lottie svelte-t0dvjt");
 			if (!src_url_equal(lottie_player.src, lottie_player_src_value = coffeeLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
 			attr(img0, "class", "hero-image svelte-t0dvjt");
-			if (!src_url_equal(img0.src, img0_src_value = /*hero_image*/ ctx[5].url)) attr(img0, "src", img0_src_value);
-			attr(img0, "alt", img0_alt_value = /*hero_image*/ ctx[5].alt);
+			if (!src_url_equal(img0.src, img0_src_value = /*hero_image*/ ctx[1].url)) attr(img0, "src", img0_src_value);
+			attr(img0, "alt", img0_alt_value = /*hero_image*/ ctx[1].alt);
 			attr(div4, "class", "svelte-t0dvjt");
 			attr(div5, "class", "hero-image-wrapper svelte-t0dvjt");
 			attr(img1, "class", "home-banner-mobile svelte-t0dvjt");
@@ -1538,8 +1538,8 @@ function create_fragment(ctx) {
 			append_hydration(div6, img2);
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*hero_title1*/ 2) set_data(t0, /*hero_title1*/ ctx[1]);
-			if (dirty & /*hero_title2*/ 4) set_data(t2, /*hero_title2*/ ctx[2]);
+			if (dirty & /*hero_title1*/ 4) set_data(t0, /*hero_title1*/ ctx[2]);
+			if (dirty & /*hero_title2*/ 8) set_data(t2, /*hero_title2*/ ctx[3]);
 
 			if (dirty & /*hero_feature*/ 16) {
 				each_value = /*hero_feature*/ ctx[4];
@@ -1564,13 +1564,13 @@ function create_fragment(ctx) {
 				each_blocks.length = each_value.length;
 			}
 
-			if (dirty & /*hero_description*/ 8) set_data(t5, /*hero_description*/ ctx[3]);
+			if (dirty & /*hero_description*/ 32) set_data(t5, /*hero_description*/ ctx[5]);
 
-			if (dirty & /*hero_image*/ 32 && !src_url_equal(img0.src, img0_src_value = /*hero_image*/ ctx[5].url)) {
+			if (dirty & /*hero_image*/ 2 && !src_url_equal(img0.src, img0_src_value = /*hero_image*/ ctx[1].url)) {
 				attr(img0, "src", img0_src_value);
 			}
 
-			if (dirty & /*hero_image*/ 32 && img0_alt_value !== (img0_alt_value = /*hero_image*/ ctx[5].alt)) {
+			if (dirty & /*hero_image*/ 2 && img0_alt_value !== (img0_alt_value = /*hero_image*/ ctx[1].alt)) {
 				attr(img0, "alt", img0_alt_value);
 			}
 
@@ -1607,38 +1607,38 @@ const coffeeLottie = '{"v":"5.5.7","meta":{"g":"LottieFiles AE 0.1.20","a":"","k
 
 function instance($$self, $$props, $$invalidate) {
 	let { props } = $$props;
-	let { background } = $$props;
 	let { logo } = $$props;
-	let { site_navigation_button } = $$props;
+	let { background } = $$props;
+	let { hero_image } = $$props;
 	let { hero_title1 } = $$props;
 	let { hero_title2 } = $$props;
-	let { hero_description } = $$props;
 	let { hero_feature } = $$props;
-	let { hero_image } = $$props;
+	let { hero_description } = $$props;
 	let { home_banner_mobile } = $$props;
+	let { site_navigation_button } = $$props;
 	let { home_banner_small_desktop } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(8, props = $$props.props);
-		if ('background' in $$props) $$invalidate(0, background = $$props.background);
 		if ('logo' in $$props) $$invalidate(9, logo = $$props.logo);
-		if ('site_navigation_button' in $$props) $$invalidate(10, site_navigation_button = $$props.site_navigation_button);
-		if ('hero_title1' in $$props) $$invalidate(1, hero_title1 = $$props.hero_title1);
-		if ('hero_title2' in $$props) $$invalidate(2, hero_title2 = $$props.hero_title2);
-		if ('hero_description' in $$props) $$invalidate(3, hero_description = $$props.hero_description);
+		if ('background' in $$props) $$invalidate(0, background = $$props.background);
+		if ('hero_image' in $$props) $$invalidate(1, hero_image = $$props.hero_image);
+		if ('hero_title1' in $$props) $$invalidate(2, hero_title1 = $$props.hero_title1);
+		if ('hero_title2' in $$props) $$invalidate(3, hero_title2 = $$props.hero_title2);
 		if ('hero_feature' in $$props) $$invalidate(4, hero_feature = $$props.hero_feature);
-		if ('hero_image' in $$props) $$invalidate(5, hero_image = $$props.hero_image);
+		if ('hero_description' in $$props) $$invalidate(5, hero_description = $$props.hero_description);
 		if ('home_banner_mobile' in $$props) $$invalidate(6, home_banner_mobile = $$props.home_banner_mobile);
+		if ('site_navigation_button' in $$props) $$invalidate(10, site_navigation_button = $$props.site_navigation_button);
 		if ('home_banner_small_desktop' in $$props) $$invalidate(7, home_banner_small_desktop = $$props.home_banner_small_desktop);
 	};
 
 	return [
 		background,
+		hero_image,
 		hero_title1,
 		hero_title2,
-		hero_description,
 		hero_feature,
-		hero_image,
+		hero_description,
 		home_banner_mobile,
 		home_banner_small_desktop,
 		props,
@@ -1653,15 +1653,15 @@ class Component extends SvelteComponent {
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
 			props: 8,
-			background: 0,
 			logo: 9,
-			site_navigation_button: 10,
-			hero_title1: 1,
-			hero_title2: 2,
-			hero_description: 3,
+			background: 0,
+			hero_image: 1,
+			hero_title1: 2,
+			hero_title2: 3,
 			hero_feature: 4,
-			hero_image: 5,
+			hero_description: 5,
 			home_banner_mobile: 6,
+			site_navigation_button: 10,
 			home_banner_small_desktop: 7
 		});
 	}
