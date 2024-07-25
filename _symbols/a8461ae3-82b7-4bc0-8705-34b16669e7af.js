@@ -610,7 +610,7 @@ function create_if_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(div, "class", "tag-pink-large svelte-1v6x5sr");
+			attr(div, "class", "tag-pink-large svelte-1oiuu6y");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div, anchor);
@@ -703,12 +703,12 @@ function create_each_block_2(ctx) {
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*card*/ ctx[17].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*card*/ ctx[17].image.alt);
-			attr(img, "class", "svelte-1v6x5sr");
+			attr(img, "class", "svelte-1oiuu6y");
 			attr(h61, "class", "h800");
-			attr(div1, "class", "card-title-wrapper svelte-1v6x5sr");
+			attr(div1, "class", "card-title-wrapper svelte-1oiuu6y");
 			attr(p, "class", "p-medium");
-			attr(div2, "class", "card-content-wrapper svelte-1v6x5sr");
-			attr(div3, "class", "card-wrapper slider svelte-1v6x5sr");
+			attr(div2, "class", "card-content-wrapper svelte-1oiuu6y");
+			attr(div3, "class", "card-wrapper slider svelte-1oiuu6y");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -823,12 +823,12 @@ function create_each_block_1(ctx) {
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*card*/ ctx[17].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*card*/ ctx[17].image.alt);
-			attr(img, "class", "svelte-1v6x5sr");
+			attr(img, "class", "svelte-1oiuu6y");
 			attr(h61, "class", "h800");
-			attr(div1, "class", "card-title-wrapper svelte-1v6x5sr");
+			attr(div1, "class", "card-title-wrapper svelte-1oiuu6y");
 			attr(p, "class", "p-medium");
-			attr(div2, "class", "card-content-wrapper svelte-1v6x5sr");
-			attr(div3, "class", "card-wrapper slider svelte-1v6x5sr");
+			attr(div2, "class", "card-content-wrapper svelte-1oiuu6y");
+			attr(div3, "class", "card-wrapper slider svelte-1oiuu6y");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div3, anchor);
@@ -898,7 +898,7 @@ function create_each_block(ctx) {
 			attr(input, "name", "slider-radio");
 			input.value = /*i*/ ctx[16];
 			input.checked = input_checked_value = /*select*/ ctx[6] == /*i*/ ctx[16];
-			attr(input, "class", "svelte-1v6x5sr");
+			attr(input, "class", "svelte-1oiuu6y");
 		},
 		m(target, anchor) {
 			insert_hydration(target, input, anchor);
@@ -1065,15 +1065,15 @@ function create_fragment(ctx) {
 		},
 		h() {
 			attr(p, "class", "p-large");
-			attr(div0, "class", "section-container content svelte-1v6x5sr");
-			attr(div1, "class", "content-header-wrapper svelte-1v6x5sr");
-			attr(div2, "class", "card-container-desktop svelte-1v6x5sr");
-			attr(div3, "class", "content-wrapper svelte-1v6x5sr");
-			attr(div4, "class", "siema svelte-1v6x5sr");
-			attr(div5, "class", "card-container-mobile svelte-1v6x5sr");
-			attr(div6, "class", "bullet svelte-1v6x5sr");
-			attr(div7, "class", "wrapper svelte-1v6x5sr");
-			attr(div8, "class", "container svelte-1v6x5sr");
+			attr(div0, "class", "section-container content svelte-1oiuu6y");
+			attr(div1, "class", "content-header-wrapper svelte-1oiuu6y");
+			attr(div2, "class", "card-container-desktop svelte-1oiuu6y");
+			attr(div3, "class", "content-wrapper svelte-1oiuu6y");
+			attr(div4, "class", "siema svelte-1oiuu6y");
+			attr(div5, "class", "card-container-mobile svelte-1oiuu6y");
+			attr(div6, "class", "bullet svelte-1oiuu6y");
+			attr(div7, "class", "wrapper svelte-1oiuu6y");
+			attr(div8, "class", "container svelte-1oiuu6y");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div8, anchor);
