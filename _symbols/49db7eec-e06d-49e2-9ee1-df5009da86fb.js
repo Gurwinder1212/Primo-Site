@@ -1277,7 +1277,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (564:12) {#each hero_feature as feature }
+// (568:12) {#each hero_feature as feature }
 function create_each_block(ctx) {
 	let div;
 	let h6;
@@ -1473,34 +1473,34 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h10, "class", "svelte-9ak1t0");
-			attr(div0, "class", "hero-text-container1 svelte-9ak1t0");
-			attr(h11, "class", "svelte-9ak1t0");
-			attr(div1, "class", "hero-text-container2 svelte-9ak1t0");
-			attr(div2, "class", "hero-feature-tag-container tags_top svelte-9ak1t0");
-			attr(p, "class", "h650 svelte-9ak1t0");
-			attr(div3, "class", "hero-feature-container svelte-9ak1t0");
+			attr(h10, "class", "svelte-1pdft1z");
+			attr(div0, "class", "hero-text-container1 svelte-1pdft1z");
+			attr(h11, "class", "svelte-1pdft1z");
+			attr(div1, "class", "hero-text-container2 svelte-1pdft1z");
+			attr(div2, "class", "hero-feature-tag-container tags_top svelte-1pdft1z");
+			attr(p, "class", "h650 svelte-1pdft1z");
+			attr(div3, "class", "hero-feature-container svelte-1pdft1z");
 			set_custom_element_data(lottie_player, "autoplay", "");
 			set_custom_element_data(lottie_player, "loop", "");
 			set_custom_element_data(lottie_player, "mode", "normal");
-			set_custom_element_data(lottie_player, "class", "hero-lottie svelte-9ak1t0");
+			set_custom_element_data(lottie_player, "class", "hero-lottie svelte-1pdft1z");
 			if (!src_url_equal(lottie_player.src, lottie_player_src_value = coffeeLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
-			attr(img0, "class", "hero-image svelte-9ak1t0");
+			attr(img0, "class", "hero-image svelte-1pdft1z");
 			if (!src_url_equal(img0.src, img0_src_value = /*hero_image*/ ctx[1].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*hero_image*/ ctx[1].alt);
-			attr(div4, "class", "svelte-9ak1t0");
-			attr(div5, "class", "hero-image-wrapper svelte-9ak1t0");
-			attr(img1, "class", "home-banner-mobile svelte-9ak1t0");
+			attr(div4, "class", "svelte-1pdft1z");
+			attr(div5, "class", "hero-image-wrapper svelte-1pdft1z");
+			attr(img1, "class", "home-banner-mobile svelte-1pdft1z");
 			if (!src_url_equal(img1.src, img1_src_value = /*home_banner_mobile*/ ctx[6].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*home_banner_mobile*/ ctx[6].alt);
-			attr(img2, "class", "home-banner-small-desktop svelte-9ak1t0");
+			attr(img2, "class", "home-banner-small-desktop svelte-1pdft1z");
 			if (!src_url_equal(img2.src, img2_src_value = /*home_banner_small_desktop*/ ctx[7].url)) attr(img2, "src", img2_src_value);
 			attr(img2, "alt", img2_alt_value = /*home_banner_small_desktop*/ ctx[7].alt);
-			attr(div6, "class", "header-wrapper svelte-9ak1t0");
-			attr(div7, "class", "header-container svelte-9ak1t0");
+			attr(div6, "class", "header-wrapper svelte-1pdft1z");
+			attr(div7, "class", "header-container svelte-1pdft1z");
 			attr(section, "role", "img");
 			attr(section, "aria-label", section_aria_label_value = /*background*/ ctx[0].alt);
-			attr(section, "class", "svelte-9ak1t0");
+			attr(section, "class", "svelte-1pdft1z");
 		},
 		m(target, anchor) {
 			insert_hydration(target, section, anchor);
