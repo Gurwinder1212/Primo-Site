@@ -694,17 +694,17 @@ function create_each_block_2(ctx) {
 			append_hydration(div4, t6);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*content_card*/ 1 && !src_url_equal(img.src, img_src_value = /*card*/ ctx[19].image.url)) {
+			if (dirty & /*content_card*/ 4 && !src_url_equal(img.src, img_src_value = /*card*/ ctx[19].image.url)) {
 				attr(img, "src", img_src_value);
 			}
 
-			if (dirty & /*content_card*/ 1 && img_alt_value !== (img_alt_value = /*card*/ ctx[19].image.alt)) {
+			if (dirty & /*content_card*/ 4 && img_alt_value !== (img_alt_value = /*card*/ ctx[19].image.alt)) {
 				attr(img, "alt", img_alt_value);
 			}
 
-			if (dirty & /*content_card*/ 1 && t1_value !== (t1_value = /*card*/ ctx[19].title + "")) set_data(t1, t1_value);
-			if (dirty & /*content_card*/ 1 && t3_value !== (t3_value = /*card*/ ctx[19].subtitle + "")) set_data(t3, t3_value);
-			if (dirty & /*content_card*/ 1 && t5_value !== (t5_value = /*card*/ ctx[19].description + "")) set_data(t5, t5_value);
+			if (dirty & /*content_card*/ 4 && t1_value !== (t1_value = /*card*/ ctx[19].title + "")) set_data(t1, t1_value);
+			if (dirty & /*content_card*/ 4 && t3_value !== (t3_value = /*card*/ ctx[19].subtitle + "")) set_data(t3, t3_value);
+			if (dirty & /*content_card*/ 4 && t5_value !== (t5_value = /*card*/ ctx[19].description + "")) set_data(t5, t5_value);
 		},
 		d(detaching) {
 			if (detaching) detach(div4);
@@ -814,17 +814,17 @@ function create_each_block_1(ctx) {
 			append_hydration(div3, t6);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*content_card*/ 1 && !src_url_equal(img.src, img_src_value = /*card*/ ctx[19].image.url)) {
+			if (dirty & /*content_card*/ 4 && !src_url_equal(img.src, img_src_value = /*card*/ ctx[19].image.url)) {
 				attr(img, "src", img_src_value);
 			}
 
-			if (dirty & /*content_card*/ 1 && img_alt_value !== (img_alt_value = /*card*/ ctx[19].image.alt)) {
+			if (dirty & /*content_card*/ 4 && img_alt_value !== (img_alt_value = /*card*/ ctx[19].image.alt)) {
 				attr(img, "alt", img_alt_value);
 			}
 
-			if (dirty & /*content_card*/ 1 && t1_value !== (t1_value = /*card*/ ctx[19].title + "")) set_data(t1, t1_value);
-			if (dirty & /*content_card*/ 1 && t3_value !== (t3_value = /*card*/ ctx[19].subtitle + "")) set_data(t3, t3_value);
-			if (dirty & /*content_card*/ 1 && t5_value !== (t5_value = /*card*/ ctx[19].description + "")) set_data(t5, t5_value);
+			if (dirty & /*content_card*/ 4 && t1_value !== (t1_value = /*card*/ ctx[19].title + "")) set_data(t1, t1_value);
+			if (dirty & /*content_card*/ 4 && t3_value !== (t3_value = /*card*/ ctx[19].subtitle + "")) set_data(t3, t3_value);
+			if (dirty & /*content_card*/ 4 && t5_value !== (t5_value = /*card*/ ctx[19].description + "")) set_data(t5, t5_value);
 		},
 		d(detaching) {
 			if (detaching) detach(div3);
@@ -909,14 +909,14 @@ function create_fragment(ctx) {
 	let div4;
 	let t5;
 	let div6;
-	let each_value_2 = /*content_card*/ ctx[0];
+	let each_value_2 = /*content_card*/ ctx[2];
 	let each_blocks_2 = [];
 
 	for (let i = 0; i < each_value_2.length; i += 1) {
 		each_blocks_2[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
 	}
 
-	let each_value_1 = /*content_card*/ ctx[0];
+	let each_value_1 = /*content_card*/ ctx[2];
 	let each_blocks_1 = [];
 
 	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -938,10 +938,10 @@ function create_fragment(ctx) {
 			div1 = element("div");
 			div0 = element("div");
 			h20 = element("h2");
-			t0 = text(/*heading*/ ctx[1]);
+			t0 = text(/*heading*/ ctx[0]);
 			t1 = space();
 			h21 = element("h2");
-			t2 = text(/*headingtwo*/ ctx[2]);
+			t2 = text(/*headingtwo*/ ctx[1]);
 			t3 = space();
 			div2 = element("div");
 
@@ -979,12 +979,12 @@ function create_fragment(ctx) {
 			var div0_nodes = children(div0);
 			h20 = claim_element(div0_nodes, "H2", { class: true });
 			var h20_nodes = children(h20);
-			t0 = claim_text(h20_nodes, /*heading*/ ctx[1]);
+			t0 = claim_text(h20_nodes, /*heading*/ ctx[0]);
 			h20_nodes.forEach(detach);
 			t1 = claim_space(div0_nodes);
 			h21 = claim_element(div0_nodes, "H2", { class: true });
 			var h21_nodes = children(h21);
-			t2 = claim_text(h21_nodes, /*headingtwo*/ ctx[2]);
+			t2 = claim_text(h21_nodes, /*headingtwo*/ ctx[1]);
 			h21_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			div1_nodes.forEach(detach);
@@ -1076,11 +1076,11 @@ function create_fragment(ctx) {
 			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*heading*/ 2) set_data(t0, /*heading*/ ctx[1]);
-			if (dirty & /*headingtwo*/ 4) set_data(t2, /*headingtwo*/ ctx[2]);
+			if (dirty & /*heading*/ 1) set_data(t0, /*heading*/ ctx[0]);
+			if (dirty & /*headingtwo*/ 2) set_data(t2, /*headingtwo*/ ctx[1]);
 
-			if (dirty & /*content_card*/ 1) {
-				each_value_2 = /*content_card*/ ctx[0];
+			if (dirty & /*content_card*/ 4) {
+				each_value_2 = /*content_card*/ ctx[2];
 				let i;
 
 				for (i = 0; i < each_value_2.length; i += 1) {
@@ -1102,8 +1102,8 @@ function create_fragment(ctx) {
 				each_blocks_2.length = each_value_2.length;
 			}
 
-			if (dirty & /*content_card*/ 1) {
-				each_value_1 = /*content_card*/ ctx[0];
+			if (dirty & /*content_card*/ 4) {
+				each_value_1 = /*content_card*/ ctx[2];
 				let i;
 
 				for (i = 0; i < each_value_1.length; i += 1) {
@@ -1161,12 +1161,12 @@ function create_fragment(ctx) {
 
 function instance($$self, $$props, $$invalidate) {
 	let { props } = $$props;
+	let { heading } = $$props;
+	let { headingtwo } = $$props;
 	let { content_card } = $$props;
 	let { content_title_1 } = $$props;
 	let { content_title_2 } = $$props;
 	let { content_paragraph_1 } = $$props;
-	let { heading } = $$props;
-	let { headingtwo } = $$props;
 	let slider, radioSlider;
 	let select = 0;
 	let data = [{ val: 1 }, { val: 2 }, { val: 3 }, { val: 4 }, { val: 5 }];
@@ -1221,18 +1221,18 @@ function instance($$self, $$props, $$invalidate) {
 
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(7, props = $$props.props);
-		if ('content_card' in $$props) $$invalidate(0, content_card = $$props.content_card);
+		if ('heading' in $$props) $$invalidate(0, heading = $$props.heading);
+		if ('headingtwo' in $$props) $$invalidate(1, headingtwo = $$props.headingtwo);
+		if ('content_card' in $$props) $$invalidate(2, content_card = $$props.content_card);
 		if ('content_title_1' in $$props) $$invalidate(8, content_title_1 = $$props.content_title_1);
 		if ('content_title_2' in $$props) $$invalidate(9, content_title_2 = $$props.content_title_2);
 		if ('content_paragraph_1' in $$props) $$invalidate(10, content_paragraph_1 = $$props.content_paragraph_1);
-		if ('heading' in $$props) $$invalidate(1, heading = $$props.heading);
-		if ('headingtwo' in $$props) $$invalidate(2, headingtwo = $$props.headingtwo);
 	};
 
 	return [
-		content_card,
 		heading,
 		headingtwo,
+		content_card,
 		slider,
 		radioSlider,
 		select,
@@ -1252,12 +1252,12 @@ class Component extends SvelteComponent {
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
 			props: 7,
-			content_card: 0,
+			heading: 0,
+			headingtwo: 1,
+			content_card: 2,
 			content_title_1: 8,
 			content_title_2: 9,
-			content_paragraph_1: 10,
-			heading: 1,
-			headingtwo: 2
+			content_paragraph_1: 10
 		});
 	}
 }

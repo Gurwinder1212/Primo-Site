@@ -1311,7 +1311,7 @@ function create_fragment(ctx) {
 			t0 = text(/*content_title*/ ctx[0]);
 			t1 = space();
 			p0 = element("p");
-			t2 = text(/*content_paragraph_1*/ ctx[1]);
+			t2 = text(/*content_paragraph_1*/ ctx[3]);
 			t3 = space();
 			div1 = element("div");
 			form0 = element("form");
@@ -1324,10 +1324,10 @@ function create_fragment(ctx) {
 			t5 = text(/*content_title*/ ctx[0]);
 			t6 = space();
 			p1 = element("p");
-			t7 = text(/*content_paragraph_1*/ ctx[1]);
+			t7 = text(/*content_paragraph_1*/ ctx[3]);
 			t8 = space();
 			p2 = element("p");
-			t9 = text(/*content_paragraph_2*/ ctx[2]);
+			t9 = text(/*content_paragraph_2*/ ctx[4]);
 			t10 = space();
 			form1 = element("form");
 			iframe1 = element("iframe");
@@ -1335,11 +1335,11 @@ function create_fragment(ctx) {
 			div7 = element("div");
 			div5 = element("div");
 			p3 = element("p");
-			t12 = text(/*content_bubble_1*/ ctx[3]);
+			t12 = text(/*content_bubble_1*/ ctx[1]);
 			t13 = space();
 			div6 = element("div");
 			p4 = element("p");
-			t14 = text(/*content_bubble_2*/ ctx[4]);
+			t14 = text(/*content_bubble_2*/ ctx[2]);
 			t15 = space();
 			p5 = element("p");
 			t16 = text(/*content_paragraph_3*/ ctx[5]);
@@ -1361,7 +1361,7 @@ function create_fragment(ctx) {
 			t1 = claim_space(div0_nodes);
 			p0 = claim_element(div0_nodes, "P", { class: true });
 			var p0_nodes = children(p0);
-			t2 = claim_text(p0_nodes, /*content_paragraph_1*/ ctx[1]);
+			t2 = claim_text(p0_nodes, /*content_paragraph_1*/ ctx[3]);
 			p0_nodes.forEach(detach);
 			div0_nodes.forEach(detach);
 			t3 = claim_space(div2_nodes);
@@ -1390,12 +1390,12 @@ function create_fragment(ctx) {
 			t6 = claim_space(div8_nodes);
 			p1 = claim_element(div8_nodes, "P", { class: true });
 			var p1_nodes = children(p1);
-			t7 = claim_text(p1_nodes, /*content_paragraph_1*/ ctx[1]);
+			t7 = claim_text(p1_nodes, /*content_paragraph_1*/ ctx[3]);
 			p1_nodes.forEach(detach);
 			t8 = claim_space(div8_nodes);
 			p2 = claim_element(div8_nodes, "P", { class: true });
 			var p2_nodes = children(p2);
-			t9 = claim_text(p2_nodes, /*content_paragraph_2*/ ctx[2]);
+			t9 = claim_text(p2_nodes, /*content_paragraph_2*/ ctx[4]);
 			p2_nodes.forEach(detach);
 			t10 = claim_space(div8_nodes);
 			form1 = claim_element(div8_nodes, "FORM", { class: true });
@@ -1410,7 +1410,7 @@ function create_fragment(ctx) {
 			var div5_nodes = children(div5);
 			p3 = claim_element(div5_nodes, "P", { class: true });
 			var p3_nodes = children(p3);
-			t12 = claim_text(p3_nodes, /*content_bubble_1*/ ctx[3]);
+			t12 = claim_text(p3_nodes, /*content_bubble_1*/ ctx[1]);
 			p3_nodes.forEach(detach);
 			div5_nodes.forEach(detach);
 			t13 = claim_space(div7_nodes);
@@ -1418,7 +1418,7 @@ function create_fragment(ctx) {
 			var div6_nodes = children(div6);
 			p4 = claim_element(div6_nodes, "P", { class: true });
 			var p4_nodes = children(p4);
-			t14 = claim_text(p4_nodes, /*content_bubble_2*/ ctx[4]);
+			t14 = claim_text(p4_nodes, /*content_bubble_2*/ ctx[2]);
 			p4_nodes.forEach(detach);
 			div6_nodes.forEach(detach);
 			div7_nodes.forEach(detach);
@@ -1504,12 +1504,12 @@ function create_fragment(ctx) {
 		},
 		p(ctx, [dirty]) {
 			if (dirty & /*content_title*/ 1) set_data(t0, /*content_title*/ ctx[0]);
-			if (dirty & /*content_paragraph_1*/ 2) set_data(t2, /*content_paragraph_1*/ ctx[1]);
+			if (dirty & /*content_paragraph_1*/ 8) set_data(t2, /*content_paragraph_1*/ ctx[3]);
 			if (dirty & /*content_title*/ 1) set_data(t5, /*content_title*/ ctx[0]);
-			if (dirty & /*content_paragraph_1*/ 2) set_data(t7, /*content_paragraph_1*/ ctx[1]);
-			if (dirty & /*content_paragraph_2*/ 4) set_data(t9, /*content_paragraph_2*/ ctx[2]);
-			if (dirty & /*content_bubble_1*/ 8) set_data(t12, /*content_bubble_1*/ ctx[3]);
-			if (dirty & /*content_bubble_2*/ 16) set_data(t14, /*content_bubble_2*/ ctx[4]);
+			if (dirty & /*content_paragraph_1*/ 8) set_data(t7, /*content_paragraph_1*/ ctx[3]);
+			if (dirty & /*content_paragraph_2*/ 16) set_data(t9, /*content_paragraph_2*/ ctx[4]);
+			if (dirty & /*content_bubble_1*/ 2) set_data(t12, /*content_bubble_1*/ ctx[1]);
+			if (dirty & /*content_bubble_2*/ 4) set_data(t14, /*content_bubble_2*/ ctx[2]);
 			if (dirty & /*content_paragraph_3*/ 32) set_data(t16, /*content_paragraph_3*/ ctx[5]);
 		},
 		i: noop,
@@ -1525,28 +1525,28 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { props } = $$props;
 	let { content_title } = $$props;
-	let { content_paragraph_1 } = $$props;
-	let { content_paragraph_2 } = $$props;
 	let { content_bubble_1 } = $$props;
 	let { content_bubble_2 } = $$props;
+	let { content_paragraph_1 } = $$props;
+	let { content_paragraph_2 } = $$props;
 	let { content_paragraph_3 } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(6, props = $$props.props);
 		if ('content_title' in $$props) $$invalidate(0, content_title = $$props.content_title);
-		if ('content_paragraph_1' in $$props) $$invalidate(1, content_paragraph_1 = $$props.content_paragraph_1);
-		if ('content_paragraph_2' in $$props) $$invalidate(2, content_paragraph_2 = $$props.content_paragraph_2);
-		if ('content_bubble_1' in $$props) $$invalidate(3, content_bubble_1 = $$props.content_bubble_1);
-		if ('content_bubble_2' in $$props) $$invalidate(4, content_bubble_2 = $$props.content_bubble_2);
+		if ('content_bubble_1' in $$props) $$invalidate(1, content_bubble_1 = $$props.content_bubble_1);
+		if ('content_bubble_2' in $$props) $$invalidate(2, content_bubble_2 = $$props.content_bubble_2);
+		if ('content_paragraph_1' in $$props) $$invalidate(3, content_paragraph_1 = $$props.content_paragraph_1);
+		if ('content_paragraph_2' in $$props) $$invalidate(4, content_paragraph_2 = $$props.content_paragraph_2);
 		if ('content_paragraph_3' in $$props) $$invalidate(5, content_paragraph_3 = $$props.content_paragraph_3);
 	};
 
 	return [
 		content_title,
-		content_paragraph_1,
-		content_paragraph_2,
 		content_bubble_1,
 		content_bubble_2,
+		content_paragraph_1,
+		content_paragraph_2,
 		content_paragraph_3,
 		props
 	];
@@ -1559,10 +1559,10 @@ class Component extends SvelteComponent {
 		init(this, options, instance, create_fragment, safe_not_equal, {
 			props: 6,
 			content_title: 0,
-			content_paragraph_1: 1,
-			content_paragraph_2: 2,
-			content_bubble_1: 3,
-			content_bubble_2: 4,
+			content_bubble_1: 1,
+			content_bubble_2: 2,
+			content_paragraph_1: 3,
+			content_paragraph_2: 4,
 			content_paragraph_3: 5
 		});
 	}
