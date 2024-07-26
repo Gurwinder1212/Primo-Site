@@ -1269,7 +1269,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (122:20) {#each nav as { link }}
+// (128:20) {#each nav as { link }}
 function create_each_block(ctx) {
 	let li;
 	let a;
@@ -1302,8 +1302,8 @@ function create_each_block(ctx) {
 			? '_blank'
 			: '_self');
 
-			attr(a, "class", "svelte-ke96tp");
-			attr(li, "class", "svelte-ke96tp");
+			attr(a, "class", "svelte-1jtoet2");
+			attr(li, "class", "svelte-1jtoet2");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
@@ -1503,30 +1503,30 @@ function create_fragment(ctx) {
 			attr(img0, "id", "logo-footer");
 			if (!src_url_equal(img0.src, img0_src_value = /*logo_footer*/ ctx[1].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*logo_footer*/ ctx[1].alt);
-			attr(img0, "class", "svelte-ke96tp");
-			attr(h1, "class", "svelte-ke96tp");
-			attr(p0, "class", "logo_below_text svelte-ke96tp");
-			attr(p1, "class", "copy_below svelte-ke96tp");
-			attr(div0, "class", "footer-left svelte-ke96tp");
-			attr(h2, "class", "svelte-ke96tp");
-			attr(ul, "class", "svelte-ke96tp");
-			attr(div1, "class", "footer-center svelte-ke96tp");
+			attr(img0, "class", "svelte-1jtoet2");
+			attr(h1, "class", "svelte-1jtoet2");
+			attr(p0, "class", "logo_below_text svelte-1jtoet2");
+			attr(p1, "class", "copy_below svelte-1jtoet2");
+			attr(div0, "class", "footer-left svelte-1jtoet2");
+			attr(h2, "class", "svelte-1jtoet2");
+			attr(ul, "class", "svelte-1jtoet2");
+			attr(div1, "class", "footer-center svelte-1jtoet2");
 			attr(img1, "id", "linkedin-social");
 			if (!src_url_equal(img1.src, img1_src_value = /*linkedin_social*/ ctx[4].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*linkedin_social*/ ctx[4].alt);
-			attr(img1, "class", "svelte-ke96tp");
+			attr(img1, "class", "svelte-1jtoet2");
 			attr(img2, "id", "facebook-social");
 			if (!src_url_equal(img2.src, img2_src_value = /*facebook_social*/ ctx[3].url)) attr(img2, "src", img2_src_value);
 			attr(img2, "alt", img2_alt_value = /*facebook_social*/ ctx[3].alt);
-			attr(img2, "class", "svelte-ke96tp");
+			attr(img2, "class", "svelte-1jtoet2");
 			attr(img3, "id", "twitter-social");
 			if (!src_url_equal(img3.src, img3_src_value = /*twitter_social*/ ctx[2].url)) attr(img3, "src", img3_src_value);
 			attr(img3, "alt", img3_alt_value = /*twitter_social*/ ctx[2].alt);
-			attr(img3, "class", "svelte-ke96tp");
-			attr(div2, "class", "social-media svelte-ke96tp");
-			attr(div3, "class", "footer-right svelte-ke96tp");
-			attr(div4, "class", "footer-content svelte-ke96tp");
-			attr(footer, "class", "svelte-ke96tp");
+			attr(img3, "class", "svelte-1jtoet2");
+			attr(div2, "class", "social-media svelte-1jtoet2");
+			attr(div3, "class", "footer-right svelte-1jtoet2");
+			attr(div4, "class", "footer-content svelte-1jtoet2");
+			attr(footer, "class", "svelte-1jtoet2");
 		},
 		m(target, anchor) {
 			insert_hydration(target, footer, anchor);
