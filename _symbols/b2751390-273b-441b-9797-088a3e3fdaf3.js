@@ -636,7 +636,7 @@ function create_fragment(ctx) {
 			var div3_nodes = children(div3);
 			div0 = claim_element(div3_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
-			h30 = claim_element(div0_nodes, "H3", {});
+			h30 = claim_element(div0_nodes, "H3", { class: true });
 			var h30_nodes = children(h30);
 			t0 = claim_text(h30_nodes, /*content_title*/ ctx[1]);
 			h30_nodes.forEach(detach);
@@ -686,7 +686,7 @@ function create_fragment(ctx) {
 			var div8_nodes = children(div8);
 			div6 = claim_element(div8_nodes, "DIV", {});
 			var div6_nodes = children(div6);
-			h31 = claim_element(div6_nodes, "H3", {});
+			h31 = claim_element(div6_nodes, "H3", { class: true });
 			var h31_nodes = children(h31);
 			t8 = claim_text(h31_nodes, /*content_title*/ ctx[1]);
 			h31_nodes.forEach(detach);
@@ -726,38 +726,40 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(p0, "class", "p-large");
-			attr(div0, "class", "section-container content svelte-u7r2s3");
+			attr(h30, "class", "svelte-q0n2yy");
+			attr(p0, "class", "p-large svelte-q0n2yy");
+			attr(div0, "class", "section-container content svelte-q0n2yy");
 			attr(img0, "id", "content-image-desktop");
 			if (!src_url_equal(img0.src, img0_src_value = /*content_image_desktop*/ ctx[4].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*content_image_desktop*/ ctx[4].alt);
-			attr(img0, "class", "svelte-u7r2s3");
-			attr(div1, "class", "content-image-wrapper svelte-u7r2s3");
+			attr(img0, "class", "svelte-q0n2yy");
+			attr(div1, "class", "content-image-wrapper svelte-q0n2yy");
 			attr(img1, "id", "content-image-mobile");
 			if (!src_url_equal(img1.src, img1_src_value = /*content_image_mobile*/ ctx[3].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*content_image_mobile*/ ctx[3].alt);
-			attr(img1, "class", "svelte-u7r2s3");
-			attr(a0, "class", "primary-large-button svelte-u7r2s3");
+			attr(img1, "class", "svelte-q0n2yy");
+			attr(a0, "class", "primary-large-button svelte-q0n2yy");
 			attr(a0, "href", a0_href_value = /*action_button*/ ctx[0].url);
-			attr(div2, "class", "button-wrapper svelte-u7r2s3");
-			attr(div3, "class", "wrapper svelte-u7r2s3");
-			attr(div4, "class", "container none svelte-u7r2s3");
-			attr(p1, "class", "p-large");
-			attr(a1, "class", "primary-large-button svelte-u7r2s3");
+			attr(div2, "class", "button-wrapper svelte-q0n2yy");
+			attr(div3, "class", "wrapper svelte-q0n2yy");
+			attr(div4, "class", "container none svelte-q0n2yy");
+			attr(h31, "class", "svelte-q0n2yy");
+			attr(p1, "class", "p-large svelte-q0n2yy");
+			attr(a1, "class", "primary-large-button svelte-q0n2yy");
 			attr(a1, "href", a1_href_value = /*action_button*/ ctx[0].url);
-			attr(div5, "class", "button-wrapper svelte-u7r2s3");
+			attr(div5, "class", "button-wrapper svelte-q0n2yy");
 			set_custom_element_data(lottie_player, "autoplay", "");
 			set_custom_element_data(lottie_player, "loop", "");
 			set_custom_element_data(lottie_player, "mode", "normal");
-			set_custom_element_data(lottie_player, "class", "lottie svelte-u7r2s3");
+			set_custom_element_data(lottie_player, "class", "lottie svelte-q0n2yy");
 			if (!src_url_equal(lottie_player.src, lottie_player_src_value = trianglesLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
 			if (!src_url_equal(img2.src, img2_src_value = /*content_image_desktop*/ ctx[4].url)) attr(img2, "src", img2_src_value);
 			attr(img2, "alt", img2_alt_value = /*content_image_desktop*/ ctx[4].alt);
-			attr(img2, "class", "svelte-u7r2s3");
-			attr(div7, "class", "img-wrapper svelte-u7r2s3");
-			attr(div8, "class", "section-container content svelte-u7r2s3");
-			attr(div9, "class", "wrapper svelte-u7r2s3");
-			attr(div10, "class", "container svelte-u7r2s3");
+			attr(img2, "class", "svelte-q0n2yy");
+			attr(div7, "class", "img-wrapper svelte-q0n2yy");
+			attr(div8, "class", "section-container content svelte-q0n2yy");
+			attr(div9, "class", "wrapper svelte-q0n2yy");
+			attr(div10, "class", "container svelte-q0n2yy");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div4, anchor);

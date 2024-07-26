@@ -2822,7 +2822,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (648:8) {#each social as { link, icon }}
+// (662:8) {#each social as { link, icon }}
 function create_each_block(ctx) {
 	let a;
 	let span;
@@ -2859,10 +2859,10 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "icon svelte-1yi48le");
+			attr(span, "class", "icon svelte-4rcynx");
 			attr(a, "href", a_href_value = /*link*/ ctx[12].url);
 			attr(a, "alt", a_alt_value = /*link*/ ctx[12].alt);
-			attr(a, "class", "svelte-1yi48le");
+			attr(a, "class", "svelte-4rcynx");
 		},
 		m(target, anchor) {
 			insert_hydration(target, a, anchor);
@@ -3046,7 +3046,7 @@ function create_fragment(ctx) {
 			var div10_nodes = children(div10);
 			div9 = claim_element(div10_nodes, "DIV", { class: true });
 			var div9_nodes = children(div9);
-			h31 = claim_element(div9_nodes, "H3", {});
+			h31 = claim_element(div9_nodes, "H3", { class: true });
 			var h31_nodes = children(h31);
 			t5 = claim_text(h31_nodes, /*content_title*/ ctx[1]);
 			h31_nodes.forEach(detach);
@@ -3105,32 +3105,33 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h30, "class", "svelte-1yi48le");
-			attr(p0, "class", "p-large svelte-1yi48le");
+			attr(h30, "class", "svelte-4rcynx");
+			attr(p0, "class", "p-large svelte-4rcynx");
 			if (!src_url_equal(iframe0.src, iframe0_src_value = "https://cdn.forms-content.sg-form.com/a0bf2821-1221-11ee-b804-2a098f035ca4")) attr(iframe0, "src", iframe0_src_value);
 			attr(iframe0, "title", "contact form");
-			attr(iframe0, "class", "svelte-1yi48le");
-			attr(form0, "class", "svelte-1yi48le");
-			attr(div1, "class", "img-wrapper svelte-1yi48le");
-			attr(div2, "class", "section-container content heading_part svelte-1yi48le");
-			attr(div3, "class", "wrapper svelte-1yi48le");
-			attr(div4, "class", "container svelte-1yi48le");
-			attr(p1, "class", "p-large svelte-1yi48le");
-			attr(p2, "class", "p-large svelte-1yi48le");
+			attr(iframe0, "class", "svelte-4rcynx");
+			attr(form0, "class", "svelte-4rcynx");
+			attr(div1, "class", "img-wrapper svelte-4rcynx");
+			attr(div2, "class", "section-container content heading_part svelte-4rcynx");
+			attr(div3, "class", "wrapper svelte-4rcynx");
+			attr(div4, "class", "container svelte-4rcynx");
+			attr(h31, "class", "svelte-4rcynx");
+			attr(p1, "class", "p-large svelte-4rcynx");
+			attr(p2, "class", "p-large svelte-4rcynx");
 			if (!src_url_equal(iframe1.src, iframe1_src_value = "https://cdn.forms-content.sg-form.com/a0bf2821-1221-11ee-b804-2a098f035ca4")) attr(iframe1, "src", iframe1_src_value);
 			attr(iframe1, "title", "contact form");
-			attr(iframe1, "class", "svelte-1yi48le");
-			attr(form1, "class", "svelte-1yi48le");
-			attr(p3, "class", "p-medium svelte-1yi48le");
-			attr(div5, "class", "bubble-1 svelte-1yi48le");
-			attr(p4, "class", "p-medium svelte-1yi48le");
-			attr(div6, "class", "bubble-2 svelte-1yi48le");
-			attr(div7, "class", "bubbles none svelte-1yi48le");
-			attr(p5, "class", "p-large svelte-1yi48le");
-			attr(div8, "class", "social-links svelte-1yi48le");
-			attr(div9, "class", "section-container content svelte-1yi48le");
-			attr(div10, "class", "wrapper svelte-1yi48le");
-			attr(div11, "class", "container none svelte-1yi48le");
+			attr(iframe1, "class", "svelte-4rcynx");
+			attr(form1, "class", "svelte-4rcynx");
+			attr(p3, "class", "p-medium svelte-4rcynx");
+			attr(div5, "class", "bubble-1 svelte-4rcynx");
+			attr(p4, "class", "p-medium svelte-4rcynx");
+			attr(div6, "class", "bubble-2 svelte-4rcynx");
+			attr(div7, "class", "bubbles none svelte-4rcynx");
+			attr(p5, "class", "p-large svelte-4rcynx");
+			attr(div8, "class", "social-links svelte-4rcynx");
+			attr(div9, "class", "section-container content svelte-4rcynx");
+			attr(div10, "class", "wrapper svelte-4rcynx");
+			attr(div11, "class", "container none svelte-4rcynx");
 			attr(div11, "id", "contact-us");
 		},
 		m(target, anchor) {
