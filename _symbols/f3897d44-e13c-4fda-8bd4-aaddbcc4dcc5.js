@@ -604,7 +604,7 @@ function create_fragment(ctx) {
 			t0 = claim_space(div3_nodes);
 			div2 = claim_element(div3_nodes, "DIV", {});
 			var div2_nodes = children(div2);
-			h3 = claim_element(div2_nodes, "H3", {});
+			h3 = claim_element(div2_nodes, "H3", { class: true });
 			var h3_nodes = children(h3);
 			t1 = claim_text(h3_nodes, /*content_title*/ ctx[1]);
 			h3_nodes.forEach(detach);
@@ -631,16 +631,17 @@ function create_fragment(ctx) {
 			set_custom_element_data(lottie_player, "autoplay", "");
 			set_custom_element_data(lottie_player, "loop", "");
 			set_custom_element_data(lottie_player, "mode", "normal");
-			set_custom_element_data(lottie_player, "class", "lottie svelte-1tai63a");
+			set_custom_element_data(lottie_player, "class", "lottie svelte-1s21dbe");
 			if (!src_url_equal(lottie_player.src, lottie_player_src_value = shapesLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
-			attr(div0, "class", "lottie-wrapper svelte-1tai63a");
-			attr(p, "class", "p-large");
-			attr(a, "class", "primary-large-button svelte-1tai63a");
+			attr(div0, "class", "lottie-wrapper svelte-1s21dbe");
+			attr(h3, "class", "svelte-1s21dbe");
+			attr(p, "class", "p-large svelte-1s21dbe");
+			attr(a, "class", "primary-large-button svelte-1s21dbe");
 			attr(a, "href", a_href_value = /*action_button*/ ctx[0].url);
-			attr(div1, "class", "button-wrapper svelte-1tai63a");
-			attr(div3, "class", "section-container content svelte-1tai63a");
-			attr(div4, "class", "wrapper svelte-1tai63a");
-			attr(div5, "class", "container svelte-1tai63a");
+			attr(div1, "class", "button-wrapper svelte-1s21dbe");
+			attr(div3, "class", "section-container content svelte-1s21dbe");
+			attr(div4, "class", "wrapper svelte-1s21dbe");
+			attr(div5, "class", "container svelte-1s21dbe");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div5, anchor);
