@@ -275,6 +275,14 @@ function set_data(text, data) {
         return;
     text.data = data;
 }
+function set_style(node, key, value, important) {
+    if (value == null) {
+        node.style.removeProperty(key);
+    }
+    else {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+}
 
 let current_component;
 function set_current_component(component) {
@@ -553,7 +561,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (333:8) {#each accordions as accordion}
+// (228:8) {#each accordions as accordion}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -604,7 +612,7 @@ function create_each_block(ctx) {
 			t3 = claim_space(div2_nodes);
 			div1 = claim_element(div2_nodes, "DIV", { class: true });
 			var div1_nodes = children(div1);
-			p = claim_element(div1_nodes, "P", { class: true });
+			p = claim_element(div1_nodes, "P", {});
 			var p_nodes = children(p);
 			t4 = claim_text(p_nodes, t4_value);
 			p_nodes.forEach(detach);
@@ -614,12 +622,11 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "open-icon svelte-epnqsx");
-			attr(span1, "class", "svelte-epnqsx");
-			attr(div0, "class", "accordion-header svelte-epnqsx");
-			attr(p, "class", "svelte-epnqsx");
-			attr(div1, "class", "accordion-content svelte-epnqsx");
-			attr(div2, "class", "accordion-item svelte-epnqsx");
+			attr(span0, "class", "open-icon svelte-1xs0tiv");
+			attr(span1, "class", "svelte-1xs0tiv");
+			attr(div0, "class", "accordion-header svelte-1xs0tiv");
+			attr(div1, "class", "accordion-content svelte-1xs0tiv");
+			attr(div2, "class", "accordion-item svelte-1xs0tiv");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -646,13 +653,23 @@ function create_each_block(ctx) {
 }
 
 function create_fragment(ctx) {
-	let div3;
-	let div2;
+	let div5;
+	let div4;
+	let div1;
 	let h3;
 	let t0;
 	let t1;
-	let div1;
+	let p;
+	let t2;
+	let t3;
 	let div0;
+	let a;
+	let t4_value = /*action_button2*/ ctx[1].label + "";
+	let t4;
+	let a_href_value;
+	let t5;
+	let div3;
+	let div2;
 	let each_value = /*accordions*/ ctx[0];
 	let each_blocks = [];
 
@@ -662,13 +679,21 @@ function create_fragment(ctx) {
 
 	return {
 		c() {
+			div5 = element("div");
+			div4 = element("div");
+			div1 = element("div");
+			h3 = element("h3");
+			t0 = text(/*content_title_2*/ ctx[2]);
+			t1 = space();
+			p = element("p");
+			t2 = text(/*content_description2*/ ctx[3]);
+			t3 = space();
+			div0 = element("div");
+			a = element("a");
+			t4 = text(t4_value);
+			t5 = space();
 			div3 = element("div");
 			div2 = element("div");
-			h3 = element("h3");
-			t0 = text(/*content_title_2*/ ctx[1]);
-			t1 = space();
-			div1 = element("div");
-			div0 = element("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
@@ -677,55 +702,90 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		l(nodes) {
-			div3 = claim_element(nodes, "DIV", { class: true });
+			div5 = claim_element(nodes, "DIV", { class: true });
+			var div5_nodes = children(div5);
+			div4 = claim_element(div5_nodes, "DIV", { class: true });
+			var div4_nodes = children(div4);
+			div1 = claim_element(div4_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			h3 = claim_element(div1_nodes, "H3", {});
+			var h3_nodes = children(h3);
+			t0 = claim_text(h3_nodes, /*content_title_2*/ ctx[2]);
+			h3_nodes.forEach(detach);
+			t1 = claim_space(div1_nodes);
+			p = claim_element(div1_nodes, "P", { style: true, class: true });
+			var p_nodes = children(p);
+			t2 = claim_text(p_nodes, /*content_description2*/ ctx[3]);
+			p_nodes.forEach(detach);
+			t3 = claim_space(div1_nodes);
+			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			var div0_nodes = children(div0);
+			a = claim_element(div0_nodes, "A", { class: true, href: true });
+			var a_nodes = children(a);
+			t4 = claim_text(a_nodes, t4_value);
+			a_nodes.forEach(detach);
+			div0_nodes.forEach(detach);
+			div1_nodes.forEach(detach);
+			t5 = claim_space(div4_nodes);
+			div3 = claim_element(div4_nodes, "DIV", { id: true, class: true });
 			var div3_nodes = children(div3);
 			div2 = claim_element(div3_nodes, "DIV", { class: true });
 			var div2_nodes = children(div2);
-			h3 = claim_element(div2_nodes, "H3", { class: true });
-			var h3_nodes = children(h3);
-			t0 = claim_text(h3_nodes, /*content_title_2*/ ctx[1]);
-			h3_nodes.forEach(detach);
-			t1 = claim_space(div2_nodes);
-			div1 = claim_element(div2_nodes, "DIV", { id: true, class: true });
-			var div1_nodes = children(div1);
-			div0 = claim_element(div1_nodes, "DIV", { class: true });
-			var div0_nodes = children(div0);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].l(div0_nodes);
+				each_blocks[i].l(div2_nodes);
 			}
 
-			div0_nodes.forEach(detach);
-			div1_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
+			div4_nodes.forEach(detach);
+			div5_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(h3, "class", "svelte-epnqsx");
-			attr(div0, "class", "accordion svelte-epnqsx");
-			attr(div1, "id", "second");
-			attr(div1, "class", "svelte-epnqsx");
-			attr(div2, "class", "wrapper svelte-epnqsx");
-			attr(div3, "class", "container svelte-epnqsx");
+			set_style(p, "display", "block");
+			attr(p, "class", "svelte-1xs0tiv");
+			attr(a, "class", "primary-large-button svelte-1xs0tiv");
+			attr(a, "href", a_href_value = /*action_button2*/ ctx[1].url);
+			attr(div0, "class", "button-wrapper svelte-1xs0tiv");
+			attr(div1, "class", "left-content svelte-1xs0tiv");
+			attr(div2, "class", "accordion svelte-1xs0tiv");
+			attr(div3, "id", "second");
+			attr(div3, "class", "svelte-1xs0tiv");
+			attr(div4, "class", "wrapper svelte-1xs0tiv");
+			attr(div5, "class", "container svelte-1xs0tiv");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div3, anchor);
-			append_hydration(div3, div2);
-			append_hydration(div2, h3);
+			insert_hydration(target, div5, anchor);
+			append_hydration(div5, div4);
+			append_hydration(div4, div1);
+			append_hydration(div1, h3);
 			append_hydration(h3, t0);
-			append_hydration(div2, t1);
-			append_hydration(div2, div1);
+			append_hydration(div1, t1);
+			append_hydration(div1, p);
+			append_hydration(p, t2);
+			append_hydration(div1, t3);
 			append_hydration(div1, div0);
+			append_hydration(div0, a);
+			append_hydration(a, t4);
+			append_hydration(div4, t5);
+			append_hydration(div4, div3);
+			append_hydration(div3, div2);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(div0, null);
+					each_blocks[i].m(div2, null);
 				}
 			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*content_title_2*/ 2) set_data(t0, /*content_title_2*/ ctx[1]);
+			if (dirty & /*content_title_2*/ 4) set_data(t0, /*content_title_2*/ ctx[2]);
+			if (dirty & /*content_description2*/ 8) set_data(t2, /*content_description2*/ ctx[3]);
+			if (dirty & /*action_button2*/ 2 && t4_value !== (t4_value = /*action_button2*/ ctx[1].label + "")) set_data(t4, t4_value);
+
+			if (dirty & /*action_button2*/ 2 && a_href_value !== (a_href_value = /*action_button2*/ ctx[1].url)) {
+				attr(a, "href", a_href_value);
+			}
 
 			if (dirty & /*accordions*/ 1) {
 				each_value = /*accordions*/ ctx[0];
@@ -739,7 +799,7 @@ function create_fragment(ctx) {
 					} else {
 						each_blocks[i] = create_each_block(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(div0, null);
+						each_blocks[i].m(div2, null);
 					}
 				}
 
@@ -753,7 +813,7 @@ function create_fragment(ctx) {
 		i: noop,
 		o: noop,
 		d(detaching) {
-			if (detaching) detach(div3);
+			if (detaching) detach(div5);
 			destroy_each(each_blocks, detaching);
 		}
 	};
@@ -792,20 +852,20 @@ function instance($$self, $$props, $$invalidate) {
 	});
 
 	$$self.$$set = $$props => {
-		if ('props' in $$props) $$invalidate(2, props = $$props.props);
+		if ('props' in $$props) $$invalidate(4, props = $$props.props);
 		if ('accordions' in $$props) $$invalidate(0, accordions = $$props.accordions);
-		if ('action_button2' in $$props) $$invalidate(3, action_button2 = $$props.action_button2);
-		if ('content_title_2' in $$props) $$invalidate(1, content_title_2 = $$props.content_title_2);
-		if ('content_description2' in $$props) $$invalidate(4, content_description2 = $$props.content_description2);
+		if ('action_button2' in $$props) $$invalidate(1, action_button2 = $$props.action_button2);
+		if ('content_title_2' in $$props) $$invalidate(2, content_title_2 = $$props.content_title_2);
+		if ('content_description2' in $$props) $$invalidate(3, content_description2 = $$props.content_description2);
 		if ('accordionsData' in $$props) $$invalidate(5, accordionsData = $$props.accordionsData);
 	};
 
 	return [
 		accordions,
-		content_title_2,
-		props,
 		action_button2,
+		content_title_2,
 		content_description2,
+		props,
 		accordionsData
 	];
 }
@@ -815,11 +875,11 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			props: 2,
+			props: 4,
 			accordions: 0,
-			action_button2: 3,
-			content_title_2: 1,
-			content_description2: 4,
+			action_button2: 1,
+			content_title_2: 2,
+			content_description2: 3,
 			accordionsData: 5
 		});
 	}
