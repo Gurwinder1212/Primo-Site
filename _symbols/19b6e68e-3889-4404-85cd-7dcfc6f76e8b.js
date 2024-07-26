@@ -561,7 +561,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (228:8) {#each accordions as accordion}
+// (230:8) {#each accordions as accordion}
 function create_each_block(ctx) {
 	let div2;
 	let div0;
@@ -622,11 +622,11 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span0, "class", "open-icon svelte-1xs0tiv");
-			attr(span1, "class", "svelte-1xs0tiv");
-			attr(div0, "class", "accordion-header svelte-1xs0tiv");
-			attr(div1, "class", "accordion-content svelte-1xs0tiv");
-			attr(div2, "class", "accordion-item svelte-1xs0tiv");
+			attr(span0, "class", "open-icon svelte-mu3j8o");
+			attr(span1, "class", "svelte-mu3j8o");
+			attr(div0, "class", "accordion-header svelte-mu3j8o");
+			attr(div1, "class", "accordion-content svelte-mu3j8o");
+			attr(div2, "class", "accordion-item svelte-mu3j8o");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div2, anchor);
@@ -744,16 +744,16 @@ function create_fragment(ctx) {
 		},
 		h() {
 			set_style(p, "display", "block");
-			attr(p, "class", "svelte-1xs0tiv");
-			attr(a, "class", "primary-large-button svelte-1xs0tiv");
+			attr(p, "class", "svelte-mu3j8o");
+			attr(a, "class", "primary-large-button svelte-mu3j8o");
 			attr(a, "href", a_href_value = /*action_button2*/ ctx[1].url);
-			attr(div0, "class", "button-wrapper svelte-1xs0tiv");
-			attr(div1, "class", "left-content svelte-1xs0tiv");
-			attr(div2, "class", "accordion svelte-1xs0tiv");
+			attr(div0, "class", "button-wrapper svelte-mu3j8o");
+			attr(div1, "class", "left-content svelte-mu3j8o");
+			attr(div2, "class", "accordion svelte-mu3j8o");
 			attr(div3, "id", "second");
-			attr(div3, "class", "svelte-1xs0tiv");
-			attr(div4, "class", "wrapper svelte-1xs0tiv");
-			attr(div5, "class", "container svelte-1xs0tiv");
+			attr(div3, "class", "svelte-mu3j8o");
+			attr(div4, "class", "wrapper svelte-mu3j8o");
+			attr(div5, "class", "container svelte-mu3j8o");
 		},
 		m(target, anchor) {
 			insert_hydration(target, div5, anchor);
