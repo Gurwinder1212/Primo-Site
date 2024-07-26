@@ -1473,34 +1473,34 @@ function create_fragment(ctx) {
 			this.h();
 		},
 		h() {
-			attr(h10, "class", "svelte-60zp7c");
-			attr(div0, "class", "hero-text-container1 svelte-60zp7c");
-			attr(h11, "class", "svelte-60zp7c");
-			attr(div1, "class", "hero-text-container2 svelte-60zp7c");
-			attr(div2, "class", "hero-feature-tag-container tags_top svelte-60zp7c");
-			attr(p, "class", "h650 svelte-60zp7c");
-			attr(div3, "class", "hero-feature-container svelte-60zp7c");
+			attr(h10, "class", "svelte-9a6iol");
+			attr(div0, "class", "hero-text-container1 svelte-9a6iol");
+			attr(h11, "class", "svelte-9a6iol");
+			attr(div1, "class", "hero-text-container2 svelte-9a6iol");
+			attr(div2, "class", "hero-feature-tag-container tags_top svelte-9a6iol");
+			attr(p, "class", "h650 svelte-9a6iol");
+			attr(div3, "class", "hero-feature-container svelte-9a6iol");
 			set_custom_element_data(lottie_player, "autoplay", "");
 			set_custom_element_data(lottie_player, "loop", "");
 			set_custom_element_data(lottie_player, "mode", "normal");
-			set_custom_element_data(lottie_player, "class", "hero-lottie svelte-60zp7c");
+			set_custom_element_data(lottie_player, "class", "hero-lottie svelte-9a6iol");
 			if (!src_url_equal(lottie_player.src, lottie_player_src_value = coffeeLottie)) set_custom_element_data(lottie_player, "src", lottie_player_src_value);
-			attr(img0, "class", "hero-image svelte-60zp7c");
+			attr(img0, "class", "hero-image svelte-9a6iol");
 			if (!src_url_equal(img0.src, img0_src_value = /*hero_image*/ ctx[1].url)) attr(img0, "src", img0_src_value);
 			attr(img0, "alt", img0_alt_value = /*hero_image*/ ctx[1].alt);
-			attr(div4, "class", "svelte-60zp7c");
-			attr(div5, "class", "hero-image-wrapper svelte-60zp7c");
-			attr(img1, "class", "home-banner-mobile svelte-60zp7c");
+			attr(div4, "class", "svelte-9a6iol");
+			attr(div5, "class", "hero-image-wrapper svelte-9a6iol");
+			attr(img1, "class", "home-banner-mobile svelte-9a6iol");
 			if (!src_url_equal(img1.src, img1_src_value = /*home_banner_mobile*/ ctx[6].url)) attr(img1, "src", img1_src_value);
 			attr(img1, "alt", img1_alt_value = /*home_banner_mobile*/ ctx[6].alt);
-			attr(img2, "class", "home-banner-small-desktop svelte-60zp7c");
+			attr(img2, "class", "home-banner-small-desktop svelte-9a6iol");
 			if (!src_url_equal(img2.src, img2_src_value = /*home_banner_small_desktop*/ ctx[7].url)) attr(img2, "src", img2_src_value);
 			attr(img2, "alt", img2_alt_value = /*home_banner_small_desktop*/ ctx[7].alt);
-			attr(div6, "class", "header-wrapper svelte-60zp7c");
-			attr(div7, "class", "header-container svelte-60zp7c");
+			attr(div6, "class", "header-wrapper svelte-9a6iol");
+			attr(div7, "class", "header-container svelte-9a6iol");
 			attr(section, "role", "img");
 			attr(section, "aria-label", section_aria_label_value = /*background*/ ctx[0].alt);
-			attr(section, "class", "svelte-60zp7c");
+			attr(section, "class", "svelte-9a6iol");
 		},
 		m(target, anchor) {
 			insert_hydration(target, section, anchor);
