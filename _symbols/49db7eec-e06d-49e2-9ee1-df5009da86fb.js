@@ -1,4 +1,4 @@
-// New Block - Updated July 26, 2024
+// New Block - Updated August 20, 2024
 function noop() { }
 function run(fn) {
     return fn();
@@ -1315,7 +1315,7 @@ function create_each_block(ctx) {
 			append_hydration(div, t1);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*hero_feature*/ 16 && t0_value !== (t0_value = /*feature*/ ctx[14].title + "")) set_data(t0, t0_value);
+			if (dirty & /*hero_feature*/ 32 && t0_value !== (t0_value = /*feature*/ ctx[14].title + "")) set_data(t0, t0_value);
 		},
 		d(detaching) {
 			if (detaching) detach(div);
@@ -1362,7 +1362,7 @@ function create_fragment(ctx) {
 	let img2_src_value;
 	let img2_alt_value;
 	let section_aria_label_value;
-	let each_value = /*hero_feature*/ ctx[4];
+	let each_value = /*hero_feature*/ ctx[5];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
@@ -1384,7 +1384,7 @@ function create_fragment(ctx) {
 			t3 = space();
 			div2 = element("div");
 			h12 = element("h1");
-			t4 = text(/*hero_title3*/ ctx[8]);
+			t4 = text(/*hero_title3*/ ctx[4]);
 			t5 = space();
 			div4 = element("div");
 			div3 = element("div");
@@ -1395,7 +1395,7 @@ function create_fragment(ctx) {
 
 			t6 = space();
 			p = element("p");
-			t7 = text(/*hero_description*/ ctx[5]);
+			t7 = text(/*hero_description*/ ctx[6]);
 			t8 = space();
 			div6 = element("div");
 			div5 = element("div");
@@ -1440,7 +1440,7 @@ function create_fragment(ctx) {
 			var div2_nodes = children(div2);
 			h12 = claim_element(div2_nodes, "H1", { class: true });
 			var h12_nodes = children(h12);
-			t4 = claim_text(h12_nodes, /*hero_title3*/ ctx[8]);
+			t4 = claim_text(h12_nodes, /*hero_title3*/ ctx[4]);
 			h12_nodes.forEach(detach);
 			div2_nodes.forEach(detach);
 			t5 = claim_space(div7_nodes);
@@ -1457,7 +1457,7 @@ function create_fragment(ctx) {
 			t6 = claim_space(div4_nodes);
 			p = claim_element(div4_nodes, "P", { class: true });
 			var p_nodes = children(p);
-			t7 = claim_text(p_nodes, /*hero_description*/ ctx[5]);
+			t7 = claim_text(p_nodes, /*hero_description*/ ctx[6]);
 			p_nodes.forEach(detach);
 			div4_nodes.forEach(detach);
 			t8 = claim_space(div7_nodes);
@@ -1509,11 +1509,11 @@ function create_fragment(ctx) {
 			attr(div5, "class", "svelte-s21mq9");
 			attr(div6, "class", "hero-image-wrapper svelte-s21mq9");
 			attr(img1, "class", "home-banner-mobile svelte-s21mq9");
-			if (!src_url_equal(img1.src, img1_src_value = /*home_banner_mobile*/ ctx[6].url)) attr(img1, "src", img1_src_value);
-			attr(img1, "alt", img1_alt_value = /*home_banner_mobile*/ ctx[6].alt);
+			if (!src_url_equal(img1.src, img1_src_value = /*home_banner_mobile*/ ctx[7].url)) attr(img1, "src", img1_src_value);
+			attr(img1, "alt", img1_alt_value = /*home_banner_mobile*/ ctx[7].alt);
 			attr(img2, "class", "home-banner-small-desktop svelte-s21mq9");
-			if (!src_url_equal(img2.src, img2_src_value = /*home_banner_small_desktop*/ ctx[7].url)) attr(img2, "src", img2_src_value);
-			attr(img2, "alt", img2_alt_value = /*home_banner_small_desktop*/ ctx[7].alt);
+			if (!src_url_equal(img2.src, img2_src_value = /*home_banner_small_desktop*/ ctx[8].url)) attr(img2, "src", img2_src_value);
+			attr(img2, "alt", img2_alt_value = /*home_banner_small_desktop*/ ctx[8].alt);
 			attr(div7, "class", "header-wrapper svelte-s21mq9");
 			attr(div8, "class", "header-container svelte-s21mq9");
 			attr(section, "role", "img");
@@ -1562,10 +1562,10 @@ function create_fragment(ctx) {
 		p(ctx, [dirty]) {
 			if (dirty & /*hero_title1*/ 4) set_data(t0, /*hero_title1*/ ctx[2]);
 			if (dirty & /*hero_title2*/ 8) set_data(t2, /*hero_title2*/ ctx[3]);
-			if (dirty & /*hero_title3*/ 256) set_data(t4, /*hero_title3*/ ctx[8]);
+			if (dirty & /*hero_title3*/ 16) set_data(t4, /*hero_title3*/ ctx[4]);
 
-			if (dirty & /*hero_feature*/ 16) {
-				each_value = /*hero_feature*/ ctx[4];
+			if (dirty & /*hero_feature*/ 32) {
+				each_value = /*hero_feature*/ ctx[5];
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
@@ -1587,7 +1587,7 @@ function create_fragment(ctx) {
 				each_blocks.length = each_value.length;
 			}
 
-			if (dirty & /*hero_description*/ 32) set_data(t7, /*hero_description*/ ctx[5]);
+			if (dirty & /*hero_description*/ 64) set_data(t7, /*hero_description*/ ctx[6]);
 
 			if (dirty & /*hero_image*/ 2 && !src_url_equal(img0.src, img0_src_value = /*hero_image*/ ctx[1].url)) {
 				attr(img0, "src", img0_src_value);
@@ -1597,19 +1597,19 @@ function create_fragment(ctx) {
 				attr(img0, "alt", img0_alt_value);
 			}
 
-			if (dirty & /*home_banner_mobile*/ 64 && !src_url_equal(img1.src, img1_src_value = /*home_banner_mobile*/ ctx[6].url)) {
+			if (dirty & /*home_banner_mobile*/ 128 && !src_url_equal(img1.src, img1_src_value = /*home_banner_mobile*/ ctx[7].url)) {
 				attr(img1, "src", img1_src_value);
 			}
 
-			if (dirty & /*home_banner_mobile*/ 64 && img1_alt_value !== (img1_alt_value = /*home_banner_mobile*/ ctx[6].alt)) {
+			if (dirty & /*home_banner_mobile*/ 128 && img1_alt_value !== (img1_alt_value = /*home_banner_mobile*/ ctx[7].alt)) {
 				attr(img1, "alt", img1_alt_value);
 			}
 
-			if (dirty & /*home_banner_small_desktop*/ 128 && !src_url_equal(img2.src, img2_src_value = /*home_banner_small_desktop*/ ctx[7].url)) {
+			if (dirty & /*home_banner_small_desktop*/ 256 && !src_url_equal(img2.src, img2_src_value = /*home_banner_small_desktop*/ ctx[8].url)) {
 				attr(img2, "src", img2_src_value);
 			}
 
-			if (dirty & /*home_banner_small_desktop*/ 128 && img2_alt_value !== (img2_alt_value = /*home_banner_small_desktop*/ ctx[7].alt)) {
+			if (dirty & /*home_banner_small_desktop*/ 256 && img2_alt_value !== (img2_alt_value = /*home_banner_small_desktop*/ ctx[8].alt)) {
 				attr(img2, "alt", img2_alt_value);
 			}
 
@@ -1635,12 +1635,12 @@ function instance($$self, $$props, $$invalidate) {
 	let { hero_image } = $$props;
 	let { hero_title1 } = $$props;
 	let { hero_title2 } = $$props;
+	let { hero_title3 } = $$props;
 	let { hero_feature } = $$props;
 	let { hero_description } = $$props;
 	let { home_banner_mobile } = $$props;
 	let { site_navigation_button } = $$props;
 	let { home_banner_small_desktop } = $$props;
-	let { hero_title3 } = $$props;
 
 	$$self.$$set = $$props => {
 		if ('props' in $$props) $$invalidate(9, props = $$props.props);
@@ -1649,12 +1649,12 @@ function instance($$self, $$props, $$invalidate) {
 		if ('hero_image' in $$props) $$invalidate(1, hero_image = $$props.hero_image);
 		if ('hero_title1' in $$props) $$invalidate(2, hero_title1 = $$props.hero_title1);
 		if ('hero_title2' in $$props) $$invalidate(3, hero_title2 = $$props.hero_title2);
-		if ('hero_feature' in $$props) $$invalidate(4, hero_feature = $$props.hero_feature);
-		if ('hero_description' in $$props) $$invalidate(5, hero_description = $$props.hero_description);
-		if ('home_banner_mobile' in $$props) $$invalidate(6, home_banner_mobile = $$props.home_banner_mobile);
+		if ('hero_title3' in $$props) $$invalidate(4, hero_title3 = $$props.hero_title3);
+		if ('hero_feature' in $$props) $$invalidate(5, hero_feature = $$props.hero_feature);
+		if ('hero_description' in $$props) $$invalidate(6, hero_description = $$props.hero_description);
+		if ('home_banner_mobile' in $$props) $$invalidate(7, home_banner_mobile = $$props.home_banner_mobile);
 		if ('site_navigation_button' in $$props) $$invalidate(11, site_navigation_button = $$props.site_navigation_button);
-		if ('home_banner_small_desktop' in $$props) $$invalidate(7, home_banner_small_desktop = $$props.home_banner_small_desktop);
-		if ('hero_title3' in $$props) $$invalidate(8, hero_title3 = $$props.hero_title3);
+		if ('home_banner_small_desktop' in $$props) $$invalidate(8, home_banner_small_desktop = $$props.home_banner_small_desktop);
 	};
 
 	return [
@@ -1662,11 +1662,11 @@ function instance($$self, $$props, $$invalidate) {
 		hero_image,
 		hero_title1,
 		hero_title2,
+		hero_title3,
 		hero_feature,
 		hero_description,
 		home_banner_mobile,
 		home_banner_small_desktop,
-		hero_title3,
 		props,
 		logo,
 		site_navigation_button
@@ -1684,12 +1684,12 @@ class Component extends SvelteComponent {
 			hero_image: 1,
 			hero_title1: 2,
 			hero_title2: 3,
-			hero_feature: 4,
-			hero_description: 5,
-			home_banner_mobile: 6,
+			hero_title3: 4,
+			hero_feature: 5,
+			hero_description: 6,
+			home_banner_mobile: 7,
 			site_navigation_button: 11,
-			home_banner_small_desktop: 7,
-			hero_title3: 8
+			home_banner_small_desktop: 8
 		});
 	}
 }
